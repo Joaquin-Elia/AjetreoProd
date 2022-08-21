@@ -1,0 +1,193 @@
+.navbar-container{
+    background: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.4rem;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 900;
+}
+.navbar-container-active{
+    background: rgba(0, 0, 0, 0.609);
+    transition: ease .5s;
+    padding-bottom: 10px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+.navbar-logo{
+    margin: 12px 0 0 15px;
+    object-fit: contain;
+    height: 35px;
+    pointer-events: none;
+}
+.nav-menu{
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    gap: 13px;
+    align-items: center;
+    justify-content: flex-end;
+    width: 70vw;
+    margin: 5px 2.7rem 0 0;
+}
+.nav-links{
+    color: #fff;
+    text-decoration: none;
+    padding: 0 1.8rem;
+    font-size: 16px;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+.nav-menu .active{
+    color: rgb(7, 190, 222);
+}
+.cart-container{
+    display: flex;
+    color: #fff;
+    margin: 5px 10px 0 0;
+}
+.menu-icon{
+    display: none;
+    color: #fff;
+}
+.cart-widget{
+    font-size: 1.5rem;
+    color: #fff;
+    margin-top: 7px;
+}
+.item_count{
+    font-size: 16px;
+    position: absolute;
+    top: 11px;
+    background-color: rgb(232, 23, 23);
+    color: #fff;
+    border-radius: 50%;
+    width: 22px;
+    height: 23px;
+    text-align: center;
+    margin-left: -4px;
+}
+@media screen and (max-width: 960px) {
+    .nav-menu{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-end;
+        width: 40%;
+        height: calc(100vh - 65px);
+        position: absolute;
+        top: 65px;
+        left: -100%;
+        opacity: 1;
+        transition: all .5s ease;
+    }
+    .nav-menu.menu-active{
+        background: rgba(21, 20, 21, 0.445);
+        backdrop-filter: blur( 10.5px );
+        -webkit-backdrop-filter: blur( 10.5px );
+        border-radius: 10px;
+        left: 0;
+        opacity: 1;
+        transition: all .5s ease;
+        z-index: 10;
+    }
+    .nav-links{
+        padding: 2.5rem 2.5rem 2rem 0rem;
+        display: flex;
+        font-size: 15px;
+    }
+    .nav-links:active{
+        color: rgb(196, 8, 8);
+    }
+    .logo-link{
+        margin: 15px 0 0 10px;
+    }
+    .navbar-logo{
+        height: 32px;
+        top: 0;
+        margin: auto;
+    }
+    .menu-icon{
+        display: flex;
+        top: 0;
+        left: 0;
+        margin: 18px 30px 0 20px;
+        position: absolute;
+        font-size: 1.7rem;
+        cursor: pointer;
+    }
+    .cart-container{
+        position: absolute;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        top: 0;
+        right: 0;
+        margin: 14px 10px 0 0;
+    }
+    .cart-widget{
+        margin: 6px;
+    }
+    .item_count{
+        font-size: 15px;
+        top: -1px;
+        width: 18px;
+        height: 21px;
+        margin-left: -11px;
+    }
+}
+@media screen and (max-width: 376px){
+    .nav-menu{
+        height: calc(100vh - 55px);
+        top: 50px;
+    }
+    .navbar-container-active{
+        border-bottom-left-radius: 15px;
+        border-bottom-right-radius: 15px;
+    }
+    .logo-link{
+        margin-top: 18px;
+    }
+    .navbar-logo{
+        height: 22px;
+    }
+    .nav-menu{
+        width: 65%;
+    }
+    .menu-icon{
+        margin-left: 15px;
+        margin-top: 19px;
+    }
+
+}
+@media screen and (max-width: 250px){
+    .navbar-logo{
+        height: 20px;
+        margin: auto;
+    }
+    .nav-menu{
+        width: 85%;
+    }
+    .menu-icon{
+        font-size: 1.5rem;
+        margin: 21px 0 0 3px;
+    }
+    .cart-widget{
+        font-size: 1.2rem;
+        margin: 8px -7px 0 0;
+    }
+    .item_count{
+        font-size: 12px;
+        position: absolute;
+        top: 3px;
+        background-color: rgb(232, 23, 23);
+        color: #fff;
+        border-radius: 50%;
+        width: 15px;
+        height: 16px;
+        text-align: center;
+        margin-left: -4px;
+    }
+}

@@ -1,38 +1,193 @@
-.App {
-  text-align: center;
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+a{
+    text-decoration: none;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.register-bg, .login-bg{
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    background-color: rgb(17, 17, 17);
+    top: 0;
+    left: 0;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.form-container{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    background-color: rgb(222, 255, 255);
+    overflow: hidden;
 }
-
-.App-link {
-  color: #61dafb;
+.backdrop-form{
+    width: 105%;
+    height: 45%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    background: #000;
+    border-bottom-right-radius: 90%;
+    color: #fff;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.title-form-h3{
+    margin: 70px 0 0 20px;
+    font-size: 43px;
+    line-height: 1.2;
+    font-weight: 600;
+    width: 90%;
+}
+.title-form-h5{
+    margin: 20px 10px 0 20px;
+    font-size: 15px;
+    line-height: 1.24;
+    font-weight: 400;
+    width: 60%;
+}
+.container-inputs{
+    margin: 250px 0 0 12px;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.inputs-form{
+    all: unset;
+    background-color: rgba(126, 125, 125, 0.362);
+    border-radius: 5px;
+    height: 40px;
+    margin: 7px 0;
+    padding: 0 10px;
+}
+.inputs-form::placeholder{
+    color: rgba(30, 29, 29, 0.705);
+    font-weight: 600;
+}
+.container-btn-submit{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 15px 0;
+}
+.btn-submit{
+    width: 95%;
+    padding: 15px 0;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    background-color: #000;
+    border-radius: 20px;
+    cursor: pointer;
+    border: none;
+    transition: all, 240ms ease-in-out;
+}
+.btn-submit:hover{
+    background-color: rgb(31, 31, 31);
+}
+.question-form{
+    font-size: 16px;
+    margin: 10px 15px;
+    display: flex;
+    justify-content: space-between;
+}
+.question-form a{
+    font-weight: 700;
+    color: #000;
+}
+.forget-password{
+    margin: 7px 15px;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 16px;
+    color: #000;
+}
+@media screen and (min-width: 345px){
+    .backdrop-form{
+        width: 100%;
+    }
+    .title-form-h3{
+        font-size: 46px;
+        letter-spacing: .5px;
+        width: 80%;
+    }
+    .title-form-h5{
+        font-size: 16px;
+        width: 80%;
+    }
+    .inputs-form{
+        height: 43px;
+        margin: 8px 0;
+        padding: 0 10px;
+    }
+}
+@media screen and (max-height: 370px){
+    .backdrop-form{
+        width: 220%;
+        height: 60px;
+    }
+    .title-form-h3, .title-form-h5{
+        display: none;
+    }
+}
+@media screen and (min-width: 435px){
+    .backdrop-form{
+        width: 99%;
+    }
+    .title-form-h3{
+        font-size: 49px;
+        width: 70%;
+    }
+    .title-form-h5{
+        font-size: 17px;
+    }
+    .container-inputs{
+        margin: 260px 0 0 28px;
+        width: 85%;
+    }
+    .btn-submit{
+        width: 80%;
+        color: #fff;
+        font-size: 16px;
+        font-weight: 600;
+        background-color: #000;
+        border-radius: 20px;
+        cursor: pointer;
+        border: none;
+        transition: all, 240ms ease-in-out;
+    }
+}
+@media screen and (min-width: 700px){
+    .title-form-h3{
+        font-size: 52px;
+        width: 70%;
+        margin-top: 30px;
+    }
+    .title-form-h5{
+        font-size: 17px;
+    }
+    .register-bg, .login-bg{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .form-container{
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 85%;
+        width: 50%;
+        max-width: 400px;
+        max-height: 770px;
+        background-color: rgb(224, 248, 248);
+        overflow: hidden;
+        border-radius: 20px;
+    }
 }

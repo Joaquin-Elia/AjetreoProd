@@ -1,0 +1,312 @@
+.container-beatstore{
+    background: rgb(19, 19, 19);
+    width: 100%;
+    min-height: 100vh;
+    color: #fff;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 100px 0 140px 5px;
+}
+.beats-container{
+    width: 43%;
+    height: 175px;
+    background-color: rgb(95, 95, 95);
+    margin: 0 9px;
+    border-radius: 7px;
+    cursor: pointer;
+}
+.selected-beat{
+    background-color: rgb(41, 41, 41);
+    color: rgb(231, 0, 0);
+}
+.img-beat{
+    width: 100%;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 7px;
+}
+.beat-info{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin: 2px 0 0 5px;
+}
+.beat-info-title{
+    width: 95%;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    margin-bottom: 5px;
+    font-weight: 700;  
+    font-size: 15px;
+}
+.beat-info-price{
+    font-weight: 600;   
+}
+.add-beat-cart{
+    all: unset;
+    position: relative;
+    background-color: rgb(180, 4, 4);
+    width: 100px;
+    height: 25px;
+    border-radius: 5px;
+    color: rgb(231, 230, 230);
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 2px;
+    margin: 10px 0 0px 5px;
+    bottom: 0;
+    left: 0;
+    font-weight: 600;
+}
+.icon-cart{
+    margin-right: 8px;
+    font-size: 16px;
+}
+@media screen and (min-width: 340px){
+    .beats-container{
+        width: 42%;
+        height: 200px;
+        margin: 0 12px;
+    }
+    .img-beat{
+        height: 95px;
+    }
+    .beat-info{
+        margin: 4px 0 0 7px;
+    }
+    .beat-info-title{
+        font-size: 16px;
+    }
+    .beat-info-price{
+        font-size: 17px; 
+    }
+    .add-beat-cart{
+        width: 110px;
+        height: 27px;
+        font-size: 17.5px;
+        margin: 10px 0 0 7px;
+        padding: 0 2px 3px 2px;
+    }
+    .icon-cart{
+        margin-right: 9px;
+        font-size: 16.5px;
+        transform: translateY(1px);
+    }
+}
+@media screen and (min-width: 380px) and (min-height: 820px){
+    .container-beatstore{
+        padding: 130px 0 150px 10px;
+    }
+    .beats-container{
+        height: 240px;
+        margin: 0 13px;
+    }
+    .img-beat{
+        height: 105px;
+    }
+    .beat-info{
+        margin: 7px 0 0 10px;
+    }
+    .beat-info-title{ 
+        font-size: 17.5px;
+        margin-bottom: 12px;
+    }
+    .beat-info-price{
+        font-size: 19.5px;
+    }
+    .add-beat-cart{
+        width: 125px;
+        height: 31px;
+        font-size: 18.5px;
+        margin: 15px 0 0 8px;
+        padding: 0 2px 3px 2px;
+    }
+    .icon-cart{
+        font-size: 19.5px;
+        font-weight: 900;
+        transform: translateY(1px);
+    }
+}
+@media screen and (min-width: 600px){
+    .container-beatstore{
+        padding: 130px 0 80px 15px;
+    }
+    .beats-container{
+        width: 44%;
+        height: 280px;
+        margin: 0 15px 20px 15px;
+    }
+    .img-beat{
+        height: 145px;
+    }
+    .beat-info{
+        margin: 7px 0 0 12px;
+    }
+    .beat-info-title{ 
+        font-size: 19.5px;
+        margin-bottom: 12px;
+    }
+    .beat-info-price{
+        font-size: 19.5px;
+    }
+    .add-beat-cart{
+        width: 120px;
+        height: 33px;
+        font-size: 18.5px;
+        margin: 10px 0 0 10px;
+        padding: 0 2px 3px 2px;
+    }
+}
+@media screen and (min-width: 1000px){
+    .container-beatstore{
+        padding: 130px 0 80px 25px;
+    }
+    .beats-container{
+        width: 22%;
+        height: 280px;
+        margin: 0 15px 20px 15px;
+    }
+    .img-beat{
+        height: 145px;
+    }
+    .beat-info{
+        margin: 7px 0 0 12px;
+    }
+    .beat-info-title{ 
+        font-size: 19.5px;
+        margin-bottom: 12px;
+    }
+    .beat-info-price{
+        font-size: 19.5px;
+    }
+    .add-beat-cart{
+        width: 120px;
+        height: 33px;
+        font-size: 18.5px;
+        margin: 10px 0 0 10px;
+        padding: 0 2px 3px 2px;
+    }
+}
+
+/* BeatsHome */
+.container-beats-home{
+    width: 100%;
+    min-height: 70vh;
+    overflow: hidden;
+    background-color: rgb(19, 18, 18);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+.container-beats-home-title{
+    color: rgb(224, 224, 224);
+    margin-bottom: 30px;
+}
+.beats-store_populars{
+    color: rgb(224, 224, 224);
+}
+.custom-scroll::-webkit-scrollbar{
+    height: 6px;
+    width: 4px;
+}
+.custom-scroll::-webkit-scrollbar-track{
+    background-color: transparent;
+}
+.custom-scroll::-webkit-scrollbar-thumb{
+    background-color: #3b3838;
+    opacity: 0;
+    border-radius: 15px;
+}
+.custom-scroll::-webkit-scrollbar-thumb:hover{
+    background-color: rgb(124, 124, 124);
+    opacity: 0;
+    border-radius: 15px;
+}
+.container-card-beat{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 195px;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    margin: 30px 0 20px 30px;
+    padding-right: 40px;
+    padding-bottom: 10px;
+}
+.beat-card{
+    min-width: 180px;
+    scroll-snap-align: start;
+    background-color: rgb(95, 95, 95);
+    margin: 0 9px;
+    border-radius: 7px;
+    cursor: pointer;
+    margin: 0 10px 0 20px;
+    border-radius: 8px;
+}
+.beat-card-img{
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+.beat-card-title{
+    width: 95%;
+    color: #fff;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    text-align: start;
+    margin: 10px 5px;
+    font-weight: 700;  
+    font-size: 17px;
+}
+.beat-card-play-container{
+    position: relative;
+    width: 100%;
+    height: 140px;
+}
+.beat-card-play-icon, .beat-card-playing{
+    color: rgb(255, 255, 255);
+    background-color: #0000004e;
+    height: 100%;
+    width: 100%;
+    font-size: 80px;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.beat-card-play-icon:hover{
+    color: rgb(235, 235, 235);
+    font-size: 85px;
+    transition: ease .3s;
+}
+.beat-card-playing{
+    font-size: 20px;
+}
+.btn-go-allbeats-container{
+    font-size: 18px;
+    background-color: #2fbc00;
+    color: #fff;
+    border-radius: 7px;
+    cursor: pointer;
+    margin: 10px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 43px;
+}
+.btn-go-allbeats-container:hover{
+    background-color: #289f01;
+}
+.btn-go-allbeats{
+    all: unset;
+    color: #fff;
+}

@@ -1,0 +1,200 @@
+.all_services_bg{
+    position: absolute;
+    width: 100%;
+    min-height: 100vh;
+    top: 0;
+    left: 0;
+    background-color: rgb(19, 18, 18);
+    overflow: hidden;
+    padding: 50px 15px;
+}
+.all_services_cards_loading{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    font-size: 50px;
+    color: #fff;
+    background-color: rgb(18, 19, 19);
+}
+.all_services_cards{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-height: 410px;
+    background-color: rgb(50, 106, 220);
+    border-radius: 7px;
+    margin: 30px 0;
+}
+.all_services_cards:hover{
+    background-color: rgb(33, 86, 193);
+    transition: ease .3s;
+}
+.all_services_card_img{
+    max-height: 105px;
+    max-width: 70%;
+    user-select: none;
+    pointer-events: none;
+    margin: 20px 0;
+}
+.all_services_content{
+   margin-top: 10px;
+}
+.all_service_card_title{
+    font-size: 20px;
+    font-weight: 800;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    color: rgb(24, 22, 22);
+}
+.all_service_card_description{
+    margin: 20px 0 20px 10px;
+    font-size: 16.5px;
+    font-weight: 500;
+    width: 90%;
+}
+.add_price_content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    height: 60px;
+    background-color: rgb(95, 145, 243);
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+.services_price_before{
+    margin: 0 5px;
+    text-decoration: solid 2px line-through;
+}
+.services_price_after{
+    font-weight: 700;
+    font-size: 17px;
+}
+.container_add_cart{
+    width: 108px;
+    height: 39px;
+    background-color: rgba(8, 25, 74, 0.632);
+    color: rgb(235, 235, 235);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.container_add_cart:hover{
+    background-color: rgba(1, 10, 38, 0.632);
+}
+.btn_add_cart{
+    all: unset;
+    font-weight: 600;
+    font-size: 16px;
+    padding: 0 0 2px 7px;
+}
+.btn_added{
+    font-weight: 600;
+    font-size: 16px;
+    color: rgb(255, 0, 0);
+}
+
+@media screen and (min-width: 600px) {
+    .all_services_bg{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 80px 0;
+    }
+    .all_services_cards{
+        justify-content: space-between;
+        width: 42%;
+        min-height: 455px;
+        margin: 20px 10px;
+    }
+    .all_services_card_img{
+        max-height: 135px;
+        max-width: 65%;
+    }
+    .all_service_card_title{
+        font-size: 23px;
+        margin-left: 20px;
+        margin-bottom: -5px;
+    }
+    .all_service_card_description{
+        margin: 20px 0 20px 20px;
+        font-size: 19px;
+        font-weight: 500;
+        line-height: 23px;
+        width: 85%;
+    }
+    .add_price_content{
+        height: 70px;
+    }
+    .services_price_before{
+        margin: 0 7px;
+        font-size: 17px;
+    }
+    .services_price_after{
+        font-size: 19px;
+    }
+    .container_add_cart{
+        width: 130px;
+        height: 42px;
+        font-size: 17px;
+    }
+    .btn_add_cart{
+        font-size: 17px;
+        padding: 0 0 2px 9px;
+    }
+    .btn_added{
+        font-weight: 600;
+        font-size: 16px;
+        color: rgb(255, 0, 0);
+    }
+}
+@media screen and (min-width: 1100px) {
+    .all_services_bg{
+        padding: 90px 0;
+    }
+    .all_services_cards{
+        width: 25%;
+        height: 470px;
+        margin: 20px 20px;
+    }
+    .add_price_content{
+        padding: 20px;
+        height: 70px;
+    }
+    .all_services_card_img{
+        max-height: 145px;
+        max-width: 55%;
+    }
+    .all_service_card_title{
+        font-size: 25px;
+        margin: 0 27px;
+    }
+    .all_service_card_description{
+        margin: 20px 0 20px 27px;
+        font-size: 17.5px;
+    }
+    .services_price_before{
+        margin: 0 9px;
+        font-size: 18px;
+    }
+    .services_price_after{
+        font-size: 20px;
+    }
+    .container_add_cart{
+        width: 145px;
+        height: 44px;
+        font-size: 17px;
+    }
+    .btn_add_cart{
+        font-size: 19px;
+        padding: 0 0 3px 9px;
+    }
+    .btn_added{
+        font-size: 19px;
+    }
+}
