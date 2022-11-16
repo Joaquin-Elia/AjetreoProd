@@ -1,4 +1,5 @@
 import React, { createContext, useContext, useEffect, useState } from 'react';
+import { BsLockFill } from 'react-icons/bs';
 import { useFirestore } from '../hooks/useFirestore';
 import BeatsContext from './BeatsContext';
 

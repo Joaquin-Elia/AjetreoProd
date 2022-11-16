@@ -10,14 +10,18 @@
 .beats-container{
     width: 43%;
     height: 175px;
-    background-color: rgb(95, 95, 95);
+    background-color: rgb(147 4 4);
     margin: 0 9px;
     border-radius: 7px;
     cursor: pointer;
 }
 .selected-beat{
     background-color: rgb(41, 41, 41);
-    color: rgb(231, 0, 0);
+    color: rgb(255, 5, 5);
+}
+.selected-beat > .add-beat-cart{
+    background-color: rgb(200, 9, 9);
+    color: #fff;
 }
 .img-beat{
     width: 100%;
@@ -47,11 +51,11 @@
 .add-beat-cart{
     all: unset;
     position: relative;
-    background-color: rgb(180, 4, 4);
+    background-color: rgb(245, 242, 242);
     width: 100px;
     height: 25px;
     border-radius: 5px;
-    color: rgb(231, 230, 230);
+    color: rgb(0, 0, 0);
     text-align: center;
     display: flex;
     justify-content: center;

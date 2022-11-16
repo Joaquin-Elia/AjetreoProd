@@ -1,9 +1,9 @@
-import React, {memo, useContext, useState} from 'react';
+import React, {useContext, useState} from 'react';
 import { Link } from 'react-router-dom';
 import { CartContext } from '../../context/CartContext';
 import {BsHandbag} from 'react-icons/bs';
 
-const AllServiceItem = memo(({
+const AllServiceItem = ({
     id,
     img,
     title,
@@ -54,7 +54,6 @@ const AllServiceItem = memo(({
             </div>
           </div>
     </div>
-  )
-})
+)}
 
 export default AllServiceItem

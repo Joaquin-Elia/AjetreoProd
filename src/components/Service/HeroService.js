@@ -3,6 +3,7 @@ import {HiOutlineArrowNarrowRight} from 'react-icons/hi';
 import { Link } from 'react-router-dom';
 import { useFirestore } from '../../hooks/useFirestore';
 import LoadingAnimation from '../LoadingAnimation/LoadingAnimation';
+import {motion} from 'framer-motion'
 import './HeroService.css';
 
 const HeroService = memo(() => {
@@ -30,9 +31,13 @@ const HeroService = memo(() => {
           <>
           <div className='service-container-service custom-scroll'>
             {heroServiceData.map((data, i)=> 
-              <div 
+              <motion.div
                 className='service-container_service-item' 
                 key={i}
+                initial={{ x: -100, opacity: 0}}
+                whileInView={{x: 0, opacity: 1}}
+                viewport={{ once: true }}
+                transition={{ delay: i * .5, duration: 1, type:'spring', stiffness: 125}} 
               > 
                 <img 
                   src={data.img}
@@ -41,7 +46,7 @@ const HeroService = memo(() => {
                 />
                 <h3 className='service-container_service_item-title'>{data.title}</h3>
                 <p className='service-container_service_item-p'>{data.description}</p>
-              </div>
+              </motion.div>
             )}
         </div>
         <div className='service-container-more'>

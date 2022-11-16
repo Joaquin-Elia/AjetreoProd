@@ -22,7 +22,7 @@ export default function Hero() {
             className='container-hero_title_p'
             animate={{opacity: 1}}
             initial={{opacity: 0}}
-            transition={{delay: 2}}
+            transition={{delay: 1.8, duration: 0.6}}
           >
               Necesitas un beat para tu proximo tema? Nosotros nos dedicamos a eso</motion.p>
         </div>
@@ -30,7 +30,7 @@ export default function Hero() {
           className='container-hero_btns'
           animate={{x: 0, opacity: 1}}
           initial={{x: -150, opacity: 0}}
-          transition={{duration: 0.8, delay: 2.2}}
+          transition={{duration: 0.6, delay: 1.8}}
         >
           <button 
             onClick={()=> setModalState(!modalState)}
@@ -53,9 +53,9 @@ export default function Hero() {
 
       <motion.div 
         className='container-hero_featured'
-        animate={{scale: 1, opacity: 1}}
-        initial={{scale: 2, opacity: 0}}
-        transition={{duration: 0.8, delay: 2.9}}
+        animate={{y: 0, opacity: 1}}
+        initial={{y: 150, opacity: 0}}
+        transition={{duration: 1.3, delay: 2.3}}
       >
         <h4 className='container-hero_featured_title'>
           Los estilos en los que mas nos destacamos:

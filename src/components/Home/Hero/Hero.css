@@ -9,7 +9,7 @@
     width: 100%;
     top: 0;
     left: 0;
-    background-color: rgb(19, 18, 18);
+    background-image: radial-gradient(circle, #151515, #181818, #1b1b1b, #181818, rgb(3, 92, 83));
 }
 .container-hero_title{
     display: flex;
@@ -386,7 +386,7 @@
         }
     }
 }
-@media screen and (min-width: 1400px){
+@media screen and (min-width: 1300px){
     .container-hero_title{
         justify-content: flex-start;
         align-items: flex-start;
@@ -398,7 +398,7 @@
     .container-hero_featured{
         width: 530px;
         height: 250px;
-        margin: 150px 0 0 160px;
+        margin: 150px 0 0 100px;
     }
     .container-hero_featured_title{
         font-size: 3.1rem;
@@ -415,19 +415,19 @@
         0%{
             content: 'Rap';
             transition-duration: 2s;
-            font-size: 7.3rem;
+            font-size: 7.1rem;
             letter-spacing: 0;
         }
         20%{
             content: 'Trap';
             transition-duration: 2s;
-            font-size: 7.3rem;
+            font-size: 7.1rem;
             letter-spacing: 0;
         }
         40%{
             content: 'Boombap';
             transition-duration: 2s;
-            font-size: 6.9rem;
+            font-size: 6.8rem;
             letter-spacing: -2px;
         }
         60%{

@@ -10,3 +10,18 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+html{
+  scroll-behavior: smooth;
+}
+::-webkit-scrollbar{
+  background-color: black;
+  width: .3rem;
+}
+::-webkit-scrollbar-thumb{
+  background-color: rgb(12, 219, 219);
+}
+@media screen and (min-width: 280px) and (max-width: 1000px){
+  body::-webkit-scrollbar {
+    display: none;
+  }
+}

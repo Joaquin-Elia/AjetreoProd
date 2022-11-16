@@ -68,6 +68,7 @@
     scroll-snap-align: start;
     border-radius: 7px;
     background-color: rgb(16 60 149);
+    background-image: radial-gradient(circle, #362eb7, #15339d, #3f4354);
     color: rgb(231, 231, 231);
     display: flex;
     flex-direction: column;

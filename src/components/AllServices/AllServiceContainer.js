@@ -1,4 +1,4 @@
-import React, { useContext} from 'react';
+import React, {useContext} from 'react';
 import { CartContext } from '../../context/CartContext';
 import AllServiceItem from './AllServiceItem';
 import LoadingAnimation from '../LoadingAnimation/LoadingAnimation';

@@ -11,42 +11,42 @@ export const AllBeats = () => {
     const value = useContext(CartContext);
     const addItem = value.addItem;
 
-  return (
-    <div className='container-beatstore'>
-        {beatsFiles.map((beat, i) => (
-            <div 
-                className={"beats-container " + 
-                (footerPlayer && currentSong === i ? "selected-beat" : '')}
-                key={i}
-            >
-                <div
-                    onClick={() => {
-                    setCurrent(i);
-                    setFooterPlayer(true);
-                }}>
-                    <img 
-                        className='img-beat'
-                        src={beat.img} 
-                        alt={beat.title}
-                    />
-                    <div className='beat-info'>
-                        <h5 className='beat-info-title'>{beat.title}</h5>
-                        <span className='beat-info-price'>$USD {beat.price}</span>
-                    </div>
-                </div>
-                <button 
-                    className='add-beat-cart'
-                    onClick={()=> addItem(beat.id)}
+    return (
+        <div className='container-beatstore'>
+            {beatsFiles.map((beat, i) => (
+                <div 
+                    className={"beats-container " + 
+                    (footerPlayer && currentSong === i ? "selected-beat" : '')}
+                    key={i}
                 >
-                    <BsHandbag className='icon-cart'/>
-                    Agregar
-                </button>
-            </div>
-            ))
-        }
-        {footerPlayer &&
-            <FooterMusicPlayer footerPlayer={footerPlayer}/>
-        }
-    </div>
-  )
+                    <div
+                        onClick={() => {
+                        setCurrent(i);
+                        setFooterPlayer(true);
+                    }}>
+                        <img 
+                            className='img-beat'
+                            src={beat.img} 
+                            alt={beat.title}
+                        />
+                        <div className='beat-info'>
+                            <h5 className='beat-info-title'>{beat.title}</h5>
+                            <span className='beat-info-price'>$USD {beat.price}</span>
+                        </div>
+                    </div>
+                    <button 
+                        className='add-beat-cart'
+                        onClick={()=> addItem(beat.id)}
+                    >
+                        <BsHandbag className='icon-cart'/>
+                        Agregar
+                    </button>
+                </div>
+                ))
+            }
+            {footerPlayer &&
+                <FooterMusicPlayer footerPlayer={footerPlayer}/>
+            }
+        </div>
+    )
 }

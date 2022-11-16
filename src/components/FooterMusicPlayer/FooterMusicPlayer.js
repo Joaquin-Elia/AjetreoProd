@@ -206,12 +206,12 @@ export const FooterMusicPlayer = ({footerPlayer}) => {
                     alt={beatsFiles[currentSong].title}
                 />
                 <div className='container-title-volume'>
-                    <motion.h5 
+                    <h5 
                         className='title-footer-beat'>
                         {beatsFiles[currentSong].title}
-                    </motion.h5>
-                    <div>
-                        {(stateVolume === 0 && < IoVolumeMuteOutline onClick={() => unmuteBeat()}/>) || 
+                    </h5>
+                    <div className='container-title-volume-icons'>
+                        {(stateVolume === 0 && <IoVolumeMuteOutline onClick={() => unmuteBeat()}/>) || 
                         (stateVolume < .4 && <IoVolumeLowOutline onClick={() => muteBeat()}/>) || 
                         (stateVolume < .7 && <IoVolumeMediumOutline onClick={() => muteBeat()}/>) ||
                         (stateVolume >= .7 && <IoVolumeHighOutline onClick={() => muteBeat()}/>)
