@@ -51,15 +51,15 @@ const NavBar = () => {
                 {menuClick ? <CgClose /> : <CgMenuGridO />}
             </div>
             <ul className={menuClick ? 'nav-menu menu-active' : 'nav-menu'}>
-                {MenuItems.map((item,index)=>{
+                {MenuItems.map(({id, title, cName, url})=>{
                     return (
-                        <li key={index}>
+                        <li key={id}>
                             <NavLink 
-                                className={item.cName}
-                                to={item.url}
+                                className={cName}
+                                to={url}
                                 onClick={()=> setMenuClick(false)}
                             >
-                                {item.title}
+                                {title}
                             </NavLink>
                         </li>
                     )

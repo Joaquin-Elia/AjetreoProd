@@ -1,78 +1,39 @@
 import React from 'react';
-import tick from '../../../imgs/redTick.png'
-import homeStudio from '../../../imgs/homeStudio.jpg'
-import speaker from '../../../imgs/speaker.jpg'
+import {reasonsData} from './aboutUsData';
+import {motion, useViewportScroll, useTransform } from 'framer-motion';
 import './AboutUs.css';
 
 const AboutUs = () => {
+  const {scrollYProgress} = useViewportScroll();
+  const leftBg = useTransform(scrollYProgress, [0.530, 0.630], ['20vh', '60vh']);
+  const rightSideScale = useTransform(scrollYProgress, [0.250, 0.600], [0, 1]);
+  const rightSideY= useTransform(scrollYProgress, [0, 0.8], ['-20vh', '10vh']);
+
   return (
     <>
-    <div className='container-why-chooseus'>
-      <div className="bg-blur-1"></div>
-      <div className="bg-blur-2"></div>
-      <div className="reasons-imgs-container">
-        <img 
-            className='img-reasons-1'
-            src={ speaker } 
-            alt="Parlantes para produccion de musica" 
-        />
-        <img 
-          className='img-reasons-2'
-          src={ homeStudio } 
-          alt="Estudio de produccion musical en casa" 
-        />
-      </div>
-      <div className="container_title-reasons">
-        <p className='mini-title-why'>Algunas razones</p>
-        <h2 className="title-why">
-          <span className='title-why-change'>
-            Por qué
-          </span> 
-          <span> elegirnos?</span>
-        </h2>
-        <div className="our-reasons">
-          <ul>
-            <li className='reasons-list'>
-              <img 
-                className='reasons-list-icon'
-                src={tick} 
-                alt='Tilde rojo'
-              />
-              Lorem ipsum dolor lorem
-            </li>
-            <li className='reasons-list'>
-              <img 
-                className='reasons-list-icon'
-                src={tick} 
-                alt='Tilde rojo'
-              />
-              Lorem ipsum dolor lorem
-            </li>
-            <li className='reasons-list'>
-              <img 
-                className='reasons-list-icon'
-                src={tick} 
-                alt='Tilde rojo'
-              />
-              Lorem ipsum dolor lorem
-            </li>
-            <li className='reasons-list'>
-              <img 
-                className='reasons-list-icon'
-                src={tick} 
-                alt='Tilde rojo'
-              />
-              Lorem ipsum dolor lorem
-            </li>
-          </ul>
+      <div className="container-choose-us">
+        <div className="scroll-left-bg">
+          <motion.div 
+            style={{height: leftBg}}
+            className="choose-us-titles"
+          >
+            <h3 className='choose-us-titles-h3'>Sobre nosotros</h3>
+            <h2 className='choose-us-titles-h2'>Algunas razones para elegirnos</h2>
+          </motion.div>
         </div>
+        <motion.div style={{y: rightSideY, scale: rightSideScale}} className="choose-us-reasons">
+          {reasonsData.map(({id, number, description}) => 
+            <div key={id} className="reasons-flex">
+              <h3 className="reasons-numbers">{number}</h3>
+              <p className="reasons-p">{description}</p>
+            </div>
+          )}
+        </motion.div>
       </div>
-      {/* <div className="our-works">
-          <h2 className="our-works-title">
-            <span className="change-text-our">Nuestros </span>
-            trabajos
-          </h2>
-      </div> */}
+      <div className="who-we-are">
+        <h2 className='who-we-are-title'>
+          Ajetreo es una <strong className='who-we-are-strong'>productora</strong> que tiene como <strong className='who-we-are-strong'>objetivo sacar</strong> a la luz a <strong className='who-we-are-strong'>artistas underground.</strong>
+        </h2>
       </div>
     </>
   )

@@ -1,18 +1,24 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import { CartContext } from '../../context/CartContext';
 import {BsFillBagXFill , BsTrash} from 'react-icons/bs'
 import { Link } from 'react-router-dom';
+import Modal from '../Modal/Modal';
+import { NeedSignIn } from '../NeedSignIn/NeedSignIn';
+import { useAuth } from '../../context/AuthContext';
 import './Cart.css'
+import GenerateOrder from '../GenerateOrder/GenerateOrder';
 
 const Cart = () => {
   const value = useContext(CartContext);
   const [cart, setCart] = value.cart;  
   const [total] = value.total;
+  const {user} = useAuth();
+  const [modalState, setModalState] = useState(false);
 
   const removeItem = id => {
-    cart.forEach((item,index) =>{
-      if(item.id === id){
-        cart.splice(index,1)
+    cart.forEach((items ,index) =>{
+      if(items.id === id){
+        cart.splice(index, 1)
       }
     })
     setCart([...cart])
@@ -34,22 +40,22 @@ const Cart = () => {
             <h4>Producto</h4>
             <h4>Precio</h4>
           </div>
-          {cart.map((item) => 
+          {cart.map(({id, img, title, price}) => 
               <div 
                 className="cart_items"
-                key={item.id}
+                key={id}
               >
                 <img
                   className='cart_items_img' 
-                  src={item.img} 
-                  alt={item.title}
+                  src={img} 
+                  alt={title}
                 />
-                <h3 className='cart_items_title'>{item.title}</h3>
-                <span className='cart_items_price'><small className='price_badge'>$USD</small> {item.price}</span>
+                <h3 className='cart_items_title'>{title}</h3>
+                <span className='cart_items_price'><small className='price_badge'>$USD</small> {price}</span>
                 <div className='items_delete_container'>
                   <button 
                     className="cart_items_delete"
-                    onClick={()=> removeItem(item.id)}
+                    onClick={()=> removeItem(id)}
                   >
                     X
                   </button>
@@ -67,7 +73,25 @@ const Cart = () => {
         </div>
         <div className="cart_detail">
           <h3>Total: $USD {total}</h3>
-          <button className='cart_detail_btn'>Comprar</button>
+          <button 
+            className='cart_detail_btn'
+            onClick={()=> setModalState(!modalState)}
+          >
+            Comprar
+          </button>
+            <Modal
+              state={modalState} 
+              changeState={setModalState}
+              showHeader
+              title={!user ? 'Paso: 1/2' : 'Paso: 2/2'}
+            >
+              {!user &&
+                <NeedSignIn />
+              }
+              {user &&
+                <GenerateOrder />
+              }
+            </Modal>
         </div>
         </>}
       </div>

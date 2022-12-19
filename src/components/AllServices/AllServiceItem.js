@@ -48,7 +48,7 @@ const AllServiceItem = ({
                 </Link>
               </div> }
               <div className="services_price_container">
-                <span className='services_price_before'>$35</span>
+                <span className='services_price_before'>${price * 1.5}</span>
                 <span className='services_price_after'>${price} USD</span>
               </div>
             </div>

@@ -1,6 +1,7 @@
-import React, {useState} from 'react'
+import React, {useContext, useState} from 'react'
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
+import { CartContext } from '../../context/CartContext';
 import { FormAlert } from '../FormAlert/FormAlert';
 
 export const Register = () => {
@@ -9,6 +10,8 @@ export const Register = () => {
     password: ''
   })
   const {signup} = useAuth();
+  const value = useContext(CartContext);
+  const [cart] = value.cart;  
   const navigate = useNavigate();
   const [error, setError] = useState();
 
@@ -20,7 +23,7 @@ export const Register = () => {
     setError('')
     try {
       await signup(user.email, user.password)
-      navigate('/profile')
+      cart.length === 0 ? navigate('/profile') : navigate('/cart');
     } catch (error) {
       if(error.code === 'auth/internal-error' || error.code === 'auth/invalid-email')
         setError('Error: Correo invalido');

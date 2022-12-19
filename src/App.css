@@ -5,7 +5,8 @@
     list-style: none;
 }
 a{
-    text-decoration: none;
+    all: unset;
+    cursor: pointer;
 }
 .register-bg, .login-bg{
     position: absolute;
@@ -38,21 +39,21 @@ a{
     color: rgb(240, 237, 237);
 }
 .title-form-h3{
-    margin: 70px 0 0 20px;
-    font-size: 43px;
+    margin: 4.375rem 0 0 1.25rem;
+    font-size: 2.6875em;
     line-height: 1.2;
     font-weight: 600;
     width: 90%;
 }
 .title-form-h5{
-    margin: 20px 10px 0 20px;
-    font-size: 15px;
+    margin: 1.25rem .625rem 0 1.25rem;
+    font-size: .9375em;
     line-height: 1.24;
     font-weight: 400;
     width: 60%;
 }
 .container-inputs{
-    margin: 250px 0 0 12px;
+    margin: 15.625rem 0 0 .75rem;
     width: 90%;
     display: flex;
     flex-direction: column;
@@ -61,10 +62,10 @@ a{
 .inputs-form{
     all: unset;
     background-color: rgba(126, 125, 125, 0.362);
-    border-radius: 5px;
-    height: 40px;
-    margin: 7px 0;
-    padding: 0 10px;
+    border-radius: .3125rem;
+    height: 2.5rem;
+    margin: .4375rem 0;
+    padding: 0 .625rem;
 }
 .inputs-form::placeholder{
     color: rgba(30, 29, 29, 0.705);
@@ -74,26 +75,26 @@ a{
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 15px 0;
+    margin: .9375rem 0;
 }
 .btn-submit{
     width: 95%;
-    padding: 15px 0;
+    padding: .9375rem 0;
     color: #fff;
-    font-size: 16px;
+    font-size: 1em;
     font-weight: 600;
     background-color: rgb(10, 10, 10);
-    border-radius: 20px;
+    border-radius: 1.25rem;
     cursor: pointer;
     border: none;
-    transition: all, 240ms ease-in-out;
+    transition: all 240ms ease-in-out;
 }
 .btn-submit:hover{
     background-color: rgb(31, 31, 31);
 }
 .question-form{
-    font-size: 16px;
-    margin: 10px 15px;
+    font-size: 1em;
+    margin: .625rem .9375rem;
     display: flex;
     justify-content: space-between;
 }
@@ -102,75 +103,73 @@ a{
     color: rgb(0, 0, 0);
 }
 .forget-password{
-    margin: 7px 15px;
+    margin: .4375rem .9375rem;
     cursor: pointer;
     font-weight: 700;
-    font-size: 16px;
+    font-size: 1em;
     color: #000;
 }
-@media screen and (min-width: 345px){
+@media screen and (min-width: 21.5625rem){
     .backdrop-form{
         width: 100%;
     }
     .title-form-h3{
-        font-size: 46px;
-        letter-spacing: .5px;
+        font-size: 2.875em;
+        letter-spacing: .0313rem;
         width: 80%;
     }
     .title-form-h5{
-        font-size: 16px;
+        font-size: 1em;
         width: 80%;
     }
     .inputs-form{
-        height: 43px;
-        margin: 8px 0;
-        padding: 0 10px;
+        height: 2.6875rem;
+        margin: .5rem 0;
+        padding: 0 .625rem;
     }
 }
-@media screen and (max-height: 370px){
+@media screen and (max-height: 23.125rem){
     .backdrop-form{
         width: 220%;
-        height: 60px;
+        height: 3.75rem;
     }
     .title-form-h3, .title-form-h5{
         display: none;
     }
 }
-@media screen and (min-width: 435px){
+@media screen and (min-width: 27.1875rem){
     .backdrop-form{
         width: 99%;
     }
     .title-form-h3{
-        font-size: 49px;
+        font-size: 3.0625em;
         width: 70%;
     }
     .title-form-h5{
-        font-size: 17px;
+        font-size: 1.0625em;
     }
     .container-inputs{
-        margin: 260px 0 0 28px;
+        margin: 16.25rem 0 0 1.75rem;
         width: 85%;
     }
     .btn-submit{
         width: 80%;
-        color: #fff;
-        font-size: 16px;
+        font-size: 1em;
         font-weight: 600;
-        background-color: #000;
-        border-radius: 20px;
-        cursor: pointer;
-        border: none;
-        transition: all, 240ms ease-in-out;
+        border-radius: 1.25rem;
     }
 }
-@media screen and (min-width: 700px){
+@media screen and (min-width: 43.75rem){
+    .backdrop-form{
+        width: 101%;
+    }
     .title-form-h3{
-        font-size: 52px;
+        font-size: 3.25em;
         width: 70%;
-        margin-top: 30px;
+        margin-top: 1.875rem;
     }
     .title-form-h5{
-        font-size: 17px;
+        font-size: 1.0625em;
     }
     .register-bg, .login-bg{
         display: flex;
@@ -178,16 +177,10 @@ a{
         align-items: center;
     }
     .form-container{
-        position: relative;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
         height: 85%;
         width: 50%;
-        max-width: 400px;
-        max-height: 770px;
-        background-color: rgb(224, 248, 248);
-        overflow: hidden;
-        border-radius: 20px;
+        max-width: 25rem;
+        max-height: 48.125rem;
+        border-radius: 1.25rem;
     }
 }

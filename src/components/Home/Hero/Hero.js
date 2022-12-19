@@ -60,7 +60,7 @@ export default function Hero() {
         <h4 className='container-hero_featured_title'>
           Los estilos en los que mas nos destacamos:
         </h4>
-        <h2 className='container-hero_featured_name' />
+        <h2 className='container-hero_featured_name'> </h2>
       </motion.div>
     </div>
     </div>

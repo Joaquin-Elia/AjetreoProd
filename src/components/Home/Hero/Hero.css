@@ -1,9 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Jost:wght@400;600;700&display=swap');
 .container-hero{
     min-height: 90vh;
 }
 .container-hero_bg{
-    position: absolute;
     overflow: hidden;
     min-height: 100vh;
     width: 100%;
@@ -15,11 +13,11 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin: 62px 0 20px 10px;
+    margin: 3.875rem 0 1.25rem .625rem;
 }
 .container-hero_title_h1{
     position: relative;
-    font-size: 3.4rem;
+    font-size: 3.4em;
     letter-spacing: -0.07rem;
     color: #dcdbdb;
     font-family: 'Jost', sans-serif;
@@ -37,7 +35,7 @@
     position: relative;
     color: #c6c6c6;
     font-size: 1rem;
-    margin-top: 10px;
+    margin-top: .625rem;
 }
 .container-hero_btns{
     display: flex;
@@ -46,32 +44,32 @@
 }
 .container-hero_btns_btn{
     all: unset;
-    padding: 6px 18px;
-    margin: 7px 0 0 10px;
-    width: 95px;
-    height: 30px;
+    padding: .375rem 1.125rem;
+    margin: .4375rem 0 0 .625rem;
+    width: 5.9375rem;
+    height: 1.875rem;
     text-align: center;
     background-color: #610699;
     color: #ffffff;
-    border-radius: 5px;
+    border-radius: .3125rem;
     font-size: .95rem;
     cursor: pointer;
 }
 .container-hero_btns_btn:nth-child(2){
     background-color: transparent;
-    margin-top: 9px;
+    margin-top: .5625rem;
     text-align: center;
     color: #00ffe1;
     border: 1px solid #00ffe1;
-    width: 115px;
+    width: 7.1875rem;
     padding: 3px 0;
 }
 .container-hero_btns_btn_icon{
     font-size: 1.1rem;
-    transform: translateY(4px);
+    transform: translateY(.25rem);
 }
 .container-hero_featured{
-    margin-top: 30px;
+    margin-top: 1.875rem;
 }
 .container-hero_featured_title{
     color: #ffffff80;
@@ -80,7 +78,7 @@
 }
 .container-hero_featured_name{
     text-align: center;
-    padding-bottom: 20px;
+    padding-bottom: 1.25rem;
 }
 .container-hero_featured_name::before{
     content: '';
@@ -116,9 +114,9 @@
         transition-duration: 2s;
     }
 }
-@media screen and (min-width: 360px){
+@media screen and (min-width: 22.5rem){
     .container-hero_title{
-        margin: 70px 0 25px 15px;
+        margin: 4.375rem 0 1.5625rem .9375rem;
     }
     .container-hero_title_h1{
         font-size: 4.2rem;
@@ -131,32 +129,32 @@
         font-size: 1.1rem;
     }
     .container-hero_btns_btn{
-        padding: 7px 22px;
-        margin: 7px 3px 0 15px;
-        width: 125px;
+        padding: .4375rem 1.375rem;
+        margin: .4375rem 3px 0 .9375rem;
+        width: 7.8125rem;
         font-size: 1.12rem;
     }
     .container-hero_btns_btn:nth-child(2){
-        width: 160px;
-        font-size: 1.2rem;
-        margin-top: 9px;
-        padding: 3px 0 7px 0;
+        width: 10rem;
+        font-size: 1.2em;
+        margin-top: .5625rem;
+        padding: 3px 0 .4375rem 0;
     }
     .container-hero_btns_btn_icon{
         font-size: 1.5rem;
-        transform: translateY(6px);
+        transform: translateY(.375rem);
     }
     .container-hero_featured_title{
         font-size: 2rem;
-        margin: 40px 0 15px 0; 
+        margin: 2.5rem 0 .9375rem 0; 
     }
     .container-hero_featured_name::before{
         font-size: 4.8rem;
     }
 }
-@media screen and (min-height: 740px) and (min-width: 350px) {
+@media screen and (min-height: 46.25rem) and (min-width: 21.875rem) {
     .container-hero_title{
-        margin-top: 80px;
+        margin-top: 5rem;
     }
     .container-hero_title_h1{
         font-size: 4.2rem;
@@ -165,153 +163,150 @@
         line-height: 1.15;
     }
     .container-hero_btns_btn{
-        padding: 7px 23px;
-        width: 125px;
-        height: 37px;
-        font-size: 1.15rem;
+        padding: .4375rem 1.4375rem;
+        width: 7.8125rem;
+        height: 2.3125rem;
+        font-size: 1.15em;
     }
     .container-hero_btns_btn:nth-child(2){
-        width: 150px;
-        font-size: 1.2rem;
+        width: 9.375rem;
+        font-size: 1.2em;
     }
     .container-hero_featured{
-        margin-top: 45px;
+        margin-top: 2.8125rem;
     }
     .container-hero_featured_title{
         font-size: 2rem;
-        margin-bottom: 20px;
+        margin-bottom: 1.25rem;
     }
     .container-hero_featured_name::before{
         font-size: 4.8rem;
     }
 }
-@media screen and (min-height: 780px) and (min-width: 380px) {
+@media screen and (min-height: 48.75rem) and (min-width: 23.75rem) {
     .container-hero_title{
-        margin: 85px 0 30px 18px;
+        margin: 5.3125rem 0 1.875rem 1.125rem;
     }
     .container-hero_title_h1{
-        font-size: 4.6rem;
+        font-size: 4.6em;
     }
     .container-hero_title_h1 span{
         line-height: 1.2;
     }
     .container-hero_btns_btn{
-        padding: 7px 23px;
-        margin-left: 18px;
-        width: 145px;
-        height: 38px;
-        font-size: 1.35rem;
+        padding: .4375rem 1.4375rem;
+        margin-left: 1.125rem;
+        width: 9.0625rem;
+        height: 2.375rem;
+        font-size: 1.35em;
     }
     .container-hero_btns_btn:nth-child(2){
-        width: 160px;
-        font-size: 1.3rem;
+        width: 10rem;
+        font-size: 1.3em;
     }
     .container-hero_featured_title{
-        font-size: 2.2rem;
-        margin: 40px 0;
+        font-size: 2.2em;
+        margin: 2.5rem 0;
     }
     .container-hero_featured_name::before{
-        font-size: 5.4rem;
+        font-size: 5.4em;
     }
 }
-@media screen and (min-width: 600px){
+@media screen and (min-width: 37.5rem){
     .container-hero_title{
         justify-content: flex-start;
         align-items: flex-start;
-        margin: 75px 0 0 25px;
+        margin: 4.6875rem 0 0 1.5625rem;
     }
     .container-hero_title_h1 span{
         line-height: 1.1;
     }
     .container-hero_title_h1{
-        font-size: 5.7rem;
+        font-size: 5.7em;
     }
     .container-hero_title_p{
-        font-size: 1.2rem;
-        margin-right: 30px;
+        font-size: 1.2em;
+        margin-right: 1.875rem;
     }
     .container-hero_btns{
-        margin: 20px 0 0 25px;
+        margin: 1.25rem 0 0 1.5625rem;
     }
     .container-hero_btns_btn:nth-child(2){
-        margin-top: 15px;
-        padding: 3px 10px 9px 10px;
+        margin-top: .9375rem;
+        padding: 3px .625rem .5625rem .625rem;
     }
     .container-hero_btns_btn{
-        margin: 15px 30px 0 0;
+        margin: .9375rem 1.875rem 0 0;
     }
 }
-@media screen and (min-width: 650px) and (min-height: 1020px) {
-    .container-hero{
-        height: 92vh;
-    }
+@media screen and (min-width: 40.625rem) and (min-height: 63.75rem) {
     .container-hero_title{
-        margin: 95px 0 0 25px;
+        margin: 5.9375rem 0 0 1.5625rem;
     }
     .container-hero_title_h1{
-        font-size: 7rem;
+        font-size: 7em;
     }
     .container-hero_title_h1 span{
         line-height: 1.2;
     }
     .container-hero_title_p{
-        font-size: 1.6rem;
+        font-size: 1.6em;
     }
     .container-hero_btns_btn{
-        padding: 13px 22px;
-        width: 185px;
-        font-size: 1.4rem;
+        padding: .8125rem 1.375rem;
+        width: 11.5625rem;
+        font-size: 1.4em;
     }
     .container-hero_btns_btn:nth-child(2){
-        width: 180px;
-        height: 46px;
-        font-size: 1.4rem;
-        margin-top: 15px;
-        padding: 7px 18px 8.5px 18px;
+        width: 11.25rem;
+        height: 2.875rem;
+        font-size: 1.4em;
+        margin-top: .9375rem;
+        padding: .4375rem 1.125rem .5313rem 1.125rem;
     }
     .container-hero_featured_title{
-        font-size: 2.8rem;
-        margin: 50px 0 0 0;
+        font-size: 2.8em;
+        margin: 3.125rem 0 0 0;
     }
     .container-hero_featured_name::before{
-        font-size: 8.3rem;
+        font-size: 6.3em;
     }
 }
-@media screen and (min-width: 950px) and (min-height: 1250px){
+@media screen and (min-width: 59.375rem) and (min-height: 78.125rem){
     .container-hero_title{
-        margin: 115px 0 0 55px;
+        margin: 7.1875rem 0 0 3.4375rem;
     }
     .container-hero_title_h1{
-        font-size: 8.5rem;
+        font-size: 8.5em;
     }
     .container-hero_title_h1 span{
         line-height: 1.23;
     }
     .container-hero_btns{
-        margin: 55px 0 0 55px;
+        margin: 3.4375rem 0 0 3.4375rem;
     }
     .container-hero_btns_btn{
-        padding: 13px 22px;
-        width: 255px;
-        height: 45px;
-        font-size: 1.7rem;
+        padding: .8125rem 1.375rem;
+        width: 15.9375rem;
+        height: 2.8125rem;
+        font-size: 1.7em;
     }
     .container-hero_btns_btn:nth-child(2){
-        width: 255px;
-        height: 45px;
-        font-size: 1.8rem;
-        margin-top: 15px;
-        padding: 8px 18px 17px 18px;
+        width: 15.9375rem;
+        height: 2.8125rem;
+        font-size: 1.8em;
+        margin-top: .9375rem;
+        padding: .5rem 1.125rem 1.06rem 1.125rem;
     }
     .container-hero_featured_title{
-        font-size: 3.8rem;
-        margin: 70px 0 50px 0;
+        font-size: 3.8em;
+        margin: 4.375rem 0 3.125rem 0;
     }
     .container-hero_featured_name::before{
-        font-size: 10.3rem;
+        font-size: 8.3em;
     }
 }
-@media screen and (min-width: 1080px){
+@media screen and (min-width: 67.5rem){
     .container-hero_bg{
         display: flex;
     }
@@ -321,25 +316,25 @@
     .container-hero_title{
         justify-content: flex-start;
         align-items: flex-start;
-        margin: 16vh 0 0 45px;
+        margin: 16vh 0 0 2.8125rem;
     }
     .container-hero_title_h1{
-        font-size: 5.7rem;
+        font-size: 5.7em;
     }
     .container-hero_btns{
-        margin: 40px 0 0 45px;
+        margin: 2.5rem 0 0 2.8125rem;
     }
     .container-hero_btns_btn{
-        margin: 15px 30px 0 0;
+        margin: .9375rem 1.875rem 0 0;
     }
     .container-hero_btns_btn:nth-child(2){
-        margin-top: 16px;
-        padding: 6px 12px;
+        margin-top: 1rem;
+        padding: .375rem .75rem;
     }
     .container-hero_featured{
-        width: 300px;
-        height: 200px;
-        margin: 170px 0 0 60px;
+        width: 18.75rem;
+        height: 12.5rem;
+        margin: 10.625rem 0 0 3.75rem;
     }
     .container-hero_featured_title{
         font-size: 2.5rem;
@@ -386,26 +381,26 @@
         }
     }
 }
-@media screen and (min-width: 1300px){
+@media screen and (min-width: 81.25rem){
     .container-hero_title{
         justify-content: flex-start;
         align-items: flex-start;
-        margin: 18vh 0 0 60px;
+        margin: 18vh 0 0 3.75rem;
     }
     .container-hero_btns{
-        margin: 40px 0 0 60px;
+        margin: 2.5rem 0 0 3.75rem;
     }
     .container-hero_featured{
-        width: 530px;
-        height: 250px;
-        margin: 150px 0 0 100px;
+        width: 33.125rem;
+        height: 15.625rem;
+        margin: 9.375rem 0 0 6.25rem;
     }
     .container-hero_featured_title{
         font-size: 3.1rem;
     }
     .container-hero_btns_btn:nth-child(2){
-        margin-top: 15px;
-        padding: 2px 12px 8px 0;
+        margin-top: .9375rem;
+        padding: 2px .75rem .5rem 0;
     }
     .container-hero_featured_name::before{
         font-size: 7.3rem;

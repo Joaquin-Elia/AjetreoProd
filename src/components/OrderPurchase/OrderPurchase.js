@@ -25,7 +25,7 @@ export const OrderPurchase = () => {
     }
   return (
     <div
-    style={{color: 'white', fontSize: '30px'}} 
+    style={{color: 'white', fontSize: '1.875rem'}} 
     onClick={generateOrder}>OrderPurchase {generateOrder && <>{idOrder}</>}</div>
   )
 }

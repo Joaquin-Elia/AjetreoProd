@@ -20,7 +20,7 @@ html{
 ::-webkit-scrollbar-thumb{
   background-color: rgb(12, 219, 219);
 }
-@media screen and (min-width: 280px) and (max-width: 1000px){
+@media screen and (min-width: 17.5rem) and (max-width: 62.5rem){
   body::-webkit-scrollbar {
     display: none;
   }

@@ -10,7 +10,7 @@ export const BeatsFiles = [
         id: 1,
         title: 'Audio prueba 1',
         audio: audio,
-        img: img1,
+        img: 'https://music-beats.com/wp-content/uploads/2020/10/STREET-TRAP.png.webp',
         price: 20
     },
     {
@@ -26,5 +26,61 @@ export const BeatsFiles = [
         audio: audio3,
         img: img3,
         price: 30
-    }
+    },
+    {
+        id: 4,
+        title: 'Audio prueba 4',
+        audio: audio,
+        img: img1,
+        price: 20
+    },
+    {
+        id: 5,
+        title: 'A kind of magic',
+        audio: audio2,
+        img: img2,
+        price: 30
+    },
+    {
+        id: 6,
+        title: 'Friends will be friends',
+        audio: audio3,
+        img: img3,
+        price: 30
+    },
+    {
+        id: 7,
+        title: 'A kind of magic',
+        audio: audio2,
+        img: img2,
+        price: 30
+    },
+    {
+        id: 8,
+        title: 'Friends will be friends',
+        audio: audio3,
+        img: img3,
+        price: 30
+    },
+    {
+        id: 9,
+        title: 'Friends will be friends',
+        audio: audio3,
+        img: img3,
+        price: 30
+    },
+    {
+        id: 10,
+        title: 'A kind of magic',
+        audio: audio2,
+        img: img2,
+        price: 30
+    },
+    {
+        id: 11,
+        title: 'Ultima',
+        audio: audio3,
+        img: img3,
+        price: 30
+    },
 ]

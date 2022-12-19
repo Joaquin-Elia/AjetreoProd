@@ -16,14 +16,14 @@ const AllService = () => {
           <LoadingAnimation />
         </div> 
           : 
-        products.map((product) => (
+        products.map(({id, img, title, description, price}) => (
           <AllServiceItem 
-            key={product.id}
-            id={product.id}
-            img={product.img}
-            title={product.title}
-            description={product.description}
-            price={product.price}
+            key={id}
+            id={id}
+            img={img}
+            title={title}
+            description={description}
+            price={price}
           />
         ))}
       </div>

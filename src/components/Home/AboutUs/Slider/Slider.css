@@ -119,7 +119,7 @@
   width: 100%;
   height: 100vh;
   position: fixed;
-  z-index: 900;
+  z-index: 1;
   top: 0;
   left: 0;
   display: flex;

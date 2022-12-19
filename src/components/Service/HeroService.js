@@ -1,16 +1,16 @@
-import React, { memo } from 'react';
+import React from 'react';
 import {HiOutlineArrowNarrowRight} from 'react-icons/hi';
 import { Link } from 'react-router-dom';
 import { useFirestore } from '../../hooks/useFirestore';
 import LoadingAnimation from '../LoadingAnimation/LoadingAnimation';
-import {motion} from 'framer-motion'
 import './HeroService.css';
 
-const HeroService = memo(() => {
+const HeroService = () => {
   const [dataServices, loading] = useFirestore();
-  const heroServiceData = dataServices.filter((element) => {
-    return element.showInHero === true;
+  const heroServiceData = dataServices.filter(({showInHero}) => {
+    return showInHero === true;
   })
+
   
   return (
     <div className='service-container'>
@@ -30,23 +30,20 @@ const HeroService = memo(() => {
             : 
           <>
           <div className='service-container-service custom-scroll'>
-            {heroServiceData.map((data, i)=> 
-              <motion.div
+            {heroServiceData.map(({id, img, title, description})=> 
+              <div
                 className='service-container_service-item' 
-                key={i}
-                initial={{ x: -100, opacity: 0}}
-                whileInView={{x: 0, opacity: 1}}
-                viewport={{ once: true }}
-                transition={{ delay: i * .5, duration: 1, type:'spring', stiffness: 125}} 
+                key={id} 
               > 
                 <img 
-                  src={data.img}
-                  alt={`Icono ${data.title}`}
+                  src={img}
+                  alt={`Icono ${title}`}
                   className='service-container_service_item-img'
+                  loading='lazy'
                 />
-                <h3 className='service-container_service_item-title'>{data.title}</h3>
-                <p className='service-container_service_item-p'>{data.description}</p>
-              </motion.div>
+                <h3 className='service-container_service_item-title'>{title}</h3>
+                <p className='service-container_service_item-p'>{description}</p>
+              </div>
             )}
         </div>
         <div className='service-container-more'>
@@ -65,6 +62,6 @@ const HeroService = memo(() => {
     </div>
     // sos un artista o queres iniciarte en la musica? entonces te podemos ayudar, tenemos la mejor variedad de beats y licencias para que puedas crear tu musica y subirla a tus sitios favoritos
   )
-})
+}
 
 export default HeroService

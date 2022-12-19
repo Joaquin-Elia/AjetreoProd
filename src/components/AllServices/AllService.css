@@ -6,7 +6,7 @@
     left: 0;
     background-color: rgb(19, 18, 18);
     overflow: hidden;
-    padding: 50px 15px;
+    padding: 3.125rem .9375rem;
 }
 .all_services_cards_loading{
     display: flex;
@@ -14,7 +14,7 @@
     align-items: center;
     width: 100%;
     height: 100vh;
-    font-size: 50px;
+    font-size: 3.125em;
     color: #fff;
     background-color: rgb(18, 19, 19);
 }
@@ -23,12 +23,12 @@
     flex-direction: column;
     align-items: center;
     width: 100%;
-    max-height: 410px;
+    max-height: 25.625rem;
     color:rgb(242, 241, 241);
     background-color: rgb(50, 106, 220);
     background-image: radial-gradient(circle, #0983eb, #346eda, #5e43f5);
-    border-radius: 7px;
-    margin: 30px 0;
+    border-radius: .4375rem;
+    margin: 1.875rem 0;
 }
 .all_services_cards:hover{
     background-color: rgb(33, 86, 193);
@@ -36,24 +36,23 @@
     transition: ease .4s;
 }
 .all_services_card_img{
-    max-height: 105px;
+    max-height: 6.5625rem;
     max-width: 70%;
     user-select: none;
     pointer-events: none;
-    margin: 20px 0;
+    margin: 1.25rem 0;
 }
 .all_services_content{
-   margin-top: 10px;
+   margin-top: .625rem;
 }
 .all_service_card_title{
-    font-size: 20px;
+    font-size: 1.25em;
     font-weight: 800;
-    margin-bottom: 10px;
-    margin-left: 10px;  
+    margin: 0 0 .625rem .625rem; 
 }
 .all_service_card_description{
-    margin: 20px 0 20px 10px;
-    font-size: 16.5px;
+    margin: 1.25rem 0 1.25rem .625rem;
+    font-size: 1.0313em;
     font-weight: 500;
     width: 90%;
 }
@@ -61,27 +60,27 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px;
-    height: 60px;
+    padding: .625rem;
+    height: 3.75rem;
     background-color: rgb(95, 145, 243);
     background-image: radial-gradient(circle, #6cb8fb, #6092ee, #767afa);
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
+    border-top-left-radius: .9375rem;
+    border-top-right-radius: .9375rem;
 }
 .services_price_before{
-    margin: 0 5px;
+    margin: 0 .3125rem;
     text-decoration: solid 2px line-through;
 }
 .services_price_after{
     font-weight: 700;
-    font-size: 17px;
+    font-size: 1.0625em;
 }
 .container_add_cart{
-    width: 108px;
-    height: 39px;
+    width: 6.75rem;
+    height: 2.4375rem;
     background-color: rgba(0, 12, 54, 0.632);
     color: rgb(235, 235, 235);
-    border-radius: 10px;
+    border-radius: .625rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -93,111 +92,110 @@
 .btn_add_cart{
     all: unset;
     font-weight: 600;
-    font-size: 16px;
-    padding: 0 0 2px 7px;
+    font-size: 1em;
+    padding: 0 0 2px .4375rem;
 }
 .btn_added{
     font-weight: 600;
-    font-size: 16px;
+    font-size: 1em;
     color: rgb(255, 0, 0);
 }
 
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 37.5rem) {
     .all_services_bg{
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
-        padding: 80px 0;
+        padding: 5rem 0;
     }
     .all_services_cards{
         justify-content: space-between;
         width: 42%;
-        min-height: 455px;
-        margin: 20px 10px;
+        min-height: 28.4375rem;
+        margin: 1.25rem .625rem;
     }
     .all_services_card_img{
-        max-height: 135px;
+        max-height: 8.4375rem;
         max-width: 65%;
     }
     .all_service_card_title{
-        font-size: 23px;
-        margin-left: 20px;
-        margin-bottom: -5px;
+        font-size: 1.4375em;
+        margin: 0 0 -0.3125rem 1.25rem;
     }
     .all_service_card_description{
-        margin: 20px 0 20px 20px;
-        font-size: 19px;
+        margin: 1.25rem 0 1.25rem 1.25rem;
+        font-size: 1.1875em;
         font-weight: 500;
-        line-height: 23px;
+        line-height: 1.4375rem;
         width: 85%;
     }
     .add_price_content{
-        height: 70px;
+        height: 4.375rem;
     }
     .services_price_before{
-        margin: 0 7px;
-        font-size: 17px;
+        margin: 0 .4375rem;
+        font-size: 1.0625em;
     }
     .services_price_after{
-        font-size: 19px;
+        font-size: 1.1875em;
     }
     .container_add_cart{
-        width: 130px;
-        height: 42px;
-        font-size: 17px;
+        width: 8.125rem;
+        height: 2.625rem;
+        font-size: 1.0625em;
     }
     .btn_add_cart{
-        font-size: 17px;
-        padding: 0 0 2px 9px;
+        font-size: 1.0625em;
+        padding: 0 0 2px .5625rem;
     }
     .btn_added{
         font-weight: 600;
-        font-size: 16px;
+        font-size: 1em;
         color: rgb(255, 0, 0);
     }
 }
-@media screen and (min-width: 1100px) {
+@media screen and (min-width: 68.75rem) {
     .all_services_bg{
-        padding: 90px 0;
+        padding: 5.625rem 0;
     }
     .all_services_cards{
-        width: 25%;
-        height: 470px;
-        margin: 20px 20px;
+        width: 28%;
+        height: 29.375rem;
+        margin: 1.25rem 1.30rem;
     }
     .add_price_content{
-        padding: 20px;
-        height: 70px;
+        padding: 1.25rem;
+        height: 4.375rem;
     }
     .all_services_card_img{
-        max-height: 145px;
+        max-height: 9.0625rem;
         max-width: 55%;
     }
     .all_service_card_title{
-        font-size: 25px;
-        margin: 0 27px;
+        font-size: 1.4625em;
+        margin: 0 1.6875rem;
     }
     .all_service_card_description{
-        margin: 20px 0 20px 27px;
-        font-size: 17.5px;
+        margin: 1.25rem 0 1.25rem 1.6875rem;
+        font-size: 1.0938em;
     }
     .services_price_before{
-        margin: 0 9px;
-        font-size: 18px;
+        margin: 0 .5625rem;
+        font-size: 1.125rem;
     }
     .services_price_after{
-        font-size: 20px;
+        font-size: 1.25em;
     }
     .container_add_cart{
-        width: 145px;
-        height: 44px;
-        font-size: 17px;
+        width: 9.0625rem;
+        height: 2.75rem;
+        font-size: 1.0625em;
     }
     .btn_add_cart{
-        font-size: 19px;
-        padding: 0 0 3px 9px;
+        font-size: 1.1875em;
+        padding: 0 0 3px .5625rem;
     }
     .btn_added{
-        font-size: 19px;
+        font-size: 1.1875em;
     }
 }

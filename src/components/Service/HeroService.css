@@ -1,7 +1,6 @@
 .service-container{
     background-color: rgb(238, 238, 238);
     width: 100%;
-    min-height: 100vh;
     overflow: hidden;
 }
 .service-container-loading{
@@ -14,11 +13,11 @@
 .service-container-text-animated{
     display: flex;
     overflow: hidden;
-    margin-top: 90px;
+    margin-top: 3rem;
     transform: skew(-5deg, -7deg);
 }
 .service-container-text-animated > h2{
-    font-size: 6rem;
+    font-size: 6em;
     color: rgb(6, 6, 6);
     animation: textAnimate linear 30s infinite;
     white-space: nowrap;
@@ -41,32 +40,18 @@
 .service-container-service{
     display: flex;
     width: 100%;
-    height: 380px;
+    height: 23.95rem;
     overflow-x: scroll;
     scroll-snap-type: x mandatory;
-    margin: 35px 0 0 10px;
+    margin: 2.1875rem 0 0 .625rem;
 }
 .custom-scroll::-webkit-scrollbar{
-    height: 6px;
-    width: 6px;
-}
-.custom-scroll::-webkit-scrollbar-track{
-    background-color: transparent;
-}
-.custom-scroll::-webkit-scrollbar-thumb{
-    background-color: #3b3838;
-    opacity: 0;
-    border-radius: 15px;
-}
-.custom-scroll::-webkit-scrollbar-thumb:hover{
-    background-color: rgb(124, 124, 124);
-    opacity: 0;
-    border-radius: 15px;
+    display: none;
 }
 .service-container_service-item{
     min-width: 85%;
     scroll-snap-align: start;
-    border-radius: 7px;
+    border-radius: .4375rem;
     background-color: rgb(16 60 149);
     background-image: radial-gradient(circle, #362eb7, #15339d, #3f4354);
     color: rgb(231, 231, 231);
@@ -74,20 +59,20 @@
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    margin: 10px 15px 5px 0;
+    margin: .625rem .9375rem .3125rem 0;
 }
 .service-container_service_item-img{
-    height: 105px;
+    height: 6.5625rem;
     user-select: none;
     pointer-events: none;
 }
 .service-container_service_item-title{
-    font-size: 28px;
+    font-size: 1.7em;
     text-align: center;
 }
 .service-container_service_item-p{
-    margin: 0 5px;
-    font-size: 16px;
+    margin: 0 .3rem 0 .625rem;
+    font-size: .95em;
 }
 .service-container-more{
     display: flex;
@@ -97,29 +82,29 @@
 }
 .service-container-more-link{
     all: unset;
-    font-size: 18px;
-    margin: 15px 0 40px 0;
-    width: 150px;
-    height: 43px;
+    font-size: 1.125em;
+    margin: .9375rem 0 2.5rem 0;
+    width: 9.375rem;
+    height: 2.7875rem;
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: rgb(0, 52, 155);
-    border-radius: 7px;
+    border-radius: .4375rem;
     cursor: pointer;
 }
 .service-container-more-link:hover{
     background-color: rgb(10, 66, 177);
 }
 .service-container-more-icon{
-    font-size: 1.2rem;
-    transform: translate(7px,2px);
+    font-size: 1.2em;
+    transform: translate(.4375rem, 2px);
 }
 .service-container-more-link:hover .service-container-more-icon{
-    transform: translate(14px, 2px);
+    transform: translate(.875rem , 2px);
     transition: ease-in .2s;
 }
-@media screen and (min-width: 600px){
+@media screen and (min-width: 37.5rem){
     .service-container{
         height: auto;
         margin: 0;
@@ -130,41 +115,40 @@
         flex-wrap: wrap;
         justify-content: center;
         width: 100%;
-        margin: 50px 10px;
+        margin: 3.125rem .625rem;
     }
     .service-container_service-item{
         min-width: unset;
-        height: 400px;
+        height: 25rem;
         width: 44%;
     }
     .service-container_service_item-p{
-        margin: 0 20px;
-        font-size: 17.5px;
+        margin: 0 1.25rem;
+        font-size: 1.0938em;
     }
     .service-container-text-animated > h2{
-        font-size: 9rem;
-        padding: 0 15px;
+        font-size: 9em;
+        padding: 0 .9375rem;
     }
 }
-@media screen and (min-width: 1000px){
+@media screen and (min-width: 62.5rem){
     .service-container-text-animated{
         transform: skew(-9deg, -3.5deg);
     }
     .service-container-text-animated > h2{
-        font-size: 10rem;
-        padding: 0 20px;
+        font-size: 10em;
+        padding: 0 1.25rem;
     }
     .service-container-service{
         width: 100%;
-        margin-top: 60px;
+        margin-top: 3.75rem;
     }
     .service-container_service-item{
-        /* min-width: unset; */
         width: 22%;
-        height: 420px;
-        margin: 0 15px 10px 0;
+        height: 26.25rem;
+        margin: 0 .9375rem .625rem 0;
     }
     .service-container_service_item-img{
-        height: 125px;
+        height: 7.8125rem;
     }
 }

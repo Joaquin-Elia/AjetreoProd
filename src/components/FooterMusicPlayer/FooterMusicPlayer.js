@@ -1,120 +1,3 @@
-// import React, { useEffect, useRef, useState } from 'react';
-// import {MdSkipNext, MdSkipPrevious, MdOutlinePauseCircleFilled, MdPlayCircle} from 'react-icons/md'
-
-// export const FooterMusicPlayer = ({currentSong, setCurrentSong, songs, setSongs, getBeatImg, getBeatSrc}) => {
-//     const [isPlaying, setIsPlaying] = useState(false);
-//     const [duration, setDuration] = useState(0);
-//     const [currentTime, setCurrentTime] = useState(0);
-
-//     const audioPlayerRef = useRef();
-//     const progressBarRef = useRef();
-//     const animationRef = useRef();
-
-//     useEffect(() => {
-//         const seconds = Math.floor(audioPlayerRef.current.duration);
-//         setDuration(seconds)
-//     },[
-//         audioPlayerRef?.current?.loadedmetadata,
-//         audioPlayerRef?.current?.readyState
-//     ])
-
-//     const calculateTime = sec => {
-//         const minutes = Math.floor(sec / 60);
-//         // <10 -> 09 or 11,12...
-//         const returnMin = minutes < 10 ? `0${minutes}` : `${minutes}`
-
-//         const seconds = Math.floor(sec % 60);
-//         const returnSec = seconds < 10 ? `0${seconds}` : `${seconds}`
-
-//         return `${returnMin}: ${returnSec}`
-//     }
-
-//     const whilePlaying = () => {
-//         progressBarRef.current.value = audioPlayerRef.current.currentTime;
-//         changeCurrentTime();
-//         animationRef.current = requestAnimationFrame(whilePlaying);
-//     }
-
-//     const changeProgress = () =>{
-//         audioPlayerRef.current.currentTime = progressBarRef.current.value;
-//         changeCurrentTime()
-//     }
-    
-//     const changeCurrentTime = () => {
-//         progressBarRef.current.style.setProperty(
-//             '--player-played', 
-//             `${(progressBarRef.current.value / duration) * 100}%`
-//             );
-//         setCurrentTime(progressBarRef.current.value);
-//     }
- 
-//     const playPause = () => {
-//         setIsPlaying(!isPlaying);
-//     }
-    
-//     const skipBack = () => {
-//         const index = songs.findIndex(x => x.id === songs.id);
-//         if(index === 0){
-//             setSongs(songs[songs.length - 1])
-//         }
-//         else{
-//             setSongs(songs[index - 1])
-//         }
-//         audioPlayerRef.current.currentTime = 0;
-//     }
-
-//     const skipNext = () => {
-//         const index = songs.findIndex(x => x.id === currentSong.id);
-//         if(index == songs.length -1){
-//             setCurrentSong(songs[0])
-//         }
-//         else{
-//             setCurrentSong(songs[index + 1])
-//         }
-//         audioPlayerRef.current.currentTime = 0;
-//     }
-
-//     useEffect(() => {
-//         if(isPlaying){
-//             audioPlayerRef.current.play();
-//             animationRef.current = requestAnimationFrame(whilePlaying);
-//         }else{
-//             audioPlayerRef.current.pause();
-//             cancelAnimationFrame(animationRef.current)
-//         }
-//     }, [isPlaying])
-    
-
-//   return (
-//     <div className='footer-music-player'>
-//         <img src={getBeatImg} style={{width: 100}}/>
-//         <h5 style={{color: 'black'}}>{currentSong.title}</h5>
-//         <MdSkipPrevious onClick={skipBack}/>
-//         {isPlaying ? 
-//             <MdOutlinePauseCircleFilled onClick={playPause}/> : 
-//             <MdPlayCircle onClick={playPause}/>
-//         }
-//         <MdSkipNext onClick={skipNext}/>
-//         <p>{calculateTime(currentTime)}</p>
-//         <input 
-//             ref={progressBarRef}
-//             type='range'
-//             onChange={changeProgress}
-//             style={{width: `${currentSong.progress + '%'}`}}
-//         />
-//         <p>{(duration && !isNaN(duration) && calculateTime(duration) ? 
-//                 calculateTime(duration) : '00:00')
-//             }
-//         </p>
-//         <audio
-//             controlsList='nodownload'
-//             ref={audioPlayerRef} 
-//             src={getBeatSrc}
-//             preload='metadata'
-//         />
-//     </div>
-//   )
-// }
 import React, { useContext, useEffect, useRef, useState } from 'react';
 import {MdSkipNext, MdSkipPrevious, MdOutlinePauseCircleFilled, MdPlayCircle} from 'react-icons/md';
 import {IoVolumeLowOutline, IoVolumeMediumOutline, IoVolumeMuteOutline, IoVolumeHighOutline} from 'react-icons/io5'
@@ -122,7 +5,7 @@ import BeatsContext from '../../context/BeatsContext';
 import {motion} from 'framer-motion';
 import './FooterMusicPlayer.css';
 
-export const FooterMusicPlayer = ({footerPlayer}) => {
+export const FooterMusicPlayer = ({footerPlayer, changeSong}) => {
     const {
         currentSong,
         beatsFiles,
@@ -133,6 +16,7 @@ export const FooterMusicPlayer = ({footerPlayer}) => {
         isPlaying,
         setIsPlaying
     } = useContext(BeatsContext);
+
     const [stateVolume, setStateVolume] = useState(0.3);
     const [duration, setDuration] = useState(0);
     const [currentTime, setCurrentTime] = useState(0);
@@ -165,14 +49,12 @@ export const FooterMusicPlayer = ({footerPlayer}) => {
     }
 
     useEffect(() => {
-        if(footerPlayer){
-            audioRef.current.play();
-            setIsPlaying(true);
-        }else{
-            audioRef.current.pause();
-            setIsPlaying(false);
-        }
-    }, [footerPlayer, setIsPlaying]);
+        footerPlayer && 
+            audioRef.current.play() &&
+            setIsPlaying(true) || 
+        changeSong && 
+        audioRef.current.play()
+    }, [footerPlayer, changeSong]);
 
   return (
       <>
@@ -242,7 +124,7 @@ export const FooterMusicPlayer = ({footerPlayer}) => {
                     }}>
                         <div className='btn-pause-play'>
                             {isPlaying ? 
-                                <MdOutlinePauseCircleFilled onClick={() =>setIsPlaying(false)} /> : 
+                                <MdOutlinePauseCircleFilled onClick={() =>{setIsPlaying(false)}} /> : 
                                 <MdPlayCircle onClick={() => setIsPlaying(true)} />
                             }
                         </div>

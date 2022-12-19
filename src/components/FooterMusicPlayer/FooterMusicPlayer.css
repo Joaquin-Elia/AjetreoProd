@@ -1,53 +1,54 @@
 .container-all-footer-player{
-    height: 62px;
+    height: 4.0625rem;
     width: 100%;
     position: fixed;
     bottom: 0;
     left: 0;
-    z-index: 500;
-    background-color: #fff;
-    color: black;
-    border-radius: 10px;
+    z-index: 1;
+    background-color: rgba(1, 1, 1, 0.608);
+    backdrop-filter: blur( 0.6563rem );
+    -webkit-backdrop-filter: blur( .6563rem );
+    color: rgb(255, 255, 255);
+    border-radius: .625rem;
 }
 .footer-music-player{
-    background-color: #fff;
     display: flex;
     align-items: center;
-    border-radius: 10px;
+    border-radius: .625rem;
 }
 .footer-img-beat{
-    width: 48px;
-    height: 50px;
+    width: 3rem;
+    height: 3.125rem;
     object-fit: cover;
-    margin: -5px 0 10px 5px;
-    border-radius: 3px;
+    margin: -0.3125rem 0 .425rem .3125rem;
+    border-radius: .4375rem;
 }
 .title-footer-beat{
-    font-size: 17px;
-    width: 110px;
+    font-size: 1.0625em;
+    width: 6.875rem;
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
 }
 .container-title-volume-icons{
     cursor: pointer;
-    font-size: 1.2rem;
+    font-size: 1.2em;
 }
 .time-song-current{
     position: absolute;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    bottom: 72px;
+    bottom: 4.5rem;
     width: 91%;
     color: #fff;
-    margin: 0 13px;
+    margin: 0 .8125rem;
     font-weight: 500;
 }
 .time-song-current > span{
     padding: 1px 2px;
     background-color: rgba(0, 0, 0, 0.707);
-    border-radius: 5px;
+    border-radius: .3125rem;
 }
 .container-beat-progressbar{
     width: 100vw;
@@ -55,65 +56,65 @@
     justify-content: center;
     align-items: center;
     cursor: pointer;
+    border-radius: .4375rem;
 }
 .beat-progressbar{
     position: relative;
     display: flex;
     flex-direction: column;
-    bottom: 10px;
-    height: 8px;
+    bottom: .425rem;
+    height: .7rem;
     width: 92%;
     background-color: black;
 }
 .container-title-volume{
-    margin: 0 10px 10px 8px;
+    margin: 0 .55rem .625rem .5rem;
 }
 .container-title-volume-icons{
     cursor: pointer;
-    font-size: 1.2rem;
+    font-size: 1.4em;
 }
 .footer-volume-bar{
     -webkit-appearance: none;
     background: transparent;
     outline: none;
-    width: 85px;
-    margin-top: 8.5px;
+    width: 5.3125rem;
+    margin: .5938rem 0 0 .125rem;
     cursor: pointer;
     position: absolute;
-    margin-left: 5px;
 }
 .footer-volume-bar::-webkit-slider-thumb{
     -webkit-appearance: none;
-    height: 12px;
-    width: 12px;
+    height: 1rem;
+    width: 1rem;
     border-radius: 50%;
-    background: rgb(155, 155, 155);
-    margin-top: -3px;
+    background: rgb(32, 179, 6);
+    margin-top: -0.2813rem;
 }
 .footer-volume-bar::-moz-range-thumb{
     -webkit-appearance: none;
-    height: 13px;
-    width: 13px;
+    height: 1rem;
+    width: 1rem;
     border-radius: 50%;
-    background: rgb(106, 106, 106);
-    margin-top: -4px;
+    background: rgb(53, 164, 1);
+    margin-top: -0.2813rem;
 }
 .footer-volume-bar:hover::-webkit-slider-thumb{
     border-radius: 50%;
     background: rgb(218, 218, 218);
-    margin-top: -4px;
+    margin-top: -0.2813rem;
 }
 .footer-volume-bar::-webkit-slider-runnable-track {
     width: 100%;
-    height: 6.4px;
-    background: #111010;
-    border-radius: 12px;
+    height: .4625rem;
+    background: #eeeeee;
+    border-radius: .75rem;
 }
 .footer-volume-bar::-moz-range-track {
     width: 100%;
-    height: 5.4px;
-    background: #111010;
-    border-radius: 12px;
+    height: .4625rem;
+    background: #eeeeee;
+    border-radius: .75rem;
   }
 .footer-volume-bar:hover::-webkit-slider-runnable-track{
     background: rgb(41, 177, 0);
@@ -124,81 +125,103 @@
     right: 0;
     top: 50%;
     transform: translateY(-40%);
-    font-size: 32px;
-    color: rgb(19, 19, 19);
+    font-size: 2.1em;
+    color: rgb(253, 253, 253);
     cursor: pointer;
 }
 .btn-pause-play{
     transform: translateY(-2.5px);
 }
-@media screen and (min-width: 340px) {
+@media screen and (min-width: 21.25rem) {
+    .footer-img-beat{
+        width: 3.37rem;
+        height: 3.525rem;
+        margin: -0.225rem 0 .725rem .4125rem;
+    }
+    .title-footer-beat{
+        font-size: 1.1625em;
+        width: 8rem;
+    }
+    .container-title-volume-icons{
+        font-size: 1.7em;
+    }
     .btns-audio-functions{
-        right: 5px;
-        font-size: 36px;
+        right: .125rem;
+        font-size: 2.7em;
     }
     .btn-pause-play{
         transform: translateY(0px);
     }
+    .time-song-current{
+        bottom: 4.7rem;
+        width: 93%;
+        margin: 0 .8125rem;
+    }
+    .time-song-current > span{
+        padding: 1px 3px;
+    }
+    .beat-progressbar{
+        height: .8rem;
+    }
 }
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 37.5rem) {
     .btns-audio-functions{
-        right: 5px;
-        font-size: 38px;
+        right: .3125rem;
+        font-size: 2.375em;
     }
     .btn-pause-play{
         transform: translateY(-2.5px);
     }
 }
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 50rem) {
     .btn-pause-play{
         transform: translateY(-3px);
     }
     .container-all-footer-player{
-        height: 64px;
+        height: 4rem;
     }
     .footer-img-beat{
-        width: 54px;
-        height: 52px;
-        margin: -2px 0 10px 10px;
-        border-radius: 5px;
+        width: 3.375rem;
+        height: 3.25rem;
+        margin: -2px 0 .625rem .625rem;
+        border-radius: .3125rem;
     }
     .container-title-volume-icons{
         cursor: pointer;
-        font-size: 1rem;
+        font-size: 1em;
     }
     .time-song-current{
-        bottom: 77px;
+        bottom: 4.8125rem;
         width: 99%;
-        margin: 0 6px;
+        margin: 0 .375rem;
     }
     .beat-progressbar{
-        bottom: 12px;
-        height: 9px;
+        bottom: .75rem;
+        height: .5625rem;
         width: 94%;
     }
     .container-title-volume{
-        margin: -4px 10px 8px 12px;
+        margin: -.25rem .625rem .5rem .75rem;
     }
     .title-footer-beat{
-        font-size: 18px;
-        width: 200px;
+        font-size: 1.125em;
+        width: 12.5rem;
         white-space: nowrap;
         text-overflow: ellipsis;
         overflow: hidden;
     }
     .container-title-volume-icons{
         cursor: pointer;
-        font-size: 1.4rem;
+        font-size: 1.4em;
     }
     .footer-volume-bar{
         -webkit-appearance: none;
         background: transparent;
         outline: none;
-        width: 100px;
-        height: 5.5px;
-        margin-top: 11px;
+        width: 6.25rem;
+        height: .3438rem;
+        margin: .6875rem 0 0 .5rem;
         cursor: pointer;
         position: absolute;
-        margin-left: 8px;
     }
 }

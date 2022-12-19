@@ -5,19 +5,21 @@
     color: #fff;
     display: flex;
     flex-wrap: wrap;
-    padding: 100px 0 140px 5px;
+    row-gap: 1.5625rem;
+    padding: 6.25rem 0 8.75rem .3125rem;
 }
 .beats-container{
     width: 43%;
-    height: 175px;
-    background-color: rgb(147 4 4);
-    margin: 0 9px;
-    border-radius: 7px;
+    height: 10.9375rem;
+    background: rgb(173,8,8);
+    background: linear-gradient(146deg, rgba(173,8,8,1) 0%, rgba(120,14,14,1) 29%, rgba(232,7,7,1) 72%, rgba(187,8,8,1) 100%);
+    margin: 0 .5625rem;
+    border-radius: .4375rem;
     cursor: pointer;
 }
 .selected-beat{
     background-color: rgb(41, 41, 41);
-    color: rgb(255, 5, 5);
+    color: rgb(0, 0, 0);
 }
 .selected-beat > .add-beat-cart{
     background-color: rgb(200, 9, 9);
@@ -25,25 +27,25 @@
 }
 .img-beat{
     width: 100%;
-    height: 80px;
+    height: 5rem;
     object-fit: cover;
-    border-radius: 7px;
+    border-radius: .4375rem;
 }
 .beat-info{
     height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    margin: 2px 0 0 5px;
+    margin: 2px 0 0 .3125rem;
 }
 .beat-info-title{
     width: 95%;
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
-    margin-bottom: 5px;
+    margin-bottom: .3125rem;
     font-weight: 700;  
-    font-size: 15px;
+    font-size: .9375em;
 }
 .beat-info-price{
     font-weight: 600;   
@@ -52,147 +54,146 @@
     all: unset;
     position: relative;
     background-color: rgb(245, 242, 242);
-    width: 100px;
-    height: 25px;
-    border-radius: 5px;
+    width: 6.25rem;
+    height: 1.5625rem;
+    border-radius: .3125rem;
     color: rgb(0, 0, 0);
     text-align: center;
     display: flex;
     justify-content: center;
     align-items: center;
     padding-bottom: 2px;
-    margin: 10px 0 0px 5px;
+    margin: .625rem 0 0px .3125rem;
     bottom: 0;
     left: 0;
     font-weight: 600;
 }
 .icon-cart{
-    margin-right: 8px;
-    font-size: 16px;
+    margin-right: .5rem;
+    font-size: 1em;
 }
-@media screen and (min-width: 340px){
+@media screen and (min-width: 21.25rem){
     .beats-container{
         width: 42%;
-        height: 200px;
-        margin: 0 12px;
+        height: 12.5rem;
+        margin: 0 .75rem;
     }
     .img-beat{
-        height: 95px;
+        height: 5.9375rem;
     }
     .beat-info{
-        margin: 4px 0 0 7px;
+        margin: .25rem 0 0 .4375rem;
     }
     .beat-info-title{
-        font-size: 16px;
+        font-size: 1em;
     }
     .beat-info-price{
-        font-size: 17px; 
+        font-size: 1.0625em; 
     }
     .add-beat-cart{
-        width: 110px;
-        height: 27px;
-        font-size: 17.5px;
-        margin: 10px 0 0 7px;
+        width: 6.875rem;
+        height: 1.6875rem;
+        font-size: 1.0938rem;
+        margin: .625rem 0 0 .4375rem;
         padding: 0 2px 3px 2px;
     }
     .icon-cart{
-        margin-right: 9px;
-        font-size: 16.5px;
+        margin-right: .5625rem;
+        font-size: 1.0313em;
         transform: translateY(1px);
     }
 }
-@media screen and (min-width: 380px) and (min-height: 820px){
+@media screen and (min-width: 23.75rem) and (min-height: 51.25rem){
     .container-beatstore{
-        padding: 130px 0 150px 10px;
+        padding: 8.125rem 0 9.375rem .625rem;
     }
     .beats-container{
-        height: 240px;
-        margin: 0 13px;
+        height: 15rem;
+        margin: 0 .8125rem;
     }
     .img-beat{
-        height: 105px;
+        height: 6.5625rem;
     }
     .beat-info{
-        margin: 7px 0 0 10px;
+        margin: .4375rem 0 0 .625rem;
     }
     .beat-info-title{ 
-        font-size: 17.5px;
-        margin-bottom: 12px;
+        font-size: 1.0938em;
+        margin-bottom: .75rem;
     }
     .beat-info-price{
-        font-size: 19.5px;
+        font-size: 1.2188em;
     }
     .add-beat-cart{
-        width: 125px;
-        height: 31px;
-        font-size: 18.5px;
-        margin: 15px 0 0 8px;
+        width: 7.8125rem;
+        height: 1.9375rem;
+        font-size: 1.1563em;
+        margin: .9375rem 0 0 .5rem;
         padding: 0 2px 3px 2px;
     }
     .icon-cart{
-        font-size: 19.5px;
+        font-size: 1.2188em;
         font-weight: 900;
         transform: translateY(1px);
     }
 }
-@media screen and (min-width: 600px){
+@media screen and (min-width: 37.5rem){
     .container-beatstore{
-        padding: 130px 0 80px 15px;
+        padding: 8.125rem 0 5rem .9375rem;
     }
     .beats-container{
         width: 44%;
-        height: 280px;
-        margin: 0 15px 20px 15px;
+        height: 17.5rem;
+        margin: 0 .9375rem 1.25rem .9375rem;
     }
     .img-beat{
-        height: 145px;
+        height: 9.0625rem;
     }
     .beat-info{
-        margin: 7px 0 0 12px;
+        margin: .4375rem 0 0 .75rem;
     }
     .beat-info-title{ 
-        font-size: 19.5px;
-        margin-bottom: 12px;
+        font-size: 1.2188em;
+        margin-bottom: .75rem;
     }
     .beat-info-price{
-        font-size: 19.5px;
+        font-size: 1.2188em;
     }
     .add-beat-cart{
-        width: 120px;
-        height: 33px;
-        font-size: 18.5px;
-        margin: 10px 0 0 10px;
+        width: 7.5rem;
+        height: 2.0625rem;
+        font-size: 1.1563em;
+        margin: .625rem 0 0 .625rem;
         padding: 0 2px 3px 2px;
     }
 }
-@media screen and (min-width: 1000px){
+@media screen and (min-width: 62.5rem){
     .container-beatstore{
-        padding: 130px 0 80px 25px;
+        padding: 8.125rem 0 5rem 1.5625rem;
     }
     .beats-container{
         width: 22%;
-        height: 280px;
-        margin: 0 15px 20px 15px;
+        height: 17.5rem;
+        margin: 0 .9375rem 1.25rem .9375rem;
     }
     .img-beat{
-        height: 145px;
+        height: 9.0625rem;
     }
     .beat-info{
-        margin: 7px 0 0 12px;
+        margin: .4375rem 0 0 .75rem;
     }
     .beat-info-title{ 
-        font-size: 19.5px;
-        margin-bottom: 12px;
+        font-size: 1.2188em;
+        margin-bottom: .75rem;
     }
     .beat-info-price{
-        font-size: 19.5px;
+        font-size: 1.2188em;
     }
     .add-beat-cart{
-        width: 120px;
-        height: 33px;
-        font-size: 18.5px;
-        margin: 10px 0 0 10px;
-        padding: 0 2px 3px 2px;
+        width: 7.5rem;
+        height: 2.0625rem;
+        font-size: 1.1563em;
+        margin: .625rem 0 0 .625rem;
     }
 }
 
@@ -200,8 +201,8 @@
 .container-beats-home{
     width: 100%;
     min-height: 70vh;
-    overflow: hidden;
-    background-color: rgb(19, 18, 18);
+    padding: 3.125rem 0;
+    background-color: rgb(0, 0, 0);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -209,14 +210,19 @@
 }
 .container-beats-home-title{
     color: rgb(224, 224, 224);
-    margin-bottom: 30px;
+    margin-bottom: 1.25rem;
 }
 .beats-store_populars{
     color: rgb(224, 224, 224);
+    margin: .9375rem 0;
+}
+.beats-store_recent{
+    color: rgb(224, 224, 224);
+    margin-top: 6.5625rem;
 }
 .custom-scroll::-webkit-scrollbar{
-    height: 6px;
-    width: 4px;
+    height: 0;
+    width: .25rem;
 }
 .custom-scroll::-webkit-scrollbar-track{
     background-color: transparent;
@@ -224,40 +230,34 @@
 .custom-scroll::-webkit-scrollbar-thumb{
     background-color: #3b3838;
     opacity: 0;
-    border-radius: 15px;
+    border-radius: .9375rem;
 }
 .custom-scroll::-webkit-scrollbar-thumb:hover{
     background-color: rgb(124, 124, 124);
     opacity: 0;
-    border-radius: 15px;
+    border-radius: .9375rem;
 }
 .container-card-beat{
     display: flex;
     flex-direction: row;
     width: 100%;
-    height: 195px;
-    overflow-x: scroll;
-    overflow-y: hidden;
-    scroll-snap-type: x mandatory;
-    margin: 30px 0 20px 30px;
-    padding-right: 40px;
-    padding-bottom: 10px;
+    height: 10.9375rem;
+    margin: 1.875rem 0 1.25rem .9375rem;
+    padding: 0 .625rem .625rem 0;
+    transform: perspective(50rem) rotateY(25deg);
+    user-select: none;
+    -webkit-box-reflect: below 0 linear-gradient(transparent, transparent, rgba(0,0,0,.4))
 }
 .beat-card{
-    min-width: 180px;
-    scroll-snap-align: start;
-    background-color: rgb(95, 95, 95);
-    margin: 0 9px;
-    border-radius: 7px;
-    cursor: pointer;
-    margin: 0 10px 0 20px;
-    border-radius: 8px;
+    min-width: 11.25rem;
+    margin: 0 .625rem 0 1.25rem;
+    border-radius: .5rem;
 }
 .beat-card-img{
     width: 100%;
-    height: 140px;
+    height: 8.4375rem;
     object-fit: cover;
-    border-radius: 8px;
+    border-radius: .5rem;
 }
 .beat-card-title{
     width: 95%;
@@ -266,21 +266,31 @@
     text-overflow: ellipsis;
     overflow: hidden;
     text-align: start;
-    margin: 10px 5px;
+    margin: 0 .3125rem .375rem .3125rem;
     font-weight: 700;  
-    font-size: 17px;
+    font-size: 1.0625em;
+}
+.swiper-button-prev, .swiper-button-next{
+    color: #30c200;
+    width: 2.5rem;
+    height: 10rem;
+    margin-left: -0.9375rem;
+    transform: translateY(-3rem);
+}
+.swiper-button-next{
+    margin-right: -0.9375rem;
 }
 .beat-card-play-container{
     position: relative;
     width: 100%;
-    height: 140px;
+    height: 8.4375rem;
 }
 .beat-card-play-icon, .beat-card-playing{
     color: rgb(255, 255, 255);
     background-color: #0000004e;
     height: 100%;
     width: 100%;
-    font-size: 80px;
+    font-size: 5em;
     position: absolute;
     display: flex;
     justify-content: center;
@@ -288,24 +298,24 @@
 }
 .beat-card-play-icon:hover{
     color: rgb(235, 235, 235);
-    font-size: 85px;
+    font-size: 5.3125em;
     transition: ease .3s;
 }
 .beat-card-playing{
-    font-size: 20px;
+    font-size: 1.25em;
 }
 .btn-go-allbeats-container{
-    font-size: 18px;
+    font-size: 1.125em;
     background-color: #2fbc00;
     color: #fff;
-    border-radius: 7px;
+    border-radius: .4375rem;
     cursor: pointer;
-    margin: 10px auto;
+    margin: 1.25rem auto -1.25rem auto;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 150px;
-    height: 43px;
+    width: 9.375rem;
+    height: 2.6875rem;
 }
 .btn-go-allbeats-container:hover{
     background-color: #289f01;
@@ -313,4 +323,42 @@
 .btn-go-allbeats{
     all: unset;
     color: #fff;
+}
+@media screen and (min-width: 39.375rem){
+    .container-card-beat{
+        margin: 1.875rem 0 -0.625rem 2.1875rem;
+        padding-right: 1.25rem;
+        transform: perspective(68.75rem) rotateY(20deg);
+    }
+}
+@media screen and (min-width: 46.875rem){
+    .container-card-beat{
+        margin: 1.875rem 0 .625rem 2.8125rem;
+        padding-right: 1.25rem;
+    }
+}
+@media screen and (min-width: 62.5rem){
+    .container-card-beat{
+        margin: 1.875rem 0 1.25rem 2.5rem;
+        padding-right: 1.25rem;
+        transform: perspective(0) rotateY(0);
+    }
+    .container-beats-home{
+        width: 100%;
+        overflow: hidden;
+        padding: 5.625rem 3.125rem 5.625 0;
+    }
+    .swiper-button-next, .swiper-button-prev{
+        width: 3.125rem;
+        margin-right: .5rem;
+        transform: translateY(-2.4375rem);
+    }
+    .swiper-button-prev{
+        transform: translateY(-2.3125rem);
+    }
+    .swiper-button-next:hover, .swiper-button-prev:hover{
+        background-color: #00000060;
+        border-radius: 1.25rem;
+        transition: all ease .5s;
+    }
 }

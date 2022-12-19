@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
+import { CartContext } from '../../context/CartContext';
 import { FormAlert } from '../FormAlert/FormAlert';
 import { ResetPassword } from '../ResetPassword/ResetPassword';
 
@@ -11,6 +12,8 @@ export const Login = () => {
   });
 
   const { login } = useAuth();
+  const value = useContext(CartContext);
+  const [cart] = value.cart;  
   const navigate = useNavigate();
   const [ error, setError ] = useState();
   const [ showReset, setShowReset ] = useState(false);
@@ -23,7 +26,7 @@ export const Login = () => {
     setError('')
     try {
       await login(user.email, user.password);
-      navigate('/profile');
+      cart.length === 0 ? navigate('/profile') : navigate('/cart');
     }catch (error) {
       if(error.code === 'auth/user-not-found')
         setError('Error: El usuario no existe')

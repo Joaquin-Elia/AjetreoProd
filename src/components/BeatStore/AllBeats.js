@@ -13,11 +13,11 @@ export const AllBeats = () => {
 
     return (
         <div className='container-beatstore'>
-            {beatsFiles.map((beat, i) => (
+            {beatsFiles.map(({id, img, title, price}, i) => (
                 <div 
                     className={"beats-container " + 
                     (footerPlayer && currentSong === i ? "selected-beat" : '')}
-                    key={i}
+                    key={id}
                 >
                     <div
                         onClick={() => {
@@ -26,17 +26,17 @@ export const AllBeats = () => {
                     }}>
                         <img 
                             className='img-beat'
-                            src={beat.img} 
-                            alt={beat.title}
+                            src={img} 
+                            alt={title}
                         />
                         <div className='beat-info'>
-                            <h5 className='beat-info-title'>{beat.title}</h5>
-                            <span className='beat-info-price'>$USD {beat.price}</span>
+                            <h5 className='beat-info-title'>{title}</h5>
+                            <span className='beat-info-price'>$USD {price}</span>
                         </div>
                     </div>
                     <button 
                         className='add-beat-cart'
-                        onClick={()=> addItem(beat.id)}
+                        onClick={()=> addItem(id)}
                     >
                         <BsHandbag className='icon-cart'/>
                         Agregar
