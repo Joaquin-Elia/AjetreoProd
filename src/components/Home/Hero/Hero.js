@@ -55,11 +55,11 @@ export default function Hero() {
         className='container-hero_featured'
         animate={{y: 0, opacity: 1}}
         initial={{y: 150, opacity: 0}}
-        transition={{duration: 1.3, delay: 2.3}}
+        transition={{duration: .6, delay: 1.8}}
       >
-        <h4 className='container-hero_featured_title'>
+        <h2 className='container-hero_featured_title'>
           Los estilos en los que mas nos destacamos:
-        </h4>
+        </h2>
         <h2 className='container-hero_featured_name'> </h2>
       </motion.div>
     </div>

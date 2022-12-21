@@ -13,6 +13,10 @@ code {
 html{
   scroll-behavior: smooth;
 }
+::selection{
+  background-color: #610699;
+  color: rgb(255, 255, 255);
+}
 ::-webkit-scrollbar{
   background-color: black;
   width: .3rem;

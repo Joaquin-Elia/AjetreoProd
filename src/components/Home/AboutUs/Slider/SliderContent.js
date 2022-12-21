@@ -43,12 +43,13 @@ const AboutUs = memo(({ activeIndex, dataSlider, loading }) => {
             className={index === activeIndex ? "slides slide-active" : "slide-inactive"}
           >
             <img 
+              loading='lazy'
               className="slide-image" 
               src={img} 
               alt={title + ' - ' + authors}
             />
             <h2 className={title.length >= 8 ? 'slide-title slide-title-long' : 'slide-title'}>{title}</h2>
-            <h4 className='slide-authors'>{authors}</h4>
+            <h3 className='slide-authors'>{authors}</h3>
             <p className='slide-text'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa quos enim deserunt magnam sed nihil id odit nesciunt officia incidunt dolorem, quia hic obcaecati odio atque! Suscipit laborum delectus nisi?Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illum soluta, enim</p>
             <button 
               onClick={()=> {getVideo(video) }}

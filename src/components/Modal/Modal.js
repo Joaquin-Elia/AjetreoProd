@@ -6,7 +6,7 @@ import './Modal.css'
 
 const Modal = ({children, state, changeState, title, showHeader}) => {
   const ref = useRef(null);
-  UseClickOutside(ref, () => changeState(false));
+  UseClickOutside(ref, ()=> changeState(false));
 
   return (
     <>
@@ -25,7 +25,7 @@ const Modal = ({children, state, changeState, title, showHeader}) => {
               }
               <button 
                 className='close-modal'
-                onClick={() => changeState(false)}
+                onClick={()=> changeState(false)}
               >
                 <CgClose />
               </button>

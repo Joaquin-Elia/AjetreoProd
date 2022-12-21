@@ -5,7 +5,7 @@ import './AboutUs.css';
 
 const AboutUs = () => {
   const {scrollYProgress} = useViewportScroll();
-  const leftBg = useTransform(scrollYProgress, [0.530, 0.630], ['20vh', '60vh']);
+  const leftBg = useTransform(scrollYProgress, [0.530, 0.630], ['7vh', '60vh']);
   const rightSideScale = useTransform(scrollYProgress, [0.250, 0.600], [0, 1]);
   const rightSideY= useTransform(scrollYProgress, [0, 0.8], ['-20vh', '10vh']);
 

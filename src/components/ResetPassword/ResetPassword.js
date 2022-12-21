@@ -1,8 +1,9 @@
 import React, {useState} from 'react'
 import { useAuth } from '../../context/AuthContext'
 import { FormAlert } from '../FormAlert/FormAlert';
+import {BsArrowLeftCircleFill} from 'react-icons/bs';
 
-export const ResetPassword = () => {
+export const ResetPassword = ({setShowReset, showReset}) => {
     const {resetPassword} = useAuth();
     const [email, setEmail] = useState('')
     const [ error, setError ] = useState();
@@ -35,19 +36,26 @@ export const ResetPassword = () => {
     <>
         <>
         {error && <FormAlert message={error}/> }
-        <form onSubmit={handleSubmit}>
+        <form className='container-inputs' onSubmit={handleSubmit}>
+        <div className="btn-back">
+          <BsArrowLeftCircleFill className='icon-back' onClick={()=> setShowReset(!showReset)} />
+        </div>
             <label htmlFor="email">Correo</label>
             <input 
+                className='inputs-form'
                 name='email'
                 type='email'
                 placeholder='Ingrese su correo'
                 onChange={e => setEmail(e.target.value)}
                 />
-            <button 
-                type='submit'
-            >
-                Recuperar
-            </button>
+            <div className="container-btn-submit">
+              <button 
+                  className='btn-submit'
+                  type='submit'
+              >
+                  Recuperar
+              </button>
+            </div>
         </form>
         </>
     </>

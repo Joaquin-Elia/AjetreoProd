@@ -24,7 +24,7 @@ const BeatStore = () => {
         <div className='container-beats-home' >
             <h2 className='container-beats-home-title'>Catalogo de beats</h2>
             <div className='beats-store_titles'>
-              <h4 className='beats-store_populars'>Los mas populares:</h4>
+              <h3 className='beats-store_populars'>Los mas populares:</h3>
               <div className="container-card-beat custom-scroll">
                 <Swiper
                   loop={true}
@@ -53,7 +53,7 @@ const BeatStore = () => {
                       spaceBetween: 30,
                     },
                     "@1.75": {
-                      slidesPerView: 5.8,
+                      slidesPerView: 5.3,
                       spaceBetween: 25,
                     }}}
                 >
@@ -61,7 +61,6 @@ const BeatStore = () => {
                     <div
                       key={id}
                       className={'beat-card ' + (footerPlayer && currentSong === i ? "selected-beat" : '')}
-                      
                     > 
                   <SwiperSlide 
                     key={id}
@@ -70,7 +69,7 @@ const BeatStore = () => {
                       setFooterPlayer(true);
                     }}
                   >
-                      <h5 className='beat-card-title'>{title}</h5>
+                      <h2 className='beat-card-title'>{title}</h2>
                       <div className="beat-card-play-container" >
                         {!footerPlayer &&
                           <div className='beat-card-play-icon'>
@@ -87,8 +86,8 @@ const BeatStore = () => {
                           </div>
                         }
                         <img 
-                          className='beat-card-img'
                           loading='lazy'
+                          className='beat-card-img'
                           src={img}
                           alt={title}
                         />
@@ -98,7 +97,7 @@ const BeatStore = () => {
                   )}
                   </Swiper>
               </div>
-              <h4 className='beats-store_recent'>Los mas recientes:</h4>
+              <h3 className='beats-store_recent'>Los mas recientes:</h3>
             </div>
             <div className="btn-go-allbeats-container">
               <Link 
@@ -108,7 +107,6 @@ const BeatStore = () => {
                 Ir a BeatStore
               </Link>
             </div>
-              <div className="cilindro"></div>
         </div> 
         {footerPlayer && 
           <FooterMusicPlayer footerPlayer={footerPlayer} currentSong={currentSong} changeSong={changeSong}/>

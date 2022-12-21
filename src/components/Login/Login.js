@@ -57,19 +57,37 @@ export const Login = () => {
       <form 
         onSubmit={handleSubmit} 
         className='form-container'
-      >
-        <div className='backdrop-form'>
-          <h3
-            className='title-form-h3'
-          >
-            Bienvenido de nuevo!
-          </h3>
-          <h5 
-            className='title-form-h5'
-          >
-            Inicia sesión para continuar
-          </h5>
-        </div>
+      > 
+        {!showReset && 
+          <div className='backdrop-form'>
+            <h3
+              className='title-form-h3'
+            >
+              Bienvenido de nuevo!
+            </h3>
+            <h5 
+              className='title-form-h5'
+            >
+              Inicia sesión para continuar
+            </h5>
+          </div>
+        }
+        {showReset && 
+          <div className='backdrop-form'>
+            <h3
+              className='title-form-h3-reset'
+            >
+              ¡Olvidaste tu contraseña?
+            </h3>
+            <h5 
+              className='title-form-h5'
+            >
+              Ingresa tu correo para recuperla
+            </h5>
+          </div>
+        }
+        {showReset && <ResetPassword showReset={showReset} setShowReset={setShowReset}/> }
+        {!showReset &&
         <div className="container-inputs">        
           <label hetmlfor='email'>Correo elecctronico</label>
           <input
@@ -89,21 +107,25 @@ export const Login = () => {
             onChange={handleChange}
           />
         </div>
-        <div className="container-btn-submit">
-          <button className='btn-submit'>Ingresar</button>
+      }
+        {!showReset &&
+          <>
+          <div className="container-btn-submit">
+            <button className='btn-submit'>Ingresar</button>
+          </div>
+          <p
+            className='forget-password'
+            onClick={()=> setShowReset(true)}
+          >
+            ¿Olvidaste tu contraseña?
+          </p>
+        <div className='question-form'>
+            <p>¿No tenes una cuenta?</p>
+            <Link to='/register'>Registrate</Link>
         </div>
-        <p
-          className='forget-password'
-          onClick={()=> setShowReset(true)}
-        >
-          ¿Olvidaste tu contraseña?
-        </p>
-      <div className='question-form'>
-          <p>¿No tenes una cuenta?</p>
-          <Link to='/register'>Registrate</Link>
-      </div>
+        </>
+      }
       </form>
-      {showReset && <ResetPassword /> }
     </div>
   )
 }

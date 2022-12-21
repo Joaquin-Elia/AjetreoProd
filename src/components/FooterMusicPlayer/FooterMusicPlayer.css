@@ -22,6 +22,7 @@
     object-fit: cover;
     margin: -0.3125rem 0 .425rem .3125rem;
     border-radius: .4375rem;
+    user-select: none;
 }
 .title-footer-beat{
     font-size: 1.0625em;

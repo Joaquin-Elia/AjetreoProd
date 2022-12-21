@@ -51,10 +51,10 @@ export const FooterMusicPlayer = ({footerPlayer, changeSong}) => {
     useEffect(() => {
         footerPlayer && 
             audioRef.current.play() &&
-            setIsPlaying(true) || 
+            setIsPlaying(true) && 
         changeSong && 
         audioRef.current.play()
-    }, [footerPlayer, changeSong]);
+    }, [footerPlayer, changeSong, setIsPlaying]);
 
   return (
       <>
@@ -83,6 +83,7 @@ export const FooterMusicPlayer = ({footerPlayer, changeSong}) => {
             </div>
             <div className='footer-music-player'>
                 <img 
+                    loading='lazy'
                     className='footer-img-beat'
                     src={beatsFiles[currentSong].img}
                     alt={beatsFiles[currentSong].title}

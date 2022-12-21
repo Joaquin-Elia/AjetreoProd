@@ -155,6 +155,11 @@
 .cart_detail_btn:hover{
     background-color: rgb(2, 197, 2);
 }
+.paypal-buttons{
+    margin-top: 30px;
+    /* background-color: #fff; */
+    border-radius: 4px;
+}
 @media screen and (min-width: 25rem){
     .cart_table{
         margin: -0.75rem .9375rem;

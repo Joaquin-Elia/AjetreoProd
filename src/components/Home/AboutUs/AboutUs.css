@@ -12,6 +12,7 @@
     font-weight: 400;
 }
 .scroll-left-bg{
+    height: 20vh;
     background-color: rgb(3, 166, 30);
     color: #fff;
     transition: 1s cubic-bezier(.165, .84, .44, 1);
@@ -44,11 +45,7 @@
     text-align: center;
 }
 .who-we-are-strong{
-    text-decoration: underline;
     transition: .5s cubic-bezier(0.075, 0.82, 0.165, 1);
-}
-.who-we-are-strong:hover{
-    text-decoration: none;   
 }
 @media screen and (min-width: 28.125rem){
     .who-we-are-title{

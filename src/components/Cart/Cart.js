@@ -5,8 +5,8 @@ import { Link } from 'react-router-dom';
 import Modal from '../Modal/Modal';
 import { NeedSignIn } from '../NeedSignIn/NeedSignIn';
 import { useAuth } from '../../context/AuthContext';
-import './Cart.css'
 import GenerateOrder from '../GenerateOrder/GenerateOrder';
+import './Cart.css'
 
 const Cart = () => {
   const value = useContext(CartContext);
@@ -73,13 +73,19 @@ const Cart = () => {
         </div>
         <div className="cart_detail">
           <h3>Total: $USD {total}</h3>
-          <button 
-            className='cart_detail_btn'
-            onClick={()=> setModalState(!modalState)}
-          >
-            Comprar
-          </button>
+          {!user && 
+            <button 
+              className='cart_detail_btn'
+              onClick={()=> setModalState(!modalState)}
+            >
+              Comprar
+            </button>
+          }
+          {user &&
+            <GenerateOrder className='paypal-buttons'/>
+          }
             <Modal
+              className='modal-purchase'
               state={modalState} 
               changeState={setModalState}
               showHeader
@@ -87,9 +93,6 @@ const Cart = () => {
             >
               {!user &&
                 <NeedSignIn />
-              }
-              {user &&
-                <GenerateOrder />
               }
             </Modal>
         </div>

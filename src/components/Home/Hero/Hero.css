@@ -84,7 +84,7 @@
     content: '';
     color: #03ddc3;
     font-size: 3.8rem;
-    animation: animate 10s ease 3s infinite;
+    animation: animate 10s ease 1.8s infinite;
     opacity: 1;
 
 }
