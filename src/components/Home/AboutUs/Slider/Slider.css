@@ -38,9 +38,9 @@
   height: 100%;
   position: absolute;
   color: rgb(53, 213, 0);
-  font-size: 55px;
+  font-size: 3.4375em;
   display: flex;
-  padding: 0px 5px 380px 10px;
+  padding: 0px .3125rem 23.75rem .625rem;
   background: 
   linear-gradient(to right,
   rgba(22, 22, 22, 0.818),
@@ -49,49 +49,49 @@
   align-items: center;
 }
 .slide-title-long{
-  font-size: 45px;
+  font-size: 2.8125em;
   letter-spacing: -.05rem;
   word-spacing: -.3rem;
-  line-height: 50px;
-  padding-bottom: 415px;
+  line-height: 3.125rem;
+  padding-bottom: 25.9375rem;
 }
 .slide-authors{
   position: absolute;
   top: 20%;
-  left: 12px;
+  left: .75rem;
   width: 80%;
-  height: 100px;
+  height: 6.25rem;
   display: flex;
   color: #fff;
-  font-size: 22px;
-  letter-spacing: .8px;
-  padding-top: 40px;  
+  font-size: 1.375em;
+  letter-spacing: .05rem;
+  padding-top: 2.5rem;  
   align-items: center;
 }
 .slide-text{
   position: absolute;
   top: 29%;
-  left: 12px;
+  left: .75rem;
   width: 90%;
   height: 30%;
   display: flex;
   color: #fff;
-  margin-top: 50px;
-  font-size: 15px;
+  margin-top: 3.125rem;
+  font-size: .9375em;
   align-items: center;
 }
 .slide-btn{
   all: unset;
   cursor: pointer;
   position: absolute;
-  left: 12px;
+  left: .75rem;
   top: 72%;
   color: #fff;
   background-color: rgb(46, 185, 0);
-  height: 40px;
-  width: 120px;
-  font-size: 17px;
-  letter-spacing: .8px;
+  height: 2.5rem;
+  width: 7.5rem;
+  font-size: 1.0625em;
+  letter-spacing: .05rem;
   border-radius: 3px;
   text-align: center;
   cursor: pointer;
@@ -130,35 +130,35 @@
 }
 .open iframe{
   width: 100%;
-  height: 200px;
+  height: 12.5rem;
 }
 .open .close-video{
   position: fixed;
   top: 27%;
-  right: 7px;
+  right: .4375rem;
   width: 2.7rem;
   height: 2.7rem;
   color: #fff;
   cursor: pointer;
   background-color: rgba(215, 215, 215, 0.405);
-  padding: 5px;
+  padding: .3125rem;
   border-radius: 10%;
 }
-@media screen and (max-width: 250px) {
+@media screen and (max-width: 15.625rem) {
   .slide-title{
-    font-size: 70px;
-    padding-bottom: 500px;
+    font-size: 4.375em;
+    padding-bottom: 31.25rem;
   }
   .slide-title-long{
-    font-size: 40px;
-    padding-bottom: 520px;
+    font-size: 2.5em;
+    padding-bottom: 32.5rem;
   }
   .slide-authors{
     top: 21%;
-    left: 15px;
+    left: .9375rem;
   }
   .slide-text{
-    font-size: 17px;
+    font-size: 1.0625em;
     top: 33%;
     width: 95%;
   }
@@ -167,275 +167,265 @@
   }
   .open iframe{
     width: 100%;
-    height: 270px;
+    height: 16.875rem;
   }
 }
-@media screen and (min-width: 340px) and (min-height: 620px) {
+@media screen and (min-width: 21.25rem) and (min-height: 38.75rem) {
   .slide-title{
-    font-size: 72px;
-    padding-bottom: 380px;
+    font-size: 4.5em;
+    padding-bottom: 23.75rem;
   }
   .slide-title-long{
-    font-size: 57px;
+    font-size: 3.5625em;
   }
   .slide-authors{
     top: 21%;
-    padding-top: 70px;
+    padding-top: 4.375rem;
   }
   .slide-text{
-    font-size: 18px;
+    font-size: 1.125em;
     top: 32%;
     width: 85%;
   }
   .slide-btn{
     top: 72%;
-    left: 12px;
-    height: 47px;
-    width: 150px;
-    font-size: 19px;
+    left: .75rem;
+    height: 2.9375rem;
+    width: 9.375rem;
+    font-size: 1.1875em;
   }
   .open iframe{
     width: 100%;
-    height: 220px;
+    height: 13.75rem;
   }
   .dot {
     height: 1.9rem;
     width: 1.9rem;
-    margin: 2.5px 4px;
+    margin: 2.5px .25rem;
   }
 }
-@media screen and (min-width: 370px) and (min-height: 840px) {
+@media screen and (min-width: 23.125rem) and (min-height: 52.5rem) {
   .slide-title{
-    font-size: 80px;
-    padding: 0 0 500px 20px;
+    font-size: 5em;
+    padding: 0 0 31.25rem 1.25rem;
   }
   .slide-title-long{
-    font-size: 67px;
-    padding-bottom: 510px;
+    font-size: 4.1875em;
+    padding-bottom: 31.875rem;
   }
   .slide-authors{
     top: 21%;
-    left: 20px;
-    font-size: 27px;
-    padding-top: 70px;
+    left: 1.25rem;
+    font-size: 1.6875em;
+    padding-top: 4.375rem;
   }
   .slide-text{
-    font-size: 21px;
+    font-size: 1.3125em;
     top: 30%;
-    left: 20px;
+    left: 1.25rem;
     width: 80%;
   }
   .slide-btn{
     top: 72%;
-    left: 20px;
-    height: 49px;
-    width: 160px;
-    font-size: 20px;
-  }
-  .open iframe{
-    width: 100%;
-    height: 220px;
+    left: 1.25rem;
+    height: 3.0625rem;
+    width: 10rem;
+    font-size: 1.25em;
   }
 }
-@media screen and (min-width: 600px) and (min-height: 278px){
+@media screen and (min-width: 37.5rem) and (min-height: 17.375rem){
   .slide-title{
-    font-size: 70px;
-    padding: 0 0 220px 30px;
+    font-size: 4.375em;
+    padding: 0 0 13.75rem 1.875rem;
   }
   .slide-authors{
     top: 4%;
-    left: 34px;
-    font-size: 20px;
+    left: 2.125rem;
+    font-size: 1.25em;
   }
   .slide-text{
-    font-size: 15px;
+    font-size: .9375em;
     top: 19%;
-    left: 34px;
-    max-width: 700px;
+    left: 2.125rem;
+    max-width: 43.75rem;
     width: 90%;
   }
   .slide-btn{
     top: 72%;
-    left: 34px;
-    height: 37px;
-    width: 120px;
-    font-size: 17px;
+    left: 2.125rem;
+    height: 2.3125rem;
+    width: 7.5rem;
+    font-size: 1.0625em;
   }
   .open iframe{
     width: 70%;
-    height: 220px;
   }
   .open .close-video{
     top: 5%;
-    right: 24px;
+    right: 1.5rem;
   }
 }
-@media screen and (min-width: 600px) and (min-height: 320px){
+@media screen and (min-width: 37.5rem) and (min-height: 20rem){
   .slide-title{
-    font-size: 75px;
-    padding: 0 0 230px 30px;
+    font-size: 4.6875rem;
+    padding: 0 0 14.375rem 1.875rem;
   }
   .slide-authors{
     top: 15%;
-    left: 34px;
+    left: 2.125rem;
   }
   .slide-text{
-    font-size: 17px;
+    font-size: 1.0625em;
     top: 25%;
-    left: 34px;
-    max-width: 700px;
+    left: 2.125rem;
+    max-width: 43.75rem;
     width: 90%;
   }
   .slide-btn{
     top: 73%;
-    left: 34px;
-    height: 42px;
-    width: 130px;
-    font-size: 17px;
+    left: 2.125rem;
+    height: 2.625rem;
+    width: 8.125rem;
+    font-size: 1.0625em;
   }
   .open iframe{
-    height: 280px;
+    height: 17.5rem;
   }
 }
-@media screen and (min-width: 602px) and (min-height: 700px){
+@media screen and (min-width: 37.625rem) and (min-height: 43.75rem){
   .slide-title{
-    font-size: 95px;
-    padding: 0 0 400px 30px;
+    font-size: 5.9375em;
+    padding: 0 0 25rem 1.875rem;
   }
   .slide-authors{
     top: 22%;
-    left: 34px;
-    font-size: 25px;
+    left: 2.125rem;
+    font-size: 1.5625em;
   }
   .slide-text{
-    font-size: 20px;
+    font-size: 1.25em;
     top: 31%;
-    left: 34px;
+    left: 2.125rem;
     width: 80%;
   }
   .slide-btn{
     top: 72%;
-    left: 30px;
-    height: 45px;
-    width: 140px;
-    font-size: 18px;
+    left: 1.875rem;
+    height: 2.8125rem;
+    width: 8.75rem;
+    font-size: 1.125em;
   }
   .open iframe{
     width: 90%;
-    height: 380px;
+    height: 23.75rem;
   }
   .open .close-video{
     top: 17%;
-    right: 20px;
+    right: 1.25rem;
   }
 }
-@media screen and (min-height: 900px) and (min-width: 750px) {
+@media screen and (min-height: 56.25rem) and (min-width: 46.875rem) {
   .slide-title{
-    font-size: 117px;
+    font-size: 7.3125rem;
     letter-spacing: 1px;
-    padding: 0 0 500px 30px;
+    padding: 0 0 31.25rem 1.875rem;
   }
   .slide-authors{
     top: 28%;
-    left: 36px;
-    font-size: 32px;
+    left: 2.25rem;
+    font-size: 2em;
   }
   .slide-text{
-    font-size: 27px;
+    font-size: 1.6875em;
     width: 75%;
     top: 33%;
-    left: 36px;
+    left: 2.25rem;
   }
   .slide-btn{
     top: 70%;
-    left: 36px;
-    height: 55px;
-    width: 190px;
-    font-size: 24px;
+    left: 2.25rem;
+    height: 3.4375rem;
+    width: 11.875rem;
+    font-size: 1.5em;
   }
   .dot{
     height: 2.5rem;
     width: 2.5rem;
-    margin: 6px;
+    margin: .375rem;
   }
   .open iframe{
     width: 80%;
-    height: 390px;
+    height: 24.375rem;
   }
 }
-@media screen and (min-height: 1050px) and (min-width: 710px) {
+@media screen and (min-height: 65.625rem) and (min-width: 44.375rem) {
   .slide-title{
-    font-size: 107px;
+    font-size: 6.6875em;
     letter-spacing: 1px;
-    padding: 0 0 500px 30px;
+    padding: 0 0 31.25rem 1.875rem;
   }
   .slide-authors{
     top: 28%;
-    left: 36px;
-    font-size: 32px;
+    left: 2.25rem;
+    font-size: 2em;
   }
   .slide-text{
-    font-size: 27px;
+    font-size: 1.6875em;
     width: 75%;
     top: 33%;
-    left: 36px;
+    left: 2.25rem;
   }
   .slide-btn{
     top: 70%;
-    left: 36px;
-    height: 55px;
-    width: 190px;
-    font-size: 24px;
-  }
-  .dot{
-    height: 2.5rem;
-    width: 2.5rem;
-    margin: 6px;
+    left: 2.25rem;
+    height: 3.4375rem;
+    width: 11.875rem;
+    font-size: 1.5em;
   }
   .open iframe{
     width: 95%;
     height: 40%;
   }
 }
-@media screen and (min-width: 1000px) and (min-height: 700px){
+@media screen and (min-width: 62.5rem) and (min-height: 43.75rem){
   .slide-title{
-    font-size: 105px;
+    font-size: 6.5625em;
     letter-spacing: 2px;
-    padding: 0 0 420px 55px;
+    padding: 0 0 26.25rem 3.4375rem;
     background: linear-gradient(to right,
     rgba(22, 22, 22, 0.957),
     rgba(27, 26, 26, 0.287))
   }
   .slide-authors{
     top: 25%;
-    left: 59px;
-    font-size: 35px;
+    left: 3.6875rem;
+    font-size: 2.1875em;
   }
   .slide-text{
-    font-size: 21px;
+    font-size: 1.3125em;
     width: 50%;
     top: 33%;
-    left: 59px;
+    left: 3.6875rem;
   }
   .slide-btn{
     top: 74%;
-    left: 59px;
-    height: 48px;
-    width: 160px;
-    font-size: 23px;
+    left: 3.6875rem;
+    height: 3rem;
+    width: 10rem;
+    font-size: 1.4375em;
   }
   .dot{
     height: 2rem;
     width: 2rem;
-    margin: 6px;
+    margin: .375rem;
   }
   .all-dots {
-    width: 0px;
+    width: 0;
     position: absolute;
     display: flex;
     flex-direction: column;
     top: 0;
-    right: 30px;
+    right: 1.875rem;
     align-items: flex-end;
   }
   .open iframe{
@@ -443,114 +433,96 @@
     height: 40%;
   }
   .open .close-video{
-    top: 20px;
-    right: 20px;
+    top: 1.25rem;
+    right: 1.25rem;
   }
 }
-@media screen and (min-height: 600px) and (min-width: 1000px){
+@media screen and (min-height: 37.5rem) and (min-width: 62.5rem){
   .slider-container{
     height: 100vh;
   }
   .slide-title{
-    font-size: 97px;
+    font-size: 6.0625em;
     letter-spacing: 1px;
-    padding: 0 0 410px 48px;
+    padding: 0 0 25.625rem 3rem;
     background: linear-gradient(to right,
     rgba(22, 22, 22, 0.957),
     rgba(27, 26, 26, 0.003))
   }
   .slide-authors{
     top: 21%;
-    left: 55px;
-    font-size: 30px;
+    left: 3.4375rem;
+    font-size: 1.875em;
   }
   .slide-text{
-    font-size: 19px;
+    font-size: 1.1875em;
     width: 45%;
     top: 33%;
-    left: 55px;
+    left: 3.4375rem;
   }
   .slide-btn{
     top: 74%;
-    left: 55px;
-    height: 50px;
-    width: 150px;
-    font-size: 23px;
+    left: 3.4375rem;
+    height: 3.125rem;
+    width: 9.375rem;
+    font-size: 1.4375em;
   }
   .dot {
     height: 2rem;
     width: 2rem;
-    margin: 6px;
+    margin: .375rem;
   }
   .all-dots {
-    width: 0px;
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    top: 30px;
-    right: 30px;
-    align-items: flex-end;
+    top: 1.875rem;
+    right: 1.875rem;
   }
   .open iframe{
     width: 75%;
     height: 82%;
   }
   .open .close-video{
-    top: 30px;
-    right: 80px;
+    top: 1.875rem;
+    right: 5rem;
   }
 }
-@media screen and (min-width: 1300px) {
+@media screen and (min-width: 81.25rem) {
   .slider-container{
     height: 100vh;
   }
   .slide-title{
-    font-size: 107px;
+    font-size: 6.6875em;
     letter-spacing: 1px;
-    padding: 0 0 420px 55px;
-    background: linear-gradient(to right,
-    rgba(22, 22, 22, 0.957),
-    rgba(27, 26, 26, 0.003))
+    padding: 0 0 26.25rem 3.4375rem;
   }
   .slide-authors{
     top: 25%;
-    left: 60px;
-    font-size: 35px;
+    left: 3.75rem;
+    font-size: 2.1875em;
   }
   .slide-text{
-    font-size: 21px;
+    font-size: 1.3125em;
     width: 40%;
     top: 33%;
-    left: 60px;
+    left: 3.75rem;
   }
   .slide-btn{
     top: 74%;
-    left: 60px;
-    height: 48px;
-    width: 160px;
-    font-size: 23px;
+    left: 3.75rem;
+    height: 3rem;
+    width: 10rem;
+    font-size: 1.4375em;
     cursor: pointer;
   }
-  .dot {
-    height: 2rem;
-    width: 2rem;
-    margin: 6px;
-  }
   .all-dots {
-    width: 0px;
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    top: 30px;
-    right: 30px;
-    align-items: flex-end;
+    top: 1.875rem;
+    right: 1.875rem;
   }
   .open iframe{
     width: 75%;
     height: 82%;
   }
   .open .close-video{
-    top: 30px;
-    right: 80px;
+    top: 1.875rem;
+    right: 5rem;
   }
 }

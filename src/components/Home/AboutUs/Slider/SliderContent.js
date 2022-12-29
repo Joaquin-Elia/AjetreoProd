@@ -2,7 +2,7 @@ import React, { memo, useContext, useRef, useState } from 'react';
 import {CgClose} from 'react-icons/cg';
 import BeatsContext from '../../../../context/BeatsContext';
 import LoadingAnimation from '../../../LoadingAnimation/LoadingAnimation';
-import { UseClickOutside } from '../../../UseClickOutside/UseClickOutside';
+import { UseClickOutside } from '../../../../hooks/useClickOutside';
 
 const AboutUs = memo(({ activeIndex, dataSlider, loading }) => {
   const [showVideo, setShowVideo] = useState(false);

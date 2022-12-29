@@ -3,6 +3,7 @@ import BeatsContext from '../../context/BeatsContext';
 import { CartContext } from '../../context/CartContext';
 import {FooterMusicPlayer} from '../FooterMusicPlayer/FooterMusicPlayer';
 import {BsHandbag} from 'react-icons/bs';
+import { useSEO } from '../../hooks/useSEO';
 import './BeatStore.css'
 
 export const AllBeats = () => {
@@ -10,6 +11,7 @@ export const AllBeats = () => {
     const {beatsFiles, currentSong, setCurrent, setFooterPlayer, footerPlayer} = useContext(BeatsContext);
     const value = useContext(CartContext);
     const addItem = value.addItem;
+    useSEO({title: 'Catalogo de beats', description: 'BeatStore'})
 
     return (
         <div className='container-beatstore'>

@@ -2,10 +2,13 @@ import React from 'react'
 import { useAuth } from '../../context/AuthContext'
 import { useOrders } from '../../hooks/useOrders';
 import LoadingAnimation from '../LoadingAnimation/LoadingAnimation';
+import {useSEO} from '../../hooks/useSEO';
+import './UserProfile.css'
 
 export const UserProfile = () => {
     const {user, logout, loading} = useAuth();
     const [dataOrders, loadingOrders] = useOrders();
+    useSEO({title: 'Perfil del usuario'})
 
     const userOrders = dataOrders.filter(({buyer}) => {
         if(user.email === 'joaquin.elia@hotmail.com'){
@@ -22,28 +25,39 @@ export const UserProfile = () => {
     }
 
     if(loading) return <LoadingAnimation />
-
     return (
-        <div style={{marginTop: '12.5rem'}}>
-            {user.email === 'joaquin.elia@hotmail.com' ? 
-                <h2>Bienvenido: Admin de ajetreo</h2>
-                : <h2>Bienvenido {user.email}</h2>
+        <div className='container-profile'>
+            {user.email === 'joaquin.elia@hotmail.com' 
+                ? <h1 className='profile-welcome'>Bienvenido: Admin de ajetreo</h1>
+                : <h1 className='profile-welcome'>Bienvenido: {user.email}</h1>
             }
-            <button onClick={handleLogout}>Salir</button>
+            <div className="container-logout">
+                <button 
+                    onClick={handleLogout}
+                    className='profile-logout'
+                >
+                    Cerrar sesión
+                </button>
+            </div>
+            <h2>Tus pedidos:</h2>
             {dataOrders && <> {
                 loadingOrders ? <LoadingAnimation /> : 
                     <>{userOrders.map(({id, total, buyer})=>{
                         return (
-                            (user.email === 'joaquin.elia@hotmail.com') ?
-                                <div key={id}>
-                                    <h3>Email del comprador: {buyer}</h3>
-                                    <h3>El numero de orden es: {id}</h3>
-                                    <h3>El total de la compra es de: USD {total}</h3>
+                            (user.email === 'joaquin.elia@hotmail.com') ? 
+                                <div key={id} className='profile-orders'>
+                                    <ol className='list-orders'>
+                                        <li className='list-orders-items'><strong>Email del comprador:</strong> {buyer}</li>
+                                        <li className='list-orders-items'><strong>El numero de orden es:</strong> {id}</li>
+                                        <li className='list-orders-items'><strong>El total de la compra es de:</strong> USD {total}</li>
+                                    </ol>
                                 </div>
                                 :
-                                <div key={id}>
-                                    <h3>Tu numero de orden es: {id}</h3>
-                                    <h3>El total de tu compra es de: USD {total}</h3>
+                                <div key={id} className='profile-orders'>
+                                    <ol className='list-orders'>
+                                        <li className='list-orders-items'><strong>Tu numero de orden es: </strong> {id} </li>
+                                        <li className='list-orders-items'><strong>El total de tu compra es de: </strong> USD {total}</li>
+                                    </ol>
                                 </div>
                                 )
                         }

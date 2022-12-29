@@ -14,7 +14,7 @@
     position: absolute;
     z-index: 1;
     width: 40vw;
-    min-width: 250px;
+    min-width: 15.625rem;
     height: auto;
     background-color: #fff;
     display: flex;
@@ -70,7 +70,7 @@
 .finish-purchase-btn{
     font-size: 1.2rem;
     margin: 1.4rem;
-    padding: 5px;
+    padding: .3125rem;
     width: 80%;
     height: 2.85rem;
     background-color: rgb(20, 19, 19);
@@ -78,40 +78,3 @@
     border-radius: .45rem;
     cursor: pointer;
 }
-/* @media screen and (max-width: 974px) {
-    .finish-purchase{
-        width: 90vw;
-    }
-}
-@media screen and (max-width: 510px) {
-    .finish-purchase{
-        width: 95vw;
-        height: 95vh;
-    }
-    .finish-purchase img{
-        width: 150px;
-        height: 150px;
-        margin: 30px 0 10px 0;
-    }
-    .finish-purchase > h3{
-        font-size: 25px;
-    }
-    .finish-purchase > h4{
-        font-size: 20px;
-        margin-top: 7px;
-    }
-    .finish-purchase > p{
-        font-size: 16px;
-        margin-top: 13px;
-        padding-bottom: 18px;
-    }
-    .finish-purchase > small{
-        margin-top: 5px;
-    }
-    .finish-purchase small > span{
-        font-size: 16px;
-    }
-    .finish-purchase .btn-send{
-        margin: 10px 0;
-    }
-} */

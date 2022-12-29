@@ -1,0 +1,38 @@
+.container-widget{
+    background-color: #25D366;
+    color: #fff;
+    font-size: 1.7rem;
+    border-radius: 50%;
+    bottom: 2.5rem;
+    right: .8rem;
+    height: 3.5rem;
+    width: 3.5rem;
+    position: fixed;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container-widget:hover{
+    transition: .3s ease-out;
+    background-color: #1aae50;
+}
+.container-icon-whatsapp{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.icon-whatsapp{
+    padding: 15px;
+    transform: translateY(2px);
+}
+@media screen and (min-width: 37.5rem) {
+    .container-widget{
+        font-size: 2rem;
+        bottom: 1.875rem;
+        right: 1.875rem;
+        height: 4rem;
+        width: 4rem;
+    }
+    
+}

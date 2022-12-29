@@ -10,9 +10,11 @@ import { Register } from './components/Register/Register';
 import { AuthProvider } from './context/AuthContext';
 import { UserProfile } from './components/UserProfile/UserProfile';
 import { ProtectedRoutes } from './components/ProtectedRoute/ProtectedRoute';
-import './App.css';
 import { PlayerState } from './context/PlayerState';
 import { AllBeats } from './components/BeatStore/AllBeats';
+import { ResetPassword } from './components/ResetPassword/ResetPassword';
+import BtnWhatsApp from './components/BtnWhatsApp/BtnWhatsApp';
+import './App.css';
 
 function App() {
   return (
@@ -22,6 +24,7 @@ function App() {
           <div className="App">
             <BrowserRouter>
               <NavBar />
+              <BtnWhatsApp />
               <Routes>
                 <Route exact path='/' element={ <Home/> }/>
                 <Route exact path='/service' element={ <AllService/> }/>
@@ -29,6 +32,7 @@ function App() {
                 <Route exact path='/cart' element={ <Cart />}/>
                 <Route exact path='/login' element={<Login />}/>
                 <Route exact path='/register' element={<Register />}/>
+                <Route exact path='/reset_password' element={<ResetPassword />}/>
                 <Route exact path='/profile' element={
                   <ProtectedRoutes>
                     <UserProfile />

@@ -8,7 +8,7 @@ a{
     all: unset;
     cursor: pointer;
 }
-.register-bg, .login-bg{
+.register-bg, .login-bg, .reset-bg{
     position: absolute;
     width: 100%;
     height: 100vh;
@@ -21,9 +21,9 @@ a{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    height: 100%;
+    height: 100vh;
     width: 100%;
-    background-color: rgb(222, 255, 255);
+    background-color: rgb(222, 222, 222);
     overflow: hidden;
 }
 .backdrop-form{
@@ -36,7 +36,7 @@ a{
     flex-direction: column;
     background: rgb(17, 16, 16);
     border-bottom-right-radius: 90%;
-    color: rgb(240, 237, 237);
+    color: rgb(255, 255, 255);
 }
 .title-form-h3{
     margin: 4.375rem 0 0 1.25rem;
@@ -49,15 +49,15 @@ a{
     margin: 3.375rem 0 0 1.25rem;
     font-size: 2.775em;
     line-height: 1.2;
-    font-weight: 600;
+    font-weight: 600; 
     width: 90%;
 }
 .icon-back{
-    width: 42px;
-    height: 42px;
+    width: 2.625rem;
+    height: 2.625rem;
     border-radius: 50%;
     color: #000;
-    margin-bottom: 20px;
+    margin-bottom: 1.25rem;
     cursor: pointer;
 }
 .title-form-h5{
@@ -68,7 +68,14 @@ a{
     width: 60%;
 }
 .container-inputs{
-    margin: 15.625rem 0 0 .75rem;
+    margin: 16.625rem 0 0 .75rem;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.container-input-reset{
+    margin: 16.625rem 0 0 .75rem;
     width: 90%;
     display: flex;
     flex-direction: column;
@@ -186,7 +193,7 @@ a{
     .title-form-h5{
         font-size: 1.0625em;
     }
-    .register-bg, .login-bg{
+    .register-bg, .login-bg, .reset-bg{
         display: flex;
         justify-content: center;
         align-items: center;

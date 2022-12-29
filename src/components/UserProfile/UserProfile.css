@@ -1,0 +1,77 @@
+.container-profile{
+    background-color: rgb(10, 10, 10);
+    color: #fff;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 3.125rem 1.875rem 0 1.875rem;
+    overflow: hidden;
+}
+.profile-welcome{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 1.3rem;
+    margin-bottom: 1.25rem;
+    text-overflow: ellipsis;
+}
+.container-logout{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 3.25rem;
+}
+.profile-logout{
+    all: unset;
+    width: 8.125rem;
+    height: 2.1875rem;
+    text-align: center;
+    background-color: rgb(164, 4, 4);
+    border-radius: .4375rem;
+    cursor: pointer;
+    margin-bottom: 1.25rem;
+}
+.profile-logout:hover{
+    transition: .3s ease-in-out;
+    background-color: rgb(133, 4, 4);
+}
+.list-orders-items{
+    list-style: circle;
+}
+.profile-orders{
+    margin: 1.05rem 0;
+}
+@media screen and (min-width: 37.5rem) {
+    .container-profile{
+        padding: 0 2.875rem;
+    }
+    .profile-welcome{
+        font-size: 2em;
+        margin-bottom: 1.25rem;
+    }
+    .container-logout{
+        margin-bottom: 3.25rem;
+    }
+    .profile-orders{
+        margin: 1.25rem 0;
+        font-size: 1.125em;
+    }
+}
+@media screen and (min-height: 50rem) and (orientation: portrait) {
+    .container-profile{
+        padding: 0 2.875rem;
+    }
+    .profile-welcome{
+        font-size: 2.5em;
+        margin-bottom: 3.25rem;
+    }
+    .container-logout{
+        margin-bottom: 3.25rem;
+    }
+    .profile-orders{
+        margin: 1.25rem 0;
+        font-size: 1.375em;
+    }
+}

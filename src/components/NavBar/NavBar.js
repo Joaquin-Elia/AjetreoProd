@@ -4,7 +4,7 @@ import MenuItems from './MenuItems';
 import { CgMenuGridO, CgClose } from 'react-icons/cg';
 import CartIcon from './CartIcon';
 import Logo  from '../../imgs/logo.png';
-import { UseClickOutside } from '../UseClickOutside/UseClickOutside';
+import { UseClickOutside } from '../../hooks/useClickOutside';
 import './NavBar.css';
 
 const NavBar = () => {

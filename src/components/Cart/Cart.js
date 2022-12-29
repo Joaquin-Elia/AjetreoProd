@@ -6,6 +6,7 @@ import Modal from '../Modal/Modal';
 import { NeedSignIn } from '../NeedSignIn/NeedSignIn';
 import { useAuth } from '../../context/AuthContext';
 import GenerateOrder from '../GenerateOrder/GenerateOrder';
+import { useSEO } from '../../hooks/useSEO';
 import './Cart.css'
 
 const Cart = () => {
@@ -14,6 +15,7 @@ const Cart = () => {
   const [total] = value.total;
   const {user} = useAuth();
   const [modalState, setModalState] = useState(false);
+  useSEO({title: 'Carrito', description: 'Carrito'})
 
   const removeItem = id => {
     cart.forEach((items ,index) =>{

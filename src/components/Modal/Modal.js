@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import {CgClose} from 'react-icons/cg';
-import { UseClickOutside } from '../UseClickOutside/UseClickOutside';
+import { UseClickOutside } from '../../hooks/useClickOutside';
 import { motion } from 'framer-motion'; 
 import './Modal.css'
 

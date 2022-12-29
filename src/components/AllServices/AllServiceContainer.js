@@ -1,13 +1,16 @@
-import React, {useContext} from 'react';
-import { CartContext } from '../../context/CartContext';
+import React from 'react';
 import AllServiceItem from './AllServiceItem';
+import { useFirestore } from '../../hooks/useFirestore';
 import LoadingAnimation from '../LoadingAnimation/LoadingAnimation';
+import { useSEO } from '../../hooks/useSEO';
 import './AllService.css'
 
 const AllService = () => {
-  const value = useContext(CartContext)
-  const [products] = value.products
-  const loading = value.loading;
+  const [dataServices, loading] = useFirestore();
+  const title = loading 
+    ? 'Cargando...' 
+    : dataServices ? 'Services' : ''
+  useSEO({title, description: 'Services'})
 
   return (
     <div className='all_services_bg'>
@@ -16,7 +19,7 @@ const AllService = () => {
           <LoadingAnimation />
         </div> 
           : 
-        products.map(({id, img, title, description, price}) => (
+        dataServices.map(({id, img, title, description, price}) => (
           <AllServiceItem 
             key={id}
             id={id}

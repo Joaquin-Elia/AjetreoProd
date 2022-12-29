@@ -156,9 +156,8 @@
     background-color: rgb(2, 197, 2);
 }
 .paypal-buttons{
-    margin-top: 30px;
-    /* background-color: #fff; */
-    border-radius: 4px;
+    margin-top: 1.875rem;
+    border-radius: .25rem;
 }
 @media screen and (min-width: 25rem){
     .cart_table{

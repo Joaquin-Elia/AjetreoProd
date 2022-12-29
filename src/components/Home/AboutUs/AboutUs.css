@@ -16,7 +16,7 @@
     background-color: rgb(3, 166, 30);
     color: #fff;
     transition: 1s cubic-bezier(.165, .84, .44, 1);
-    border-radius: 4px;
+    border-radius: .25rem;
 }
 .reasons-numbers{
     font-family: 'Jost', sans-serif;
@@ -50,7 +50,7 @@
 @media screen and (min-width: 28.125rem){
     .who-we-are-title{
         width: 80%;
-        max-width: 500px;
+        max-width: 31.25rem;
         font-size: 2.1em;
     }
 }
@@ -88,7 +88,7 @@
     .who-we-are-title{
         font-size: 2.4em;
         width: 70%;
-        max-width: 600px;
+        max-width: 37.5rem;
     }
 }
 @media screen and (min-width: 68.8rem){
@@ -118,7 +118,7 @@
     .who-we-are-title{
         font-size: 3em;
         width: 40%;
-        max-width: 700px;
+        max-width: 43.75rem;
     }
 }
 @media screen and (min-width: 78.8rem){

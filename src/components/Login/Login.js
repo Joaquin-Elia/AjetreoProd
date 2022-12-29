@@ -3,7 +3,6 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
 import { CartContext } from '../../context/CartContext';
 import { FormAlert } from '../FormAlert/FormAlert';
-import { ResetPassword } from '../ResetPassword/ResetPassword';
 
 export const Login = () => {
   const [user, setUser] = useState({
@@ -16,7 +15,6 @@ export const Login = () => {
   const [cart] = value.cart;  
   const navigate = useNavigate();
   const [ error, setError ] = useState();
-  const [ showReset, setShowReset ] = useState(false);
 
   const handleChange = ({ target: { name, value } }) =>
     setUser({ ...user, [name]: value });
@@ -57,39 +55,22 @@ export const Login = () => {
       <form 
         onSubmit={handleSubmit} 
         className='form-container'
-      > 
-        {!showReset && 
-          <div className='backdrop-form'>
-            <h3
-              className='title-form-h3'
-            >
-              Bienvenido de nuevo!
-            </h3>
-            <h5 
-              className='title-form-h5'
-            >
-              Inicia sesión para continuar
-            </h5>
-          </div>
-        }
-        {showReset && 
-          <div className='backdrop-form'>
-            <h3
-              className='title-form-h3-reset'
-            >
-              ¡Olvidaste tu contraseña?
-            </h3>
-            <h5 
-              className='title-form-h5'
-            >
-              Ingresa tu correo para recuperla
-            </h5>
-          </div>
-        }
-        {showReset && <ResetPassword showReset={showReset} setShowReset={setShowReset}/> }
-        {!showReset &&
+      >  
+        <div className='backdrop-form'>
+          <h3
+            className='title-form-h3'
+          >
+            Bienvenido de nuevo!
+          </h3>
+          <h5 
+            className='title-form-h5'
+          >
+            Inicia sesión para continuar
+          </h5>
+        </div>
+        
         <div className="container-inputs">        
-          <label hetmlfor='email'>Correo elecctronico</label>
+          <label hetmlfor='email'>Correo electronico</label>
           <input
             className='inputs-form' 
             type='email' 
@@ -107,24 +88,20 @@ export const Login = () => {
             onChange={handleChange}
           />
         </div>
-      }
-        {!showReset &&
-          <>
-          <div className="container-btn-submit">
+
+        <div className="container-btn-submit">
             <button className='btn-submit'>Ingresar</button>
           </div>
-          <p
+          <Link 
+            to='/reset_password'
             className='forget-password'
-            onClick={()=> setShowReset(true)}
           >
             ¿Olvidaste tu contraseña?
-          </p>
+          </Link>
         <div className='question-form'>
             <p>¿No tenes una cuenta?</p>
             <Link to='/register'>Registrate</Link>
         </div>
-        </>
-      }
       </form>
     </div>
   )
