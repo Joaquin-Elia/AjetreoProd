@@ -5,13 +5,13 @@ import './AboutUs.css';
 
 const AboutUs = () => {
   const {scrollYProgress} = useViewportScroll();
-  const leftBg = useTransform(scrollYProgress, [0.530, 0.630], ['7vh', '60vh']);
-  const rightSideScale = useTransform(scrollYProgress, [0.250, 0.600], [0, 1]);
-  const rightSideY= useTransform(scrollYProgress, [0, 0.8], ['-20vh', '10vh']);
+  const leftBg = useTransform(scrollYProgress, [0.430, 0.530], ['7vh', '60vh']);
+  const rightSideScale = useTransform(scrollYProgress, [0.250, 0.530], [0, 1]);
+  const rightSideY= useTransform(scrollYProgress, [0, 0.7], ['-20vh', '10vh']);
 
   return (
     <>
-      <div className="container-choose-us">
+      <div className="container-choose-us" id='nosotros'>
         <div className="scroll-left-bg">
           <motion.div 
             style={{height: leftBg}}
@@ -21,7 +21,10 @@ const AboutUs = () => {
             <h2 className='choose-us-titles-h2'>Algunas razones para elegirnos</h2>
           </motion.div>
         </div>
-        <motion.div style={{y: rightSideY, scale: rightSideScale}} className="choose-us-reasons">
+        <motion.div 
+          style={{y: rightSideY, scale: rightSideScale}} 
+          className="choose-us-reasons"
+        >
           {reasonsData.map(({id, number, description}) => 
             <div key={id} className="reasons-flex">
               <h3 className="reasons-numbers">{number}</h3>

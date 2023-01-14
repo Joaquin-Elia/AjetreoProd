@@ -51,19 +51,30 @@ const NavBar = () => {
                 {menuClick ? <CgClose /> : <CgMenuGridO />}
             </div>
             <ul className={menuClick ? 'nav-menu menu-active' : 'nav-menu'}>
-                {MenuItems.map(({id, title, cName, url})=>{
-                    return (
-                        <li key={id}>
-                            <NavLink 
-                                className={cName}
-                                to={url}
-                                onClick={()=> setMenuClick(false)}
-                            >
-                                {title}
-                            </NavLink>
-                        </li>
-                    )
-                })}
+                {MenuItems.map(({id, title, cName, url, src})=> { 
+
+                    return (url ? 
+                    <li key={id}>
+                        <NavLink 
+                            className={cName}
+                            to={url}
+                            onClick={()=> setMenuClick(false)}
+                        >
+                            {title}
+                        </NavLink>
+                    </li> :
+                    
+                    <li key={id}>
+                        <a
+                            className={cName}
+                            href={src}
+                            onClick={()=> setMenuClick(false)}
+                        >
+                            {title}
+                        </a>
+                    </li>)
+                }
+            )}
             </ul>
             <div className='cart-container'>
                 <div

@@ -1,0 +1,30 @@
+.scroll-top{
+    background-color: rgba(0, 0, 0, 0.84);
+    backdrop-filter: blur( 0.6563rem );
+    -webkit-backdrop-filter: blur( .6563rem );
+    border-radius: 30%;
+    position: fixed;
+    height: 2.8rem;
+    width: 2.8rem;
+    bottom: 5.7625rem;
+    right: .65rem;
+    z-index: 4;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(225, 225, 225);
+    font-size: 1.8em;
+}
+.scroll-top:hover{
+    background-color: rgb(57, 57, 57);
+}
+@media screen and (min-width: 37.5rem){
+    .scroll-top{
+        height: 3rem;
+        width: 3rem;
+        bottom: 6.5625rem;
+        right: 2.5rem;
+        font-size: 2em;
+    }
+}

@@ -8,7 +8,7 @@ import './UserProfile.css'
 export const UserProfile = () => {
     const {user, logout, loading} = useAuth();
     const [dataOrders, loadingOrders] = useOrders();
-    useSEO({title: 'Perfil del usuario'})
+    useSEO({title: 'Perfil de el usuario'})
 
     const userOrders = dataOrders.filter(({buyer}) => {
         if(user.email === 'joaquin.elia@hotmail.com'){
@@ -39,7 +39,8 @@ export const UserProfile = () => {
                     Cerrar sesión
                 </button>
             </div>
-            <h2>Tus pedidos:</h2>
+            {userOrders.length >= 1 && <h2>Tus pedidos:</h2>}
+            
             {dataOrders && <> {
                 loadingOrders ? <LoadingAnimation /> : 
                     <>{userOrders.map(({id, total, buyer})=>{

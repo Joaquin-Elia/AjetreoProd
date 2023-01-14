@@ -200,9 +200,9 @@
 /* BeatsHome */
 .container-beats-home{
     width: 100%;
-    min-height: 70vh;
+    min-height: 100vh;
     padding: 3.125rem 0;
-    background-color: rgb(0, 0, 0);
+    background-color: #151516;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -238,23 +238,15 @@
     border-radius: .9375rem;
 }
 .container-card-beat{
-    display: flex;
-    flex-direction: row;
     width: 100%;
-    height: 10.9375rem;
-    margin: 1.875rem 0 1.25rem .9375rem;
+    margin: 2.875rem 0 .75rem .9375rem;
     padding: 0 .625rem .625rem 0;
     transform: perspective(50rem) rotateY(25deg);
     user-select: none;
 }
-.beat-card{
-    min-width: 11.25rem;
-    margin: 0 .625rem 0 1.25rem;
-    border-radius: .5rem;
-}
 .beat-card-img{
     width: 100%;
-    height: 8.4375rem;
+    height: 9.4375rem;
     object-fit: cover;
     border-radius: .5rem;
 }
@@ -282,13 +274,14 @@
 .beat-card-play-container{
     position: relative;
     width: 100%;
-    height: 8.4375rem;
+    border-radius: .5rem;
 }
 .beat-card-play-icon, .beat-card-playing{
     color: rgb(255, 255, 255);
     background-color: #0000004e;
-    height: 100%;
+    height: 98%;
     width: 100%;
+    border-radius: .5rem;
     font-size: 5em;
     position: absolute;
     display: flex;
@@ -327,34 +320,41 @@
     .container-card-beat{
         margin: 1.875rem 0 -0.625rem 2.1875rem;
         padding-right: 1.25rem;
-        transform: perspective(68.75rem) rotateY(20deg);
+        transform: perspective(69.75rem) rotateY(19deg);
     }
 }
 @media screen and (min-width: 46.875rem){
     .container-card-beat{
-        margin: 1.875rem 0 .625rem 2.8125rem;
+        margin: 1.875rem 0 .625rem 3.8125rem;
         padding-right: 1.25rem;
     }
 }
 @media screen and (min-width: 62.5rem){
+    .container-beats-home{
+        overflow: hidden;
+        padding: 5.625rem 3.125rem 1.625rem 0;
+    }
     .container-card-beat{
-        margin: 1.875rem 0 1.25rem 2.5rem;
+        display: block;
+        height: 13.9rem;
+        margin: 1.875rem 0 3.25rem 2.5rem;
         padding-right: 1.25rem;
         transform: perspective(0) rotateY(0);
         -webkit-box-reflect: below 0 linear-gradient(transparent, transparent, rgba(0,0,0,.4))
     }
-    .container-beats-home{
-        width: 100%;
-        overflow: hidden;
-        padding: 5.625rem 3.125rem 5.625 0;
+    .beat-card-img{
+        height: 11.2rem;
+        object-fit: cover;
     }
     .swiper-button-next, .swiper-button-prev{
         width: 3.125rem;
+        height: 100%;
         margin-right: .5rem;
-        transform: translateY(-2.4375rem);
+        transform: translateY(-4.2rem);
     }
-    .swiper-button-prev{
-        transform: translateY(-2.3125rem);
+    .swiper-button-next{
+        margin-right: -.7rem;
+        transform: translateY(-4.2rem);
     }
     .swiper-button-next:hover, .swiper-button-prev:hover{
         background-color: #00000060;

@@ -93,7 +93,7 @@ export const Login = () => {
             <button className='btn-submit'>Ingresar</button>
           </div>
           <Link 
-            to='/reset_password'
+            to='/reset-password'
             className='forget-password'
           >
             ¿Olvidaste tu contraseña?

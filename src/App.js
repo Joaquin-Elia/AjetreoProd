@@ -14,6 +14,10 @@ import { PlayerState } from './context/PlayerState';
 import { AllBeats } from './components/BeatStore/AllBeats';
 import { ResetPassword } from './components/ResetPassword/ResetPassword';
 import BtnWhatsApp from './components/BtnWhatsApp/BtnWhatsApp';
+import Cookies from './components/Cookies/Cookies';
+import { CookiesPolicy } from './components/CookiesPolicy/CookiesPolicy';
+import ScrollToTop from './components/ScrollToTop/ScrollToTop';
+import Footer from './components/Footer/Footer';
 import './App.css';
 
 function App() {
@@ -23,8 +27,10 @@ function App() {
         <CartProvider>
           <div className="App">
             <BrowserRouter>
+              <Cookies />
               <NavBar />
               <BtnWhatsApp />
+              <ScrollToTop />
               <Routes>
                 <Route exact path='/' element={ <Home/> }/>
                 <Route exact path='/service' element={ <AllService/> }/>
@@ -32,13 +38,15 @@ function App() {
                 <Route exact path='/cart' element={ <Cart />}/>
                 <Route exact path='/login' element={<Login />}/>
                 <Route exact path='/register' element={<Register />}/>
-                <Route exact path='/reset_password' element={<ResetPassword />}/>
+                <Route exact path='/reset-password' element={<ResetPassword />}/>
+                <Route exact path='/politica-de-cookies' element={<CookiesPolicy />}/>
                 <Route exact path='/profile' element={
                   <ProtectedRoutes>
                     <UserProfile />
                   </ProtectedRoutes> 
                 }/>
               </Routes>
+            <Footer />
             </BrowserRouter>
           </div>
         </CartProvider>

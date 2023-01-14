@@ -4,7 +4,7 @@ import './OurProjects.css';
 
 const OurProjects = () => { 
     const {scrollYProgress} = useViewportScroll();
-    const titleScrollX = useTransform(scrollYProgress, [0.770, 1], [0, -700]);
+    const titleScrollX = useTransform(scrollYProgress, [0.630, .85], [0, -680]);
     
   return (
         <>

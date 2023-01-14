@@ -3,53 +3,55 @@
     margin-bottom: 3rem;
 }
 .our-projects-title{
-    font-size: 7.2em;
-    letter-spacing: -.2rem;
+    font-size: 7em;
+    letter-spacing: -.3rem;
     white-space: nowrap;
-    transition: 1.3s cubic-bezier(.165, .84, .44, 1);
+    transition: 1.5s cubic-bezier(.165, .84, .44, 1);
 }
 @media screen and (min-width: 22.5rem){
     .our-projects-title{
-        font-size: 7.9em;
+        font-size: 7.3em;
     }
 }
 @media screen and (min-height: 53.125rem) and (orientation: portrait) {
     .our-projects-title{
-        font-size: 9em;
+        font-size: 8.2em;
     }
 }
 @media screen and (min-width: 31.25rem) and (orientation: portrait) {
     .our-projects-title{
-        font-size: 9.6em;
+        font-size: 8.7em;
     }
 }
 @media screen and (min-width: 43.75rem) and (orientation: portrait) {
     .our-projects-title{
-        font-size: 11em;
+        font-size: 10.3em;
+        margin-left: 3rem;
         letter-spacing: -.3rem;
     }
 }
 @media screen and (min-width: 62.5rem) and (orientation: portrait) {
     .our-projects-title{
-        font-size: 15.2em;
+        font-size: 13em;
         margin-left: -3rem;
-        letter-spacing: -.6rem;
+        letter-spacing: -.5rem;
     }
 }
 @media screen and (min-width: 43.75rem) and (orientation: landscape) {
     .our-projects-title{
-        font-size: 12.2em;
+        font-size: 9.8em;
+        margin-left: 5rem;
     }
 }
 @media screen and (min-width: 62.5rem) and (orientation: landscape) {
     .our-projects-title{
-        font-size: 13.4em;
+        font-size: 12.4em;
         letter-spacing: -.4rem;
     }
 }
 @media screen and (min-width: 81.25rem) and (orientation: landscape) {
     .our-projects-title{
-        font-size: 15.2em;
-        margin-left: 4rem;
+        font-size: 14.2em;
+        margin-left: 5rem;
     }
 }

@@ -8,7 +8,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 1;
+    z-index: 4;
 }
 .container-modal{
     background-color: rgb(242, 235, 225);
@@ -35,7 +35,7 @@
 .close-modal{
     all: unset;
     position: absolute;
-    z-index: 1;
+    z-index: 2;
     top: .625rem;
     right: .625rem;
     width: 2rem;

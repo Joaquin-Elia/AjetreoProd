@@ -19,8 +19,8 @@ const MenuItems = [
     },
     {
         id: 4,
-        title: 'nosotros',
-        url: '/nosotros',
+        title: 'Nosotros',
+        src: '/#nosotros',
         cName: 'nav-links'
     }
 ]
