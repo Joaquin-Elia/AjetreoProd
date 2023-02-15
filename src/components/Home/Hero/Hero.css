@@ -1,13 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
 .container-hero{
     min-height: 90vh;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
 }
 .container-hero_bg{
     overflow: hidden;
+    position: relative;
+    z-index: 3;
     min-height: 100vh;
     width: 100%;
     top: 0;
     left: 0;
-    background-image: radial-gradient(circle, #151515, #181818, #1b1b1b, #181818, rgb(3, 92, 83));
+    background-image: radial-gradient(circle, #151515, #181818, #1b1b1b, #181818);
 }
 .container-hero_title{
     display: flex;
@@ -17,18 +24,17 @@
 }
 .container-hero_title_h1{
     position: relative;
-    font-size: 3.4em;
+    font-size: 2.8em;
     letter-spacing: -0.07rem;
-    color: #dcdbdb;
-    font-family: 'Jost', sans-serif;
-    font-weight: 400;
+    color: #c1c1c1;
+    font-family: 'Orbitron';
 }
 .container-hero_title_h1 span{
     display: block;
-    line-height: 1.2;
+    line-height: 1.4;
+    font-weight: 400;
 }
 .container-hero_title_h1 strong{
-    font-weight: 700;
     color: #ffffff;
 }
 .container-hero_title_p{
@@ -36,6 +42,7 @@
     color: #c6c6c6;
     font-size: 1rem;
     margin-top: .625rem;
+    max-width: 34.375rem;
 }
 .container-hero_btns{
     display: flex;
@@ -44,7 +51,7 @@
 }
 .container-hero_btns_btn{
     all: unset;
-    padding: .375rem 1.125rem;
+    padding: .375rem 1.12rem;
     margin: .4375rem 0 0 .625rem;
     width: 5.9375rem;
     height: 1.875rem;
@@ -57,113 +64,157 @@
 }
 .container-hero_btns_btn:nth-child(2){
     background-color: transparent;
-    margin-top: .5625rem;
+    margin-top: .425rem;
     text-align: center;
     color: #00ffe1;
     border: 1px solid #00ffe1;
     width: 7.1875rem;
-    padding: 3px 0;
+    padding: .25rem .3125rem;
 }
 .container-hero_btns_btn_icon{
     font-size: 1.1rem;
     transform: translateY(.25rem);
 }
-.container-hero_featured{
-    margin-top: 1.875rem;
+.bg-blurs, .bg-blurs2, .bg-blurs3, .bg-blurs4{
+    width: 15.625rem;
+    height: 5rem;
+    z-index: -1;
+    position: absolute;
+    top: 5.625rem;
+    left: 9.375rem;
+    border-bottom-left-radius: 3.125rem;
+    border-top-right-radius: 3.125rem;
+    filter: blur(4.0625rem);
+    background-color: #9e08d9;
+    animation: 8s animateBlurs 2s linear infinite;
 }
-.container-hero_featured_title{
-    color: #ffffff80;
-    font-size: 1.8rem;
-    text-align: center;
-}
-.container-hero_featured_name{
-    text-align: center;
-    padding-bottom: 1.25rem;
-}
-.container-hero_featured_name::before{
-    content: '';
-    color: #03ddc3;
-    font-size: 3.8rem;
-    animation: animate 10s ease 1.8s infinite;
-    opacity: 1;
-
-}
-@keyframes animate{
+@keyframes animateBlurs {
     0%{
-        content: 'Rap';
-        transition-duration: 2s;
+        transform: translate(0);
     }
-    20%{
-        content: 'Trap';
-        transition-duration: 2s;
-    }
-    40%{
-        content: 'Boombap';
-        transition-duration: 2s;
-    }
-    60%{
-        content: 'Drill';
-        transition-duration: 2s;
-    }
-    80%{
-        content: 'Plug';
-        transition-duration: 2s;
+    50%{
+        transform: translate(-8.1875rem, -2.3125rem) ;
     }
     100%{
-        content: 'Pop';
-        transition-duration: 2s;
+        transform: translate(0);
     }
+}
+@keyframes animateBlurs2 {
+    0%{
+        transform: translate(0);
+    }
+    50%{
+        transform: translate(8.1875rem, 5.3125rem);
+    }
+    100%{
+        transform: translate(0);
+    }
+}
+.bg-blurs2{
+    top: 30;
+    left: -4.375rem;
+    background: #880078;
+    transform: rotate(20deg);
+    animation: 8s animateBlurs2 2s linear infinite;
+}
+.bg-blurs3{
+    width: 12.5rem;
+    height: 4.375rem;
+    top: 1.875rem;
+    left: 1.25rem;
+    transform: rotate(25deg);
+    background: #08a795;
+    animation: none;
+}
+.bg-blurs4{
+    display: none;
+    top: 85%;
+    left: 2.25rem;
+    transform: rotate(-25deg);
+    background: #068315;
+    animation: none;
+}
+.container-images{
+    margin-top: 2.5rem;
+    z-index: 3;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+}
+.image-hero1, .image-hero2, .image-hero3, .image-hero4{
+    position: relative;
+    object-fit: contain;
+    border-radius: .4375rem;
+}
+.image-hero1{
+    width: 160px;
+    left: 50px;
+}
+.image-hero2{
+    width: 120px;
+    top: 60px;
+    left: 65px;
+    pointer-events: none;
+}
+.image-hero3{
+    width: 80px;
+    top: 137px;
+    right: 191px;
+    pointer-events: none;
+}
+.image-hero4{
+    bottom: 60px;
+    right: 80px;
+    width: 80px;
 }
 @media screen and (min-width: 22.5rem){
     .container-hero_title{
         margin: 4.375rem 0 1.5625rem .9375rem;
     }
     .container-hero_title_h1{
-        font-size: 4.2rem;
+        font-size: 3.4em;
         letter-spacing: -0.07rem;
     }
     .container-hero_title_h1 span{
-        line-height: 1;
+        line-height: 1.35;
     }
     .container-hero_title_p{
         font-size: 1.1rem;
     }
     .container-hero_btns_btn{
-        padding: .4375rem 1.375rem;
-        margin: .4375rem 3px 0 .9375rem;
+        padding: .5375rem 1.175rem;
+        margin: .375rem 3px 0 .9375rem;
         width: 7.8125rem;
         font-size: 1.12rem;
     }
     .container-hero_btns_btn:nth-child(2){
-        width: 10rem;
+        width: 9.7rem;
         font-size: 1.2em;
-        margin-top: .5625rem;
-        padding: 3px 0 .4375rem 0;
+        margin-top: .3725rem;
+        padding: .375rem 2px .48rem 0;
     }
     .container-hero_btns_btn_icon{
         font-size: 1.5rem;
         transform: translateY(.375rem);
     }
-    .container-hero_featured_title{
-        font-size: 2rem;
-        margin: 2.5rem 0 .9375rem 0; 
-    }
-    .container-hero_featured_name::before{
-        font-size: 4.8rem;
+    .container-images{
+        margin-top: 4rem;
     }
 }
-@media screen and (min-height: 46.25rem) and (min-width: 21.875rem) {
+@media screen and (min-height: 46.5rem) and (orientation: portrait) {
     .container-hero_title{
         margin-top: 5rem;
     }
     .container-hero_title_h1{
-        font-size: 4.2rem;
+        font-size: 3.5em;
     }
     .container-hero_title_h1 span{
-        line-height: 1.15;
+        line-height: 1.3;
     }
     .container-hero_btns_btn{
-        padding: .4375rem 1.4375rem;
+        padding: .42rem 1.4375rem;
         width: 7.8125rem;
         height: 2.3125rem;
         font-size: 1.15em;
@@ -171,6 +222,8 @@
     .container-hero_btns_btn:nth-child(2){
         width: 9.375rem;
         font-size: 1.2em;
+        margin-top: .48rem;
+        padding: .295rem 0rem;
     }
     .container-hero_featured{
         margin-top: 2.8125rem;
@@ -183,20 +236,20 @@
         font-size: 4.8rem;
     }
 }
-@media screen and (min-height: 48.75rem) and (min-width: 23.75rem) {
+@media screen and (min-height: 52.75rem) and (orientation: portrait) {
     .container-hero_title{
         margin: 5.3125rem 0 1.875rem 1.125rem;
     }
     .container-hero_title_h1{
-        font-size: 4.6em;
+        font-size: 3.75em;
     }
     .container-hero_title_h1 span{
-        line-height: 1.2;
+        line-height: 1.5;
     }
     .container-hero_btns_btn{
-        padding: .4375rem 1.4375rem;
-        margin-left: 1.125rem;
-        width: 9.0625rem;
+        padding: .4375rem 1.1375rem;
+        margin-left: 1.1rem;
+        width: 8.7rem;
         height: 2.375rem;
         font-size: 1.35em;
     }
@@ -204,25 +257,40 @@
         width: 10rem;
         font-size: 1.3em;
     }
-    .container-hero_featured_title{
-        font-size: 2.2em;
-        margin: 2.5rem 0;
+}
+@media screen and (min-height: 55.75rem) and (orientation: portrait) {
+    .container-hero_title{
+        margin: 5.3125rem 0 1.875rem 1.125rem;
     }
-    .container-hero_featured_name::before{
-        font-size: 5.4em;
+    .container-hero_title_h1{
+        font-size: 4em;
+    }
+    .container-hero_btns_btn{
+        padding: .53rem 1.5rem;
+        margin-left: 1.1rem;
+        width: 8.7rem;
+        height: 2.375rem;
+        font-size: 1.35em;
+    }
+    .container-hero_btns_btn:nth-child(2){
+        width: 10.5rem;
+        margin-top: .45rem;
+        padding: .48rem 0;
+        font-size: 1.3em;
+    }
+    .container-images{
+        margin-top: 4rem;
     }
 }
 @media screen and (min-width: 37.5rem){
     .container-hero_title{
-        justify-content: flex-start;
-        align-items: flex-start;
-        margin: 4.6875rem 0 0 1.5625rem;
+        margin: 4.4875rem 0 0 1.5625rem;
     }
     .container-hero_title_h1 span{
-        line-height: 1.1;
+        line-height: 1.3;
     }
     .container-hero_title_h1{
-        font-size: 5.7em;
+        font-size: 4.7em;
     }
     .container-hero_title_p{
         font-size: 1.2em;
@@ -236,7 +304,41 @@
         padding: 3px .625rem .5625rem .625rem;
     }
     .container-hero_btns_btn{
-        margin: .9375rem 1.875rem 0 0;
+        margin: .9375rem 1.575rem 0 0;
+    }
+    .bg-blurs, .bg-blurs2, .bg-blurs3{
+        width: 300px;
+        height: 120px;
+        top: 20px;
+        left: 200px;
+    }
+    .bg-blurs2{
+        left: -20px;
+    }
+    .bg-blurs3{
+        width: 300px;
+        height: 90px;
+        top: 40px;
+        left: 30px;
+    }
+    .image-hero1{
+        top: -10px;
+        left: 25px;
+    }
+    .image-hero2{
+        width: 130px;
+        top: 60px;
+        left: 65px;
+    }
+    .image-hero3{
+        width: 85px;
+        top: 137px;
+        right: 200px;
+    }
+    .image-hero4{
+        bottom: 50px;
+        right: 60px;
+        width: 70px;
     }
 }
 @media screen and (min-width: 40.625rem) and (min-height: 63.75rem) {
@@ -244,7 +346,7 @@
         margin: 5.9375rem 0 0 1.5625rem;
     }
     .container-hero_title_h1{
-        font-size: 7em;
+        font-size: 5.7em;
     }
     .container-hero_title_h1 span{
         line-height: 1.2;
@@ -264,51 +366,112 @@
         margin-top: .9375rem;
         padding: .4375rem 1.125rem .5313rem 1.125rem;
     }
-    .container-hero_featured_title{
-        font-size: 2.8em;
-        margin: 3.125rem 0 0 0;
+    .bg-blurs, .bg-blurs2, .bg-blurs3{
+        width: 21.875rem;
+        height: 8.75rem;
+        top: 5.625rem;
+        left: 18.75rem;
     }
-    .container-hero_featured_name::before{
-        font-size: 6.3em;
+    .bg-blurs2{
+        width: 18.75rem;
+        top: 6.25rem;
+        left: 1.25rem;
+    }
+    .bg-blurs3{
+        top: 3.75rem;
+        left: 2.5rem;
+    }
+    .container-images{
+        margin-top: 4rem;
+    }
+    .image-hero1{
+        top: .625rem;
+        left: .3125rem;
+        width: 11.875rem;
+    }
+    .image-hero2{
+        width: 10.625rem;
+        top: 7.5rem;
+        left: 4.0625rem;
+    }
+    .image-hero3{
+        width: 6.5625rem;
+        top: 12.9375rem;
+        right: 16.25rem;
+    }
+    .image-hero4{
+        bottom: 3.4375rem;
+        width: 5.9375rem;
     }
 }
-@media screen and (min-width: 59.375rem) and (min-height: 78.125rem){
+@media screen and (min-width: 60rem) and (orientation: portrait){
     .container-hero_title{
         margin: 7.1875rem 0 0 3.4375rem;
     }
     .container-hero_title_h1{
-        font-size: 8.5em;
-    }
-    .container-hero_title_h1 span{
-        line-height: 1.23;
+        font-size: 7.58em;
     }
     .container-hero_btns{
-        margin: 3.4375rem 0 0 3.4375rem;
+        margin: 3.1375rem 0 0 3.4375rem;
     }
     .container-hero_btns_btn{
-        padding: .8125rem 1.375rem;
         width: 15.9375rem;
         height: 2.8125rem;
-        font-size: 1.7em;
+        font-size: 1.8em;
     }
     .container-hero_btns_btn:nth-child(2){
         width: 15.9375rem;
         height: 2.8125rem;
-        font-size: 1.8em;
-        margin-top: .9375rem;
+        font-size: 1.9em;
         padding: .5rem 1.125rem 1.06rem 1.125rem;
     }
-    .container-hero_featured_title{
-        font-size: 3.8em;
-        margin: 4.375rem 0 3.125rem 0;
+    .bg-blurs, .bg-blurs2, .bg-blurs3{
+        width: 25.875rem;
+        height: 9.75rem;
+        top: 6.625rem;
+        left: 25.75rem;
     }
-    .container-hero_featured_name::before{
-        font-size: 8.3em;
+    .bg-blurs2{
+        width: 22.75rem;
+        top: 10.25rem;
+        left: 2.25rem;
+    }
+    .bg-blurs3{
+        width: 20.875rem;
+        left: 3.5rem;
+    }
+    .container-images{
+        margin-top: 5rem;
+    }
+    .image-hero1{
+        top: .625rem;
+        left: -.3125rem;
+        width: 14.875rem;
+    }
+    .image-hero2{
+        width: 13.225rem;
+        top: 9.5rem;
+        left: 6.0625rem;
+    }
+    .image-hero3{
+        width: 8.5625rem;
+        top: 14.9375rem;
+        right: 20.25rem;
+    }
+    .image-hero4{
+        left: -5rem;
+        width: 7.9375rem;
     }
 }
-@media screen and (min-width: 67.5rem){
+@media screen and (min-width: 64rem) and (orientation: landscape){
     .container-hero_bg{
         display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+    .container-hero_title_h1{
+        font-size: 4.5em;
+        letter-spacing: .5px;
     }
     .container-hero_title_h1 span{
         line-height: 1.2;
@@ -316,132 +479,133 @@
     .container-hero_title{
         justify-content: flex-start;
         align-items: flex-start;
-        margin: 16vh 0 0 2.8125rem;
-    }
-    .container-hero_title_h1{
-        font-size: 5.7em;
+        margin: 0 0 0 1rem;
     }
     .container-hero_btns{
-        margin: 2.5rem 0 0 2.8125rem;
+        margin: 2.5rem 0 0 1rem;
     }
     .container-hero_btns_btn{
         margin: .9375rem 1.875rem 0 0;
+        padding: .675rem 1.3rem;
     }
     .container-hero_btns_btn:nth-child(2){
         margin-top: 1rem;
-        padding: .375rem .75rem;
+        padding: .575rem .75rem;
     }
-    .container-hero_featured{
-        width: 18.75rem;
-        height: 12.5rem;
-        margin: 10.625rem 0 0 3.75rem;
+    .bg-blurs,.bg-blurs2,.bg-blurs3,.bg-blurs4{
+        filter: blur(5.4rem);
     }
-    .container-hero_featured_title{
-        font-size: 2.5rem;
+    .bg-blurs{
+        width: 12.875rem;
+        height: 9.15rem;
+        top: 1rem;
+        left: 7.75rem;
     }
-    .container-hero_featured_name::before{
-        font-size: 5.3rem;
+    .bg-blurs2{
+        width: 12.75rem;
+        top: 9.25rem;
+        left: 2rem;
     }
-    @keyframes animate{
+    .bg-blurs3{
+        width: 13.875rem;
+        height: 7rem;
+        top: 2rem;
+        left: -1rem;
+    }
+    .bg-blurs4{
+        display: flex;
+        width: 11.875rem;
+        height: 5rem;
+    }
+    @keyframes animateBlurs {
         0%{
-            content: 'Rap';
-            transition-duration: 2s;
-            font-size: 5.3rem;
-            letter-spacing: 0;
+            transform: translate(0) ;
         }
-        20%{
-            content: 'Trap';
-            transition-duration: 2s;
-            font-size: 5.3rem;
-            letter-spacing: 0;
-        }
-        40%{
-            content: 'Boombap';
-            transition-duration: 2s;
-            font-size: 4.8rem;
-            letter-spacing: -3px;
-        }
-        60%{
-            content: 'Drill';
-            transition-duration: 2s;
-            font-size: 5.3rem;
-            letter-spacing: -1px;
-        }
-        80%{
-            content: 'Plug';
-            transition-duration: 2s;
-            font-size: 5.3rem;
-            letter-spacing: 0;
+        50%{
+            transform: translate(-5.1875rem, -6.3125rem) ;
         }
         100%{
-            content: 'Pop';
-            transition-duration: 2s;
-            font-size: 5.3rem;
-            letter-spacing: 0;
+            transform: translate(0);
         }
+    }
+    @keyframes animateBlurs2 {
+        0%{
+            transform: translate(0);
+        }
+        50%{
+            transform: translate(10.1875rem, 4.3125rem);
+        }
+        100%{
+            transform: translate(0);
+        }
+    }
+    .container-images{
+        margin: 0 .5rem 3rem 1rem;
+    }
+    .image-hero1{
+        left: .4125rem;
+        width: 10.9rem;
+    }
+    .image-hero2{
+        width: 9.9rem;
+        top: 5rem;
+        left: 3.1rem;
+    }
+    .image-hero3{
+        width: 5.63rem;
+        top: 9.5rem;
+        right: 14.25rem;
+    }
+    .image-hero4{
+        left: -6.5rem;
+        bottom: 4.3rem;
+        width: 5rem;
     }
 }
 @media screen and (min-width: 81.25rem){
     .container-hero_title{
-        justify-content: flex-start;
-        align-items: flex-start;
-        margin: 18vh 0 0 3.75rem;
+        margin-left: 2rem;
+    }
+    .container-hero_title_h1{
+        font-size: 5em;
+        letter-spacing: 2px;
+    }
+    .container-hero_title_h1 span{
+        line-height: 1.3;
     }
     .container-hero_btns{
-        margin: 2.5rem 0 0 3.75rem;
+        margin: 2rem 0 0 2rem;
     }
-    .container-hero_featured{
-        width: 33.125rem;
-        height: 15.625rem;
-        margin: 9.375rem 0 0 6.25rem;
+    .bg-blurs{
+        width: 13.875rem;
+        height: 10.15rem;
+        top: 2rem;
+        left: 7.75rem;
     }
-    .container-hero_featured_title{
-        font-size: 3.1rem;
+    .bg-blurs2{
+        width: 13.75rem;
+        top: 13.25rem;
+        left: 2rem;
     }
-    .container-hero_btns_btn:nth-child(2){
-        margin-top: .9375rem;
-        padding: 2px .75rem .5rem 0;
+    .container-images{
+        margin: 0 .5rem 6rem 1rem;
     }
-    .container-hero_featured_name::before{
-        font-size: 7.3rem;
-        font-weight: 700;
+    .image-hero1{
+        left: -.4125rem;
+        width: 13rem;
     }
-    @keyframes animate{
-        0%{
-            content: 'Rap';
-            transition-duration: 2s;
-            font-size: 7.1rem;
-            letter-spacing: 0;
-        }
-        20%{
-            content: 'Trap';
-            transition-duration: 2s;
-            font-size: 7.1rem;
-            letter-spacing: 0;
-        }
-        40%{
-            content: 'Boombap';
-            transition-duration: 2s;
-            font-size: 6.8rem;
-            letter-spacing: -2px;
-        }
-        60%{
-            content: 'Drill';
-            transition-duration: 2s;
-            font-size: 7.3rem;
-            letter-spacing: -1px;
-        }
-        80%{
-            content: 'Plug';
-            transition-duration: 2s;
-            font-size: 7.3rem;
-            letter-spacing: 0;
-        }
-        100%{
-            content: 'Pop';
-            transition-duration: 2s;
-            font-size: 7.3rem;
-            letter-spacing: 0;
-        }
+    .image-hero2{
+        width: 11rem;
+        top: 6rem;
+    }
+    .image-hero3{
+        width: 6.63rem;
+        top: 11.5rem;
+        right: 17.25rem;
+    }
+    .image-hero4{
+        left: -8.5rem;
+        bottom: 5.5rem;
+        width: 6rem;
     }
 }

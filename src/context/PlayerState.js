@@ -1,12 +1,12 @@
-import React, {useReducer, useState} from 'react';
+import {useReducer, useState} from 'react';
 import playerReducer from './PlayerReducer';
 import BeatsContext from './BeatsContext';
-import { BeatsFiles } from '../components/BeatStore/BeatsFiles';
+import { useBeats } from '../hooks/useBeats';
 
-export const PlayerState = (props) => {
+export const PlayerState = ({children}) => {
+  const [dataBeats, loading] = useBeats()
   const initialState = {
         currentSong: 0,
-        beatsFiles: BeatsFiles,
         repeat: false,
         random: false,
         playing: false,
@@ -22,7 +22,7 @@ export const PlayerState = (props) => {
 
   const prevSong = () => {
       if (state.currentSong === 0){
-          setCurrent(state.beatsFiles.length - 1);
+          setCurrent(dataBeats.length - 1);
           setIsPlaying(false);
       } else{
           setCurrent(state.currentSong - 1);
@@ -31,7 +31,7 @@ export const PlayerState = (props) => {
   }
   
   const nextSong = () => {
-      if (state.currentSong === state.beatsFiles.length - 1){
+      if (state.currentSong === dataBeats.length - 1){
           setCurrent(0);
           setIsPlaying(false);
       } else{
@@ -44,12 +44,12 @@ export const PlayerState = (props) => {
     if(state.random){
         return dispatch({
             type: 'SET_CURRENT_SONG',
-            data: ~ (Math.random() * state.beatsFiles.length),
+            data: ~ (Math.random() * dataBeats.length),
         })
     }else {
         if(state.repeat){
             nextSong();
-        }else if (state.currentSong === state.beatsFiles.length - 1){
+        }else if (state.currentSong === dataBeats.length - 1){
             return
         } else {
             nextSong();
@@ -60,10 +60,11 @@ export const PlayerState = (props) => {
     return  <BeatsContext.Provider 
                 value={{
                     currentSong: state.currentSong,
-                    beatsFiles: state.beatsFiles,
                     repeat: state.repeat,
                     random: state.random,
                     playing: state.playing,
+                    dataBeats: dataBeats,
+                    loading: loading,
                     setCurrent,
                     nextSong,
                     prevSong,
@@ -74,6 +75,6 @@ export const PlayerState = (props) => {
                     setFooterPlayer,
                     footerPlayer
                 }}>
-                    {props.children}
+                    {children}
             </BeatsContext.Provider>
 }

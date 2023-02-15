@@ -50,7 +50,7 @@ const AboutUs = memo(({ activeIndex, dataSlider, loading }) => {
             />
             <h2 className={title.length >= 8 ? 'slide-title slide-title-long' : 'slide-title'}>{title}</h2>
             <h3 className='slide-authors'>{authors}</h3>
-            <p className='slide-text'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa quos enim deserunt magnam sed nihil id odit nesciunt officia incidunt dolorem, quia hic obcaecati odio atque! Suscipit laborum delectus nisi?Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illum soluta, enim</p>
+            <p className='slide-text'>El artista Tian VCK tenía compuesto un tema con KKKevin, necesitaban una grabación y producción a la altura de este hit. Colaboramos grabando las voces con una cadena de audio profesional, sin equipos millonarios, pero con un excelente asesoramiento. Mezcla y master 100% digital pero con un sonido cálido y profesional, logrando así ¡5 Millones de visitas en plataformas de manera 100% Independiente!</p>
             <button 
               onClick={()=> {getVideo(video) }}
               className='slide-btn'

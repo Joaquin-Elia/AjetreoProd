@@ -1,5 +1,5 @@
 import React from 'react';
-import imgBg from '../../../../imgs/abstractBg.jpg'
+import imgBg from '../../../../imgs/mesh-gradient.webp';
 import FormSubscribe from './FormSubscribe/FormSubscribe';
 import './ModalSubscribe.css'
 

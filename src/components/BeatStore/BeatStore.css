@@ -1,16 +1,26 @@
+.all-beats-loading{
+    background: rgb(19, 19, 19);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    height: 90vh;
+}
+
 .container-beatstore{
     background: rgb(19, 19, 19);
-    width: 100%;
-    min-height: 100vh;
     color: #fff;
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
     row-gap: 1.5625rem;
     padding: 6.25rem 0 8.75rem .3125rem;
+    overflow: hidden;
 }
 .beats-container{
-    width: 43%;
-    height: 10.9375rem;
+    width: 11rem;
+    height: 13.9375rem;
     background: rgb(173,8,8);
     background: linear-gradient(146deg, rgba(173,8,8,1) 0%, rgba(120,14,14,1) 29%, rgba(232,7,7,1) 72%, rgba(187,8,8,1) 100%);
     margin: 0 .5625rem;
@@ -27,9 +37,11 @@
 }
 .img-beat{
     width: 100%;
-    height: 5rem;
+    height: 6rem;
     object-fit: cover;
     border-radius: .4375rem;
+    user-select: none;
+    pointer-events: none;
 }
 .beat-info{
     height: 100%;
@@ -74,15 +86,15 @@
 }
 @media screen and (min-width: 21.25rem){
     .beats-container{
-        width: 42%;
-        height: 12.5rem;
+        width: 15rem;
+        height: 18.5rem;
         margin: 0 .75rem;
     }
     .img-beat{
-        height: 5.9375rem;
+        height: 8.3rem;
     }
     .beat-info{
-        margin: .25rem 0 0 .4375rem;
+        margin: .35rem 0 0 .5375rem;
     }
     .beat-info-title{
         font-size: 1em;
@@ -91,8 +103,8 @@
         font-size: 1.0625em; 
     }
     .add-beat-cart{
-        width: 6.875rem;
-        height: 1.6875rem;
+        width: 7rem;
+        height: 1.9rem;
         font-size: 1.0938rem;
         margin: .625rem 0 0 .4375rem;
         padding: 0 2px 3px 2px;
@@ -142,12 +154,12 @@
         padding: 8.125rem 0 5rem .9375rem;
     }
     .beats-container{
-        width: 44%;
-        height: 17.5rem;
+        width: 17rem;
+        height: 20rem;
         margin: 0 .9375rem 1.25rem .9375rem;
     }
     .img-beat{
-        height: 9.0625rem;
+        height: 10rem;
     }
     .beat-info{
         margin: .4375rem 0 0 .75rem;
@@ -172,12 +184,12 @@
         padding: 8.125rem 0 5rem 1.5625rem;
     }
     .beats-container{
-        width: 22%;
-        height: 17.5rem;
+        width: 18rem;
+        height: 23rem;
         margin: 0 .9375rem 1.25rem .9375rem;
     }
     .img-beat{
-        height: 9.0625rem;
+        height: 13rem;
     }
     .beat-info{
         margin: .4375rem 0 0 .75rem;
@@ -207,6 +219,9 @@
     flex-direction: column;
     justify-content: center;
     text-align: center;
+    position: relative;
+    z-index: 2;
+    overflow: hidden;
 }
 .container-beats-home-title{
     color: rgb(224, 224, 224);
@@ -219,6 +234,22 @@
 .beats-store_recent{
     color: rgb(224, 224, 224);
     margin-top: 6.5625rem;
+}
+.title-beats-page{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.bg-text{
+    display: none;
+    position: absolute;
+    width: 100%;
+    word-wrap: break-word;
+    z-index: -1;
+    color: #ffffff11;
+    text-transform: uppercase;
+    transition: ease 2s;
+    user-select: none;
 }
 .custom-scroll::-webkit-scrollbar{
     height: 0;
@@ -262,7 +293,7 @@
     font-size: 1.0625em;
 }
 .swiper-button-prev, .swiper-button-next{
-    color: #30c200;
+    color: rgb(255, 11, 11);
     width: 2.5rem;
     height: 10rem;
     margin-left: -0.9375rem;
@@ -298,7 +329,7 @@
 }
 .btn-go-allbeats-container{
     font-size: 1.125em;
-    background-color: #2fbc00;
+    background-color: rgb(173,8,8);
     color: #fff;
     border-radius: .4375rem;
     cursor: pointer;
@@ -319,26 +350,37 @@
 @media screen and (min-width: 39.375rem){
     .container-card-beat{
         margin: 1.875rem 0 -0.625rem 2.1875rem;
-        padding-right: 1.25rem;
+        /* padding-right: 1.25rem; */
         transform: perspective(69.75rem) rotateY(19deg);
+    }
+    .bg-text{
+        top: 3.5rem;
+        font-size: 7.2rem;
+        display: block;
     }
 }
 @media screen and (min-width: 46.875rem){
     .container-card-beat{
         margin: 1.875rem 0 .625rem 3.8125rem;
-        padding-right: 1.25rem;
     }
 }
 @media screen and (min-width: 62.5rem){
+    .container-card-beat{
+        margin: 1.875rem 0 .625rem 3.8125rem;
+        padding-right: 4.25rem;
+    }
     .container-beats-home{
         overflow: hidden;
-        padding: 5.625rem 3.125rem 1.625rem 0;
+        padding: 5.625rem 0.125rem 1.625rem 0;
+    }
+    .bg-text{
+        top: 5rem;
+        font-size: 9.2rem;
     }
     .container-card-beat{
         display: block;
         height: 13.9rem;
         margin: 1.875rem 0 3.25rem 2.5rem;
-        padding-right: 1.25rem;
         transform: perspective(0) rotateY(0);
         -webkit-box-reflect: below 0 linear-gradient(transparent, transparent, rgba(0,0,0,.4))
     }

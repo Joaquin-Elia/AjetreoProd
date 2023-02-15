@@ -1,10 +1,11 @@
 import React from 'react';
 import {reasonsData} from './aboutUsData';
-import {motion, useViewportScroll, useTransform } from 'framer-motion';
+import {motion, useScroll, useTransform } from 'framer-motion';
 import './AboutUs.css';
+import CookiesAccordion from '../../CookiesPolicy/CookiesAccordion/CookiesAccordion';
 
 const AboutUs = () => {
-  const {scrollYProgress} = useViewportScroll();
+  const {scrollYProgress} = useScroll();
   const leftBg = useTransform(scrollYProgress, [0.430, 0.530], ['7vh', '60vh']);
   const rightSideScale = useTransform(scrollYProgress, [0.250, 0.530], [0, 1]);
   const rightSideY= useTransform(scrollYProgress, [0, 0.7], ['-20vh', '10vh']);
@@ -31,6 +32,7 @@ const AboutUs = () => {
               <p className="reasons-p">{description}</p>
             </div>
           )}
+      {/* <CookiesAccordion /> */}
         </motion.div>
       </div>
       <div className="who-we-are">

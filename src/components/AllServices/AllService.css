@@ -1,11 +1,5 @@
 .all_services_bg{
-    position: absolute;
-    width: 100%;
-    min-height: 100vh;
-    top: 0;
-    left: 0;
     background-color: rgb(19, 18, 18);
-    overflow: hidden;
     padding: 3.125rem .9375rem;
 }
 .all_services_cards_loading{

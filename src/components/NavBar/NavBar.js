@@ -3,7 +3,7 @@ import { Link, NavLink } from 'react-router-dom';
 import MenuItems from './MenuItems';
 import { CgMenuGridO, CgClose } from 'react-icons/cg';
 import CartIcon from './CartIcon';
-import Logo  from '../../imgs/logo.png';
+import Logo  from '../../imgs/logoHeader.webp';
 import { UseClickOutside } from '../../hooks/useClickOutside';
 import './NavBar.css';
 
@@ -50,38 +50,42 @@ const NavBar = () => {
             >
                 {menuClick ? <CgClose /> : <CgMenuGridO />}
             </div>
-            <ul className={menuClick ? 'nav-menu menu-active' : 'nav-menu'}>
-                {MenuItems.map(({id, title, cName, url, src})=> { 
+            <div className='container-links'>
+                <ul className={menuClick ? 'nav-menu menu-active' : 'nav-menu'}>
+                    {MenuItems.map(({id, title, cName, url, src})=> { 
 
-                    return (url ? 
-                    <li key={id}>
-                        <NavLink 
-                            className={cName}
-                            to={url}
-                            onClick={()=> setMenuClick(false)}
-                        >
-                            {title}
-                        </NavLink>
-                    </li> :
-                    
-                    <li key={id}>
-                        <a
-                            className={cName}
-                            href={src}
-                            onClick={()=> setMenuClick(false)}
-                        >
-                            {title}
-                        </a>
-                    </li>)
-                }
-            )}
-            </ul>
-            <div className='cart-container'>
-                <div
-                    onClick={()=> setMenuClick(false)}
-                > 
-                    <CartIcon />
+                        return (url ? 
+                        <li key={id}>
+                            <NavLink 
+                                className={cName}
+                                to={url}
+                                onClick={()=> setMenuClick(false)}
+                            >
+                                {title}
+                            </NavLink>
+                        </li> :
+                        
+                        <li key={id}>
+                            <a
+                                className={cName}
+                                href={src}
+                                onClick={()=> setMenuClick(false)}
+                            >
+                                {title}
+                            </a>
+                        </li>)
+                    }
+                )}
+                </ul>
+                <div className='cart-container'>
+                    {/* <Link to='/register' className=''>Regístrate</Link> */}
+                    <div
+                        onClick={()=> setMenuClick(false)}
+                    > 
+                        <CartIcon />
+                    </div>
                 </div>
+
             </div>
         </nav>
     </>

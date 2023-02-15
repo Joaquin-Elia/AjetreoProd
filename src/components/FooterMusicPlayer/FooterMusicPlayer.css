@@ -83,6 +83,7 @@
     margin: .5938rem 0 0 .125rem;
     cursor: pointer;
     position: absolute;
+
 }
 .footer-volume-bar::-webkit-slider-thumb{
     -webkit-appearance: none;
@@ -90,6 +91,7 @@
     width: 1rem;
     border-radius: 50%;
     background: rgb(32, 179, 6);
+    transition: .3s ease;
     margin-top: -0.2813rem;
 }
 .footer-volume-bar::-moz-range-thumb{
@@ -98,6 +100,7 @@
     width: 1rem;
     border-radius: 50%;
     background: rgb(53, 164, 1);
+    transition: .3s ease;
     margin-top: -0.2813rem;
 }
 .footer-volume-bar:hover::-webkit-slider-thumb{
@@ -119,6 +122,7 @@
   }
 .footer-volume-bar:hover::-webkit-slider-runnable-track{
     background: rgb(41, 177, 0);
+    transition: .3s ease;
   }
 .btns-audio-functions{
     position: absolute;
@@ -126,12 +130,25 @@
     right: 0;
     top: 50%;
     transform: translateY(-40%);
-    font-size: 2.1em;
+    font-size: 1.8em;
     color: rgb(253, 253, 253);
     cursor: pointer;
 }
 .btn-pause-play{
-    transform: translateY(-2.5px);
+    transform: translateY(-2px);
+}
+.prev-next-audio{
+    display: none;
+}
+.btn-close-footer{
+    margin-left: .5rem;
+    font-size: 1.02em;
+    transition: .3s ease;
+}
+.btn-close-footer:hover{
+    background-color: rgb(224, 224, 224);
+    color: black;
+    border-radius: .4375rem;
 }
 @media screen and (min-width: 21.25rem) {
     .footer-img-beat{
@@ -148,10 +165,15 @@
     }
     .btns-audio-functions{
         right: .125rem;
-        font-size: 2.7em;
+        font-size: 2em;
     }
     .btn-pause-play{
-        transform: translateY(0px);
+        transform: translateY(1px);
+    }
+    .btn-close-footer{
+        margin-left: .5rem;
+        font-size: 1.03em;
+        transform: translateY(1.2px);
     }
     .time-song-current{
         bottom: 4.7rem;
@@ -168,10 +190,13 @@
 @media screen and (min-width: 37.5rem) {
     .btns-audio-functions{
         right: .3125rem;
-        font-size: 2.375em;
+        font-size: 2.1em;
     }
     .btn-pause-play{
         transform: translateY(-2.5px);
+    }
+    .prev-next-audio{
+        display: block;
     }
 }
 @media screen and (min-width: 50rem) {
@@ -224,5 +249,12 @@
         margin: .6875rem 0 0 .5rem;
         cursor: pointer;
         position: absolute;
+    }
+    .btns-audio-functions{
+        font-size: 2.3em;
+        margin-right: .5rem;
+    }
+    .btn-close-footer{
+        transform: translateY(-.8px);
     }
 }

@@ -1,4 +1,4 @@
-import React, { useContext, useState} from 'react';
+import React, { useContext, useEffect, useState} from 'react';
 import { Link } from 'react-router-dom';
 import BeatsContext from '../../context/BeatsContext';
 import { FooterMusicPlayer } from '../FooterMusicPlayer/FooterMusicPlayer';
@@ -11,20 +11,31 @@ import "swiper/css/navigation";
 
 const BeatStore = () => {
   const {
-    beatsFiles, 
+    dataBeats,
     setCurrent, 
     setFooterPlayer, 
     footerPlayer, 
     currentSong } = useContext(BeatsContext);
 
   const [changeSong, setChangeSong] = useState(false);
+  useEffect(() => {
+    const onLoad = () => {
+      window.scrollTo({top: 0});
+    }
+    return () => onLoad();
+    
+  }, []);
 
   return (
     <>
         <div className='container-beats-home' >
+          <div className="title-beats-page">
             <h2 className='container-beats-home-title'>Catalogo de beats</h2>
+            <h3 className='bg-text'>Catalogo</h3>
+            {/* <h3 className='bg-text2'>logo</h3> */}
+          </div>
             <div className='beats-store_titles'>
-              <h3 className='beats-store_populars'>Los mas populares:</h3>
+              {/* <h3 className='beats-store_populars'>Los mas populares:</h3> */}
               <div className="container-card-beat custom-scroll">
                 <Swiper
                   loop={true}
@@ -57,7 +68,7 @@ const BeatStore = () => {
                       spaceBetween: 25,
                     }}}
                 >
-                  {beatsFiles.map(({id, title, img}, i) => 
+                  {dataBeats.map(({id, title, img}, i) => 
                     <div
                       key={id}
                       className={'beat-card ' + (footerPlayer && currentSong === i ? "selected-beat" : '')}
@@ -109,7 +120,7 @@ const BeatStore = () => {
             </div>
         </div> 
         {footerPlayer && 
-          <FooterMusicPlayer footerPlayer={footerPlayer} currentSong={currentSong} changeSong={changeSong}/>
+          <FooterMusicPlayer footerPlayer={footerPlayer} setFooterPlayer={setFooterPlayer} currentSong={currentSong} changeSong={changeSong}/>
         }
     </>
   )

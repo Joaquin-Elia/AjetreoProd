@@ -14,6 +14,12 @@ const HeroService = () => {
   
   return (
     <div className='service-container'>
+        {loading ? 
+          <div className='service-container-loading'>
+            <LoadingAnimation /> 
+          </div> 
+            : 
+          <>
       <div className='service-container-text-animated'>
           <h2 className='service-container_text-animated-transparent'>Ajetreo Services</h2>
           <h2>Ajetreo Services</h2>
@@ -21,20 +27,13 @@ const HeroService = () => {
           <h2>Ajetreo Services</h2>
       </div>
       <>
-        {/* <p>Comenzar de cero en el mundo de la musica y subir tus canciones es mas simple de lo que pensás</p>
-        <h2>Nuestros servicios</h2> */}
-        {loading ? 
-          <div className='service-container-loading'>
-            <LoadingAnimation /> 
-          </div> 
-            : 
-          <>
+        {/* <p>Comenzar de cero en el mundo de la musica y subir tus canciones es mas simple de lo que pensás</p> */}
           <div className='service-container-service custom-scroll'>
             {heroServiceData.map(({id, img, title, description})=> 
               <div
                 className='service-container_service-item' 
                 key={id} 
-              > 
+              >
                 <img 
                   src={img}
                   alt={`Icono ${title}`}
@@ -57,8 +56,8 @@ const HeroService = () => {
             /> 
         </Link>
         </div>
-      </>}
       </>
+      </>}
     </div>
     // sos un artista o queres iniciarte en la musica? entonces te podemos ayudar, tenemos la mejor variedad de beats y licencias para que puedas crear tu musica y subirla a tus sitios favoritos
   )

@@ -10,7 +10,7 @@ export const UserProfile = () => {
     const [dataOrders, loadingOrders] = useOrders();
     useSEO({title: 'Perfil de el usuario'})
 
-    const userOrders = dataOrders.filter(({buyer}) => {
+    const userOrders = dataOrders.filter(({buyer, uid}) => {
         if(user.email === 'joaquin.elia@hotmail.com'){
             return dataOrders;
         } return (user.email === buyer);
@@ -39,7 +39,7 @@ export const UserProfile = () => {
                     Cerrar sesión
                 </button>
             </div>
-            {userOrders.length >= 1 && <h2>Tus pedidos:</h2>}
+            {userOrders.length > 0 && <h2>Tus pedidos:</h2>}
             
             {dataOrders && <> {
                 loadingOrders ? <LoadingAnimation /> : 

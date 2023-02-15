@@ -14,7 +14,6 @@
 .scroll-left-bg{
     height: 20vh;
     background-color: #96ef1d;
-    /* color: #fff; */
     transition: 1s cubic-bezier(.165, .84, .44, 1);
     border-radius: .25rem;
 }

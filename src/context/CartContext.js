@@ -4,17 +4,18 @@ import BeatsContext from './BeatsContext';
 
 export const CartContext = createContext()
 
-const CartProvider = (props) => {
-  const {beatsFiles} = useContext(BeatsContext);
+const CartProvider = ({children}) => {
+  const {dataBeats} = useContext(BeatsContext);
   const [products, setProducts] = useState([]);
   const [beats, setBeats] = useState([]);
   const [cart, setCart] = useState([]);
   const [total, setTotal] = useState(0);
-  const [dataServices, loading] = useFirestore()
+  const [license, setLicense] = useState('Mp3 sin TAG')
+  const [dataServices, loading] = useFirestore();
 
   useEffect(() => {
     const product = dataServices;
-    const beat = beatsFiles;
+    const beat = dataBeats;
     if (product) {
       setProducts(product);
     } else {
@@ -24,7 +25,7 @@ const CartProvider = (props) => {
     } else{
       setBeats([])
     }
-  }, [dataServices, beatsFiles])
+  }, [dataServices, dataBeats])
 
   const addItem = (id) => {
     // funcion que evalua que item.id sea diferente al id,
@@ -50,26 +51,34 @@ const CartProvider = (props) => {
   useEffect(() =>{
     const getTotal = () =>{
       const res = cart.reduce((prev, item)=> {
-        return prev + (item.price)
+        if (license === 'Stems en WAV'){
+            return prev + (item.price * 1.8);
+          } else if (license === 'WAV sin TAG') {
+             return prev + (item.price * 1.5);
+          } 
+          return prev + (item.price);
       }, 0)
       setTotal(res)
   }
   getTotal()
-  }, [cart])
+  }, [cart, license])
+
 
   useEffect(() => {
     // revisando si hay algo en cart
-    const dataCart = JSON.parse(localStorage.getItem('dataCart')
-    )
+    const dataCart = JSON.parse(localStorage.getItem('dataCart'))
+    const dataLicense = JSON.parse(localStorage.getItem('dataLicense'))
     if (dataCart) {
       setCart(dataCart)
     } 
+    setLicense(dataLicense)
   },[])
   
   // si hay algo en cart entonces lo guardo 
   useEffect(() =>{
     localStorage.setItem('dataCart', JSON.stringify(cart))
-  },[cart])
+    localStorage.setItem('dataLicense', JSON.stringify(license))
+  },[cart, license])
 
   const value = {
     products: [products],
@@ -77,11 +86,12 @@ const CartProvider = (props) => {
     addItem: addItem,
     cart: [cart, setCart],
     total: [total, setTotal],
+    license: [license],
   }
 
   return (
         <CartContext.Provider value={value}>
-            {props.children}
+            {children}
         </CartContext.Provider>
   )
 }

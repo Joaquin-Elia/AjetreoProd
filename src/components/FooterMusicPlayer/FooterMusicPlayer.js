@@ -1,14 +1,14 @@
 import React, { useContext, useEffect, useRef, useState } from 'react';
-import {MdSkipNext, MdSkipPrevious, MdOutlinePauseCircleFilled, MdPlayCircle} from 'react-icons/md';
-import {IoVolumeLowOutline, IoVolumeMediumOutline, IoVolumeMuteOutline, IoVolumeHighOutline} from 'react-icons/io5'
+import {MdSkipNext, MdSkipPrevious} from 'react-icons/md';
+import {IoVolumeLowOutline, IoVolumeMediumOutline, IoVolumeMuteOutline, IoVolumeHighOutline, IoPlay, IoPause, IoClose} from 'react-icons/io5'
 import BeatsContext from '../../context/BeatsContext';
 import {motion} from 'framer-motion';
 import './FooterMusicPlayer.css';
 
-export const FooterMusicPlayer = ({footerPlayer, changeSong}) => {
+export const FooterMusicPlayer = ({footerPlayer, setFooterPlayer, changeSong}) => {
     const {
         currentSong,
-        beatsFiles,
+        dataBeats,
         nextSong,
         prevSong,
         togglePlaying,
@@ -85,13 +85,13 @@ export const FooterMusicPlayer = ({footerPlayer, changeSong}) => {
                 <img 
                     loading='lazy'
                     className='footer-img-beat'
-                    src={beatsFiles[currentSong].img}
-                    alt={beatsFiles[currentSong].title}
+                    src={dataBeats[currentSong].img}
+                    alt={dataBeats[currentSong].title}
                 />
                 <div className='container-title-volume'>
                     <h5 
                         className='title-footer-beat'>
-                        {beatsFiles[currentSong].title}
+                        {dataBeats[currentSong].title}
                     </h5>
                     <div className='container-title-volume-icons'>
                         {(stateVolume === 0 && <IoVolumeMuteOutline onClick={() => unmuteBeat()}/>) || 
@@ -115,22 +115,32 @@ export const FooterMusicPlayer = ({footerPlayer, changeSong}) => {
                     onEnded={handleEnd}
                     preload='true'
                     controlsList='nodownload'
-                    src={beatsFiles[currentSong].audio}
+                    src={dataBeats[currentSong].audio}
                 />
                 <div className="btns-audio-functions">
-                    <MdSkipPrevious onClick={prevSong} />
+                    <MdSkipPrevious 
+                        onClick={prevSong}
+                        className='prev-next-audio'
+                    />
                     <div onClick={() => {
                         togglePlaying();
                         toggleAudio();
                     }}>
                         <div className='btn-pause-play'>
                             {isPlaying ? 
-                                <MdOutlinePauseCircleFilled onClick={() =>{setIsPlaying(false)}} /> : 
-                                <MdPlayCircle onClick={() => setIsPlaying(true)} />
+                                <IoPause onClick={() =>{setIsPlaying(false)}} /> : 
+                                <IoPlay onClick={() => setIsPlaying(true)} />
                             }
                         </div>
                     </div>
-                    <MdSkipNext onClick={nextSong}/>
+                    <MdSkipNext 
+                        className='prev-next-audio'
+                        onClick={nextSong}
+                    />
+                    <IoClose 
+                        className='btn-close-footer'
+                        onClick={() => setFooterPlayer(!footerPlayer)}
+                    />
                 </div>
             </div>
         </motion.div>

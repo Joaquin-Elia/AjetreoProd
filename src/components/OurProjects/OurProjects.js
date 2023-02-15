@@ -1,9 +1,9 @@
 import React from 'react';
-import {motion, useViewportScroll, useTransform} from 'framer-motion';
+import {motion, useScroll, useTransform} from 'framer-motion';
 import './OurProjects.css';
 
 const OurProjects = () => { 
-    const {scrollYProgress} = useViewportScroll();
+    const {scrollYProgress} = useScroll();
     const titleScrollX = useTransform(scrollYProgress, [0.630, .85], [0, -680]);
     
   return (

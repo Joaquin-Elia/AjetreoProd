@@ -1,4 +1,4 @@
-import React from 'react';
+import { useEffect } from 'react';
 import AllServiceItem from './AllServiceItem';
 import { useFirestore } from '../../hooks/useFirestore';
 import LoadingAnimation from '../LoadingAnimation/LoadingAnimation';
@@ -11,6 +11,14 @@ const AllService = () => {
     ? 'Cargando...' 
     : dataServices ? 'Services' : ''
   useSEO({title, description: 'Services'})
+
+  useEffect(() => {
+    const onLoad = () => {
+      window.scrollTo({top: 0});
+    }
+    return () => onLoad();
+    
+  }, []);
 
   return (
     <div className='all_services_bg'>

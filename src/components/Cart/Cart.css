@@ -2,11 +2,7 @@
     color: #fff;
 }
 .cart_bg{
-    position: absolute;
     min-height: 100vh;
-    top: 0;
-    left: 0;
-    width: 100%;
     background-color: rgb(18, 16, 16);
     padding-top: 6.25rem;
 }
@@ -83,21 +79,24 @@
 }
 .cart_items_title{
     margin: 0 .625rem;
-    font-size: 1em;
+    font-size: .8em;
     max-width: 5.625rem;
     text-align: center;
 }
 .cart_items_price{
-    font-size: 1.0625em;
+    font-size: 1em;
     width: 5.625rem;
-    padding: 0 .3125rem;
+    padding-left: .125rem;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
 }
+.cart_items_license{
+    font-size: .75em;
+}
 .price_badge{
-    margin-right: .3125rem;
+    margin-right: .2325rem;
 }
 .items_delete_container{
     position: relative;
@@ -174,10 +173,13 @@
         max-width: 5rem;
     }
     .cart_items_title{
-        font-size: 1.1875em;
+        font-size: 1em;
+    }
+    .cart_items_license{
+        font-size: .85em;
     }
     .cart_items_price{
-        font-size: 1.375em;
+        font-size: 1.175em;
     }
     .cart_items_delete{
         margin: 0 .5rem;
@@ -206,7 +208,13 @@
         min-width: 7.5rem;
     }
     .cart_items_title{
-        font-size: 1.25em;
+        font-size: 1.15em;
+    }
+    .cart_items_license{
+        font-size: .9em;
+    }
+    .cart_items_price{
+        font-size: 1.35em;
     }
     .cart_items_delete{
         font-size: 1.3125em;
@@ -231,8 +239,11 @@
         min-height: 6.875rem;
     }
     .cart_items_title{
-        font-size: 1.375em;
+        font-size: 1.2em;
         min-width: 12.5rem;
+    }
+    .cart_items_license{
+        font-size: 1.1em;
     }
     .cart_items_delete{
         font-size: 1.3125em;
@@ -241,5 +252,6 @@
     }
     .cart_items_price{
         margin-left: 2.1875rem;
+        font-size: 1.4em;
     }
 }

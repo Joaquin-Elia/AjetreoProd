@@ -1,0 +1,10 @@
+# https://www.robotstxt.org/robotstxt.html
+User-agent: *
+Allow: /
+Allow: /services
+Allow: /beatstore
+Allow: /cart
+Allow: /register
+Allow: /login
+Disallow: /nosotros
+Disallow: https://wa.link/o8foo4

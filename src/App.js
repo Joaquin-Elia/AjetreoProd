@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect} from 'react';
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
 import NavBar from './components/NavBar/NavBar';
 import Home from './components/Home/Home';
@@ -21,6 +21,19 @@ import Footer from './components/Footer/Footer';
 import './App.css';
 
 function App() {
+
+  useEffect(() => {
+    const onLoad = () => {
+      window.scrollTo({top: 0})
+    }
+
+    window.addEventListener("load", onLoad);
+
+    return () => {
+      window.removeEventListener("load", onLoad);
+    }
+  }, []);
+
   return (
     <AuthProvider>
       <PlayerState>
@@ -32,10 +45,10 @@ function App() {
               <BtnWhatsApp />
               <ScrollToTop />
               <Routes>
-                <Route exact path='/' element={ <Home/> }/>
-                <Route exact path='/service' element={ <AllService/> }/>
-                <Route exact path='/beatstore' element={ <AllBeats /> }/>
-                <Route exact path='/cart' element={ <Cart />}/>
+                <Route exact path='/' element={<Home/> }/>
+                <Route exact path='/service' element={<AllService/> }/>
+                <Route exact path='/beatstore' element={<AllBeats /> }/>
+                <Route exact path='/cart' element={<Cart />}/>
                 <Route exact path='/login' element={<Login />}/>
                 <Route exact path='/register' element={<Register />}/>
                 <Route exact path='/reset-password' element={<ResetPassword />}/>

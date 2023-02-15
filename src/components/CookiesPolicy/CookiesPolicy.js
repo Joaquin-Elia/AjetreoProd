@@ -1,37 +1,8 @@
-import React, { useState } from 'react';
-import { Accordion } from '../Accordion/Accordion';
+import React from 'react';
+import CookiesAccordion from './CookiesAccordion/CookiesAccordion';
 import './CookiesPolicy.css';
 
 export const CookiesPolicy = () => {
-  const [accordionData] = useState([
-    {
-        id: 1,
-        title: 'YouTube',
-        cookieType: 'Funcional',
-        description: 'Usamos YouTube para mostrar videos.',
-        linkDescription: 'https://cookiedatabase.org/service/youtube/',
-        moreInfo: 'Para mas información, por favor, lee la ',
-        linkMoreInfo: 'https://policies.google.com/privacy'
-      },
-      {
-        id: 2,
-        title: 'PayPal',
-        cookieType: 'Funcional',
-        description: 'Usamos PayPal para el procesamiento de pagos.',
-        linkDescription: 'https://cookiedatabase.org/service/paypal/',
-        moreInfo: 'Para mas información, por favor, lee la ',
-        linkMoreInfo: 'https://www.paypal.com/uk/webapps/mpp/ua/privacy-full'
-      },
-      {
-        id: 3,
-        title: 'Google Analytics',
-        cookieType: 'Analitica',
-        description: 'Usamos Google Analytics para conseguir estadisticas.',
-        linkDescription: 'https://cookiedatabase.org/service/google-analytics/',
-        moreInfo: 'Para mas información, por favor, lee la ',
-        linkMoreInfo: 'https://policies.google.com/privacy'
-      },
-]);
 
   return (
     <div className="bg-cookies-policy">
@@ -48,7 +19,7 @@ export const CookiesPolicy = () => {
           <h3 className="cookies-h3">3.2 Cookies analitícas</h3>
           <p className="cookies-policy-p">Utilizamos cookies analitícas para optimizar la experiencia de la web para nuestros usuarios. Con estas cookies analíticas obtenemos información sobre el uso de nuestra web, con el fin de en un futuro poder introducir mejoras. Te pedimos tu permiso para colocar cookies analitícas.</p>
           <h2 className="cookies-h2">4. Cookies usadas</h2>
-          <Accordion accordionData={accordionData}/>
+          <CookiesAccordion />
           <h2 className="cookies-h2">5. Consentimiento</h2>
           <p className="cookies-policy-p">Cuando visites nuestra web por primera vez, te mostraremos una ventana emergente con una explicación sobre las cookies. Tan pronto como hagas clic en «Aceptar», aceptas que usemos todas las cookies y plugins tal como se describe en la ventana emergente y en esta política de cookies. Puedes desactivar el uso de cookies a través de tu navegador, pero, por favor, ten en cuenta que nuestra web puede dejar de funcionar correctamente.</p>
           <h2 className="cookies-h2">6. Activación/desactivación y eliminación de cookies</h2>
