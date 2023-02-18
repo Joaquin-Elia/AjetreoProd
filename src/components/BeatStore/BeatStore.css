@@ -7,7 +7,6 @@
     width: 100%;
     height: 90vh;
 }
-
 .container-beatstore{
     background: rgb(19, 19, 19);
     color: #fff;
@@ -20,7 +19,7 @@
 }
 .beats-container{
     width: 11rem;
-    height: 13.9375rem;
+    height: 14.5rem;
     background: rgb(173,8,8);
     background: linear-gradient(146deg, rgba(173,8,8,1) 0%, rgba(120,14,14,1) 29%, rgba(232,7,7,1) 72%, rgba(187,8,8,1) 100%);
     margin: 0 .5625rem;
@@ -37,7 +36,7 @@
 }
 .img-beat{
     width: 100%;
-    height: 6rem;
+    height: 7.5rem;
     object-fit: cover;
     border-radius: .4375rem;
     user-select: none;
@@ -48,36 +47,40 @@
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    margin: 2px 0 0 .3125rem;
+    align-items: center;
+    margin-top: 2px;
 }
 .beat-info-title{
     width: 95%;
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
+    text-align: center;
     margin-bottom: .3125rem;
     font-weight: 700;  
     font-size: .9375em;
 }
 .beat-info-price{
-    font-weight: 600;   
+    font-weight: 600;
+}
+.container-add-cart{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .add-beat-cart{
     all: unset;
     position: relative;
     background-color: rgb(245, 242, 242);
-    width: 6.25rem;
-    height: 1.5625rem;
-    border-radius: .3125rem;
+    width: 90%;
+    height: 1.8rem;
+    border-radius: .43rem;
     color: rgb(0, 0, 0);
-    text-align: center;
     display: flex;
     justify-content: center;
     align-items: center;
     padding-bottom: 2px;
-    margin: .625rem 0 0px .3125rem;
-    bottom: 0;
-    left: 0;
+    margin-top: .625rem;
     font-weight: 600;
 }
 .icon-cart{
@@ -87,27 +90,24 @@
 @media screen and (min-width: 21.25rem){
     .beats-container{
         width: 15rem;
-        height: 18.5rem;
+        height: 17rem;
         margin: 0 .75rem;
     }
     .img-beat{
-        height: 8.3rem;
-    }
-    .beat-info{
-        margin: .35rem 0 0 .5375rem;
+        height: 9rem;
     }
     .beat-info-title{
-        font-size: 1em;
+        font-size: 1.1em;
+        margin-top: .4rem;
     }
     .beat-info-price{
         font-size: 1.0625em; 
     }
     .add-beat-cart{
-        width: 7rem;
-        height: 1.9rem;
+        height: 2.2rem;
+        width: 85%;
         font-size: 1.0938rem;
-        margin: .625rem 0 0 .4375rem;
-        padding: 0 2px 3px 2px;
+        margin-top: .7rem;
     }
     .icon-cart{
         margin-right: .5625rem;
@@ -117,31 +117,26 @@
 }
 @media screen and (min-width: 23.75rem) and (min-height: 51.25rem){
     .container-beatstore{
-        padding: 8.125rem 0 9.375rem .625rem;
+        padding: 8.125rem 0 5.375rem 0;
     }
     .beats-container{
-        height: 15rem;
-        margin: 0 .8125rem;
+        height: 18.7rem;
+        margin: 0;
     }
     .img-beat{
-        height: 6.5625rem;
-    }
-    .beat-info{
-        margin: .4375rem 0 0 .625rem;
+        height: 9.5rem;
     }
     .beat-info-title{ 
-        font-size: 1.0938em;
-        margin-bottom: .75rem;
+        font-size: 1.15em;
+        margin-bottom: .55rem;
     }
     .beat-info-price{
         font-size: 1.2188em;
     }
     .add-beat-cart{
-        width: 7.8125rem;
-        height: 1.9375rem;
+        height: 2.3rem;
         font-size: 1.1563em;
-        margin: .9375rem 0 0 .5rem;
-        padding: 0 2px 3px 2px;
+        margin-top: .9375rem;
     }
     .icon-cart{
         font-size: 1.2188em;
@@ -151,61 +146,54 @@
 }
 @media screen and (min-width: 37.5rem){
     .container-beatstore{
-        padding: 8.125rem 0 5rem .9375rem;
+        padding: 8.125rem 0 5rem 0;
     }
     .beats-container{
         width: 17rem;
-        height: 20rem;
-        margin: 0 .9375rem 1.25rem .9375rem;
+        height: 21rem;
+        margin-bottom: 1.25rem;
     }
     .img-beat{
-        height: 10rem;
+        height: 12rem;
     }
     .beat-info{
-        margin: .4375rem 0 0 .75rem;
+        margin-top: .375rem;
     }
     .beat-info-title{ 
-        font-size: 1.2188em;
-        margin-bottom: .75rem;
+        font-size: 1.21em;
+        margin-bottom: .6rem;
     }
     .beat-info-price{
         font-size: 1.2188em;
     }
     .add-beat-cart{
-        width: 7.5rem;
         height: 2.0625rem;
         font-size: 1.1563em;
-        margin: .625rem 0 0 .625rem;
-        padding: 0 2px 3px 2px;
+        margin-top: .725rem;
     }
 }
 @media screen and (min-width: 62.5rem){
     .container-beatstore{
-        padding: 8.125rem 0 5rem 1.5625rem;
+        padding: 8.125rem 0 5rem 0;
     }
     .beats-container{
         width: 18rem;
-        height: 23rem;
+        height: 22rem;
         margin: 0 .9375rem 1.25rem .9375rem;
     }
     .img-beat{
-        height: 13rem;
-    }
-    .beat-info{
-        margin: .4375rem 0 0 .75rem;
+        height: 12.2rem;
     }
     .beat-info-title{ 
-        font-size: 1.2188em;
-        margin-bottom: .75rem;
+        font-size: 1.25em;
     }
     .beat-info-price{
-        font-size: 1.2188em;
+        font-size: 1.24em;
     }
     .add-beat-cart{
-        width: 7.5rem;
-        height: 2.0625rem;
+        height: 2.35rem;
         font-size: 1.1563em;
-        margin: .625rem 0 0 .625rem;
+        margin-top: .825rem;
     }
 }
 

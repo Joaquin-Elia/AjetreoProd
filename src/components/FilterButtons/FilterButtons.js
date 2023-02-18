@@ -1,22 +1,33 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
+import { useBeats } from '../../hooks/useBeats';
 import './FilterButtons.css'
 
-export const FilterButtons = () => {
-
-  const [beatsCategories] = useState(['Trap', 'Boombap', 'Drill'])
+export const FilterButtons = ({filterResult}) => {
+  const [beatsCategories] = useState(['Todo', 'Trap', 'Rap', 'Boombap'])
+  
   return (
     <div>
         <div className="btns-categories">
-            {beatsCategories.map((category, i) => 
-            <div key={i}>
               <button 
                   type='button'
                   className='category-btn'
-              >
-                  {category}
-              </button>
-            </div>
-            )}
+                  onClick={() => filterResult()}
+              >Todo</button>
+              <button 
+                  type='button'
+                  className='category-btn'
+                  onClick={() => filterResult('Trap')}
+              >Trap</button>
+              <button 
+                  type='button'
+                  className='category-btn'
+                  onClick={() => filterResult('Rap')}
+              >Rap</button>
+              <button 
+                  type='button'
+                  className='category-btn'
+                  onClick={() => filterResult('Boombap')}
+              >Boombap</button>
         </div>
     </div>
   )

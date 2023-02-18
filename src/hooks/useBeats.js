@@ -32,7 +32,7 @@ export const useBeats = () => {
     
     return (
         [dataBeats,
-        loading, 
+        loading,
         error]
     )
 }

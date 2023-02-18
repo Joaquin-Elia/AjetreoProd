@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Ajetreo",
+  "name": "Ajetreo Producciones | Venta de beats y servio de producción musical",
   "icons": [
     {
       "src": "favicon.ico",
@@ -8,12 +8,12 @@
       "type": "image/x-icon"
     },
     {
-      "src": "logo192.png",
+      "src": "ajetreoIconHigh.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "logo512.png",
+      "src": "ajetreoIconHigh.png",
       "type": "image/png",
       "sizes": "512x512"
     }

@@ -18,6 +18,7 @@ import Cookies from './components/Cookies/Cookies';
 import { CookiesPolicy } from './components/CookiesPolicy/CookiesPolicy';
 import ScrollToTop from './components/ScrollToTop/ScrollToTop';
 import Footer from './components/Footer/Footer';
+import { BeatDetail } from './components/BeatDetail/BeatDetail';
 import './App.css';
 
 function App() {
@@ -48,6 +49,7 @@ function App() {
                 <Route exact path='/' element={<Home/> }/>
                 <Route exact path='/service' element={<AllService/> }/>
                 <Route exact path='/beatstore' element={<AllBeats /> }/>
+                <Route exact path='/detail/:id' element={<BeatDetail /> }/>
                 <Route exact path='/cart' element={<Cart />}/>
                 <Route exact path='/login' element={<Login />}/>
                 <Route exact path='/register' element={<Register />}/>

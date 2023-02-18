@@ -8,9 +8,16 @@ import image2 from '../../../imgs/movesImg.webp'
 import image3 from '../../../imgs/KendrickImg.jpg'
 import image4 from '../../../imgs/ysyaImg.webp'
 import './Hero.css'
+import { useBeats } from '../../../hooks/useBeats';
 
 export default function Hero() {
   const [modalState, setModalState] = useState(false);
+  const [dataBeats, loading] = useBeats();
+
+  // const [beatsImg, setBeatsImgs] = useState(dataBeats);
+  const heroImgs = dataBeats.filter(({showInHero}) => {
+    return showInHero === true;
+  })
 
   const title = {
     hidden: { y: 28, opacity: 0 },
@@ -108,8 +115,6 @@ export default function Hero() {
               initial={{ y: -120, x: -75, opacity: 0}}
               animate={{ y: 0, x: 0, opacity: 1}}
               transition={{ duration: .9, delay: 1.8 }}
-              drag={true}
-              dragConstraints={{left: 0, right: 0, top: 0, bottom: 0}}
             />
             <motion.img
               src={image2}
@@ -136,8 +141,6 @@ export default function Hero() {
               initial={{ y: 120, x: 75, opacity: 0}}
               animate={{ y: 0, x: 0, opacity: 1}}
               transition={{ duration: .9, delay: 2.05 }}
-              drag={true}
-              dragConstraints={{left: 5, right: 30, top: 10, bottom: 0}}
             />
           </div>
         </div>

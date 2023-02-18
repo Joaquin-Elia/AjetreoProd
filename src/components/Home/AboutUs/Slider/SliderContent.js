@@ -23,7 +23,12 @@ const AboutUs = memo(({ activeIndex, dataSlider, loading }) => {
       {showVideo &&
         <div className={showVideo ? 'video-container open' : 'video-container'}>
           {getVideo &&
-            <iframe src={getVideoSrc} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+            <iframe 
+              src={getVideoSrc} 
+              title="YouTube video player" 
+              frameBorder="0" 
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+              allowFullScreen />
           }
           <CgClose 
             onClick={()=> setShowVideo(false)}

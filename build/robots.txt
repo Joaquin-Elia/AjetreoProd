@@ -1,10 +1,8 @@
 # https://www.robotstxt.org/robotstxt.html
 User-agent: *
+
+Sitemap: https://ajetreoprod.netlify.app
+
 Allow: /
-Allow: /services
-Allow: /beatstore
-Allow: /cart
-Allow: /register
-Allow: /login
-Disallow: /nosotros
-Disallow: https://wa.link/o8foo4
+Disallow: /profile/
+
