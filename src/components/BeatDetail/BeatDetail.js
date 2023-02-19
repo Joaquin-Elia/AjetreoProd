@@ -3,7 +3,8 @@ import { useParams } from "react-router-dom"
 import BeatsContext from "../../context/BeatsContext";
 import { useBeats } from "../../hooks/useBeats";
 import { FooterMusicPlayer } from "../FooterMusicPlayer/FooterMusicPlayer";
-import LoadingAnimation from '../LoadingAnimation/LoadingAnimation'
+import LoadingAnimation from '../LoadingAnimation/LoadingAnimation';
+import './BeatDetail.css'
 
 export const BeatDetail = () => {
     const [dataBeats, loading] = useBeats()
@@ -23,12 +24,17 @@ export const BeatDetail = () => {
 
   return (
     <div>
-      {loading ? <div><LoadingAnimation /></div> : <>
-        {beatDetail.map(({id, title, category, price, description},i) => 
+      {loading ? <div className="loading-animation"><LoadingAnimation /></div> : <>
+        {beatDetail.map(({id, title, img, category, price, description},i) => 
           <div 
-            style={{padding: '5rem'}}
+            className='detail-container'
             key={i}
           >
+            <img 
+              className='img-beat-detail' 
+              src={img} 
+              alt={title}
+            />
             <h3
               onClick={() => {
               setCurrent(i);
