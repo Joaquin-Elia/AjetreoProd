@@ -4,17 +4,19 @@ import {IoVolumeLowOutline, IoVolumeMediumOutline, IoVolumeMuteOutline, IoVolume
 import BeatsContext from '../../context/BeatsContext';
 import {motion} from 'framer-motion';
 import './FooterMusicPlayer.css';
+import { Link } from 'react-router-dom';
 
-export const FooterMusicPlayer = ({footerPlayer, setFooterPlayer, changeSong}) => {
+export const FooterMusicPlayer = ({dataDetail, footerPlayer, setFooterPlayer, changeSong, id}) => {
     const {
         currentSong,
         dataBeats,
         nextSong,
         prevSong,
         togglePlaying,
-        handleEnd,
+        // handleEnd,
         isPlaying,
-        setIsPlaying
+        setIsPlaying,
+        // repeat
     } = useContext(BeatsContext);
 
     const [stateVolume, setStateVolume] = useState(0.3);
@@ -82,16 +84,19 @@ export const FooterMusicPlayer = ({footerPlayer, setFooterPlayer, changeSong}) =
                 />
             </div>
             <div className='footer-music-player'>
+                <Link to={`/detail/${dataBeats[currentSong].id}`}>
                 <img 
                     loading='lazy'
                     className='footer-img-beat'
-                    src={dataBeats[currentSong].img}
-                    alt={dataBeats[currentSong].title}
+                    src={id ? dataDetail[currentSong].img : dataBeats[currentSong].img}
+                    alt={id ? dataDetail[currentSong].title : dataBeats[currentSong].title}
                 />
+
+                </Link>
                 <div className='container-title-volume'>
                     <h5 
                         className='title-footer-beat'>
-                        {dataBeats[currentSong].title}
+                        {id ? dataDetail[currentSong].title : dataBeats[currentSong].title}
                     </h5>
                     <div className='container-title-volume-icons'>
                         {(stateVolume === 0 && <IoVolumeMuteOutline onClick={() => unmuteBeat()}/>) || 
@@ -112,16 +117,18 @@ export const FooterMusicPlayer = ({footerPlayer, setFooterPlayer, changeSong}) =
                 <audio ref={audioRef} 
                     onTimeUpdate={e => setCurrentTime(e.target.currentTime)}
                     onCanPlay={e => setDuration(e.target.duration)}
-                    onEnded={handleEnd}
+                    // onEnded={handleEnd}
                     preload='true'
                     controlsList='nodownload'
-                    src={dataBeats[currentSong].audio}
+                    src={id ? dataDetail[currentSong].audio : dataBeats[currentSong].audio}
                 />
                 <div className="btns-audio-functions">
-                    <MdSkipPrevious 
-                        onClick={prevSong}
-                        className='prev-next-audio'
-                    />
+                    {!id && 
+                        <MdSkipPrevious 
+                            onClick={prevSong}
+                            className='prev-next-audio'
+                        />
+                    }
                     <div onClick={() => {
                         togglePlaying();
                         toggleAudio();
@@ -133,10 +140,12 @@ export const FooterMusicPlayer = ({footerPlayer, setFooterPlayer, changeSong}) =
                             }
                         </div>
                     </div>
-                    <MdSkipNext 
-                        className='prev-next-audio'
-                        onClick={nextSong}
-                    />
+                    {!id && 
+                        <MdSkipNext 
+                            className='prev-next-audio'
+                            onClick={nextSong}
+                        />
+                    }
                     <IoClose 
                         className='btn-close-footer'
                         onClick={() => setFooterPlayer(!footerPlayer)}

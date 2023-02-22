@@ -329,7 +329,7 @@
     height: 2.6875rem;
 }
 .btn-go-allbeats-container:hover{
-    background-color: #289f01;
+    background-color: rgb(203, 3, 3);
 }
 .btn-go-allbeats{
     all: unset;
@@ -338,7 +338,6 @@
 @media screen and (min-width: 39.375rem){
     .container-card-beat{
         margin: 1.875rem 0 -0.625rem 2.1875rem;
-        /* padding-right: 1.25rem; */
         transform: perspective(69.75rem) rotateY(19deg);
     }
     .bg-text{

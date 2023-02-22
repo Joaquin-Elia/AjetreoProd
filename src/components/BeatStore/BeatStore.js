@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState} from 'react';
+import React, { useContext, useState} from 'react';
 import { Link } from 'react-router-dom';
 import BeatsContext from '../../context/BeatsContext';
 import { FooterMusicPlayer } from '../FooterMusicPlayer/FooterMusicPlayer';
@@ -7,24 +7,17 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper";
 import "swiper/swiper.min.css";
 import "swiper/css/navigation";
+import LoadingAnimation from '../LoadingAnimation/LoadingAnimation';
+import { useBeats } from '../../hooks/useBeats';
 
 
 const BeatStore = () => {
+  const [dataBeats, loading] = useBeats()
   const {
-    dataBeats,
-    setCurrent, 
-    setFooterPlayer, 
-    footerPlayer, 
+    setCurrent,
     currentSong } = useContext(BeatsContext);
-
-  const [changeSong, setChangeSong] = useState(false);
-  useEffect(() => {
-    const onLoad = () => {
-      window.scrollTo({top: 0});
-    }
-    return () => onLoad();
-    
-  }, []);
+    const [footerPlayer, setFooterPlayer] = useState(false)
+    const [changeSong, setChangeSong] = useState(false);
 
   return (
     <>
@@ -32,10 +25,9 @@ const BeatStore = () => {
           <div className="title-beats-page">
             <h2 className='container-beats-home-title'>Catalogo de beats</h2>
             <h3 className='bg-text'>Catalogo</h3>
-            {/* <h3 className='bg-text2'>logo</h3> */}
           </div>
+          {loading ? <LoadingAnimation /> : 
             <div className='beats-store_titles'>
-              {/* <h3 className='beats-store_populars'>Los mas populares:</h3> */}
               <div className="container-card-beat custom-scroll">
                 <Swiper
                   loop={true}
@@ -92,7 +84,7 @@ const BeatStore = () => {
                             <h4>Reproduciendo</h4>
                           </div>
                             : 
-                          <div className='beat-card-play-icon' onClick={() => setChangeSong(!changeSong)} >
+                          <div className='beat-card-play-icon' onClick={() => setChangeSong(!changeSong)}>
                             <BsFillPlayFill/>
                           </div>
                         }
@@ -110,6 +102,8 @@ const BeatStore = () => {
               </div>
               <h3 className='beats-store_recent'>Los mas recientes:</h3>
             </div>
+          
+          }
             <div className="btn-go-allbeats-container">
               <Link 
                 to='/beatstore'

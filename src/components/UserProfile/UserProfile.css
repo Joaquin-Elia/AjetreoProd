@@ -39,6 +39,7 @@
 }
 .list-orders-items{
     list-style: circle;
+    margin: .5rem 0;
 }
 .profile-orders{
     margin: 1.05rem 0;

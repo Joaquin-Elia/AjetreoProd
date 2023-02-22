@@ -1,27 +1,28 @@
 import { Link } from "react-router-dom";
-import {BsHandbag} from 'react-icons/bs'
-import { useContext } from "react";
-import { CartContext } from "../../context/CartContext";
+import { useEffect } from "react";
 
 export const AllBeats = ({data}) => {
-    const value = useContext(CartContext);
-    const addItem = value.addItem;
+
+    useEffect(() => {
+        const onLoad = () => {
+          window.scrollTo({top: 0})
+        }
+    
+        window.addEventListener("load", onLoad);
+    
+        return () => {
+          window.removeEventListener("load", onLoad);
+        }
+      }, []);
   return (
     <>
         {data.map(({id, img, title, price}, i) => (
                 <div
-                className="beats-container"
-                    // className={"beats-container " + 
-                    // (footerPlayer && currentSong === i ? "selected-beat" : '')}
+                    className="beats-container"
                     key={i}
                 >
                     <Link to={`/detail/${id}`}>
-                        <div
-                        //onClick={() => {
-                        //setCurrent(i);
-                        //setFooterPlayer(true);
-                        // }}
-                        >
+                        <div>
                             <img 
                                 className='img-beat'
                                 src={img} 
@@ -30,29 +31,16 @@ export const AllBeats = ({data}) => {
                             <div className='beat-info'>
                                 <h5 className='beat-info-title'>{title}</h5>
                                 <span className='beat-info-price'>
-                                    $USD {
-                                    // license === 'Stems en WAV' 
-                                    //     ?
-                                    // price * 1.8 
-                                    //     : 
-                                    // license === 'WAV sin TAG'
-                                    //     ? 
-                                    // price * 1.5 
-                                    //     : 
-                                    price}
+                                    $USD {price}
                                 </span>
                             </div>
                         </div>
+                        <div className="container-add-cart">
+                            <button className='add-beat-cart' >
+                                Ver más
+                            </button>
+                        </div>
                     </Link>
-                    <div className="container-add-cart">
-                        <button 
-                            className='add-beat-cart'
-                            onClick={()=> addItem(id)}
-                        >
-                            <BsHandbag className='icon-cart'/>
-                            Agregar
-                        </button>
-                    </div>
                 </div>
             ))
         }

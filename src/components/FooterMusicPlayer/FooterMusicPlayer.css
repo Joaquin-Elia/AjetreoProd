@@ -1,5 +1,5 @@
 .container-all-footer-player{
-    height: 4.0625rem;
+    height: 4.16rem;
     width: 100%;
     position: fixed;
     bottom: 0;
@@ -18,15 +18,15 @@
 }
 .footer-img-beat{
     width: 3rem;
-    height: 3.125rem;
+    height: 3.425rem;
     object-fit: cover;
-    margin: -0.3125rem 0 .425rem .3125rem;
+    margin: -.2125rem 0 .725rem .3125rem;
     border-radius: .4375rem;
     user-select: none;
 }
 .title-footer-beat{
     font-size: 1.0625em;
-    width: 6.875rem;
+    width: 8.875rem;
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;

@@ -8,16 +8,16 @@ import image2 from '../../../imgs/movesImg.webp'
 import image3 from '../../../imgs/KendrickImg.jpg'
 import image4 from '../../../imgs/ysyaImg.webp'
 import './Hero.css'
-import { useBeats } from '../../../hooks/useBeats';
+// import { useBeats } from '../../../hooks/useBeats';
 
 export default function Hero() {
   const [modalState, setModalState] = useState(false);
-  const [dataBeats, loading] = useBeats();
+  // const [dataBeats, loading] = useBeats();
 
   // const [beatsImg, setBeatsImgs] = useState(dataBeats);
-  const heroImgs = dataBeats.filter(({showInHero}) => {
-    return showInHero === true;
-  })
+  // const heroImgs = dataBeats.filter(({showInHero}) => {
+  //   return showInHero === true;
+  // })
 
   const title = {
     hidden: { y: 28, opacity: 0 },
@@ -112,16 +112,16 @@ export default function Hero() {
               loading='lazy'
               className='image-hero1'
               alt='beat'
-              initial={{ y: -120, x: -75, opacity: 0}}
-              animate={{ y: 0, x: 0, opacity: 1}}
+              initial={{ y: -120, x: -75, opacity: 0, scale: 0}}
+              animate={{ y: 0, x: 0, opacity: 1, scale: 1}}
               transition={{ duration: .9, delay: 1.8 }}
             />
             <motion.img
               src={image2}
               loading='lazy'
               className='image-hero2'
-              initial={{ y: -120, x: 75, opacity: 0}}
-              animate={{ y: 0, x: 0, opacity: 1}}
+              initial={{ y: -120, x: 75, opacity: 0, scale: 0}}
+              animate={{ y: 0, x: 0, opacity: 1, scale: 1}}
               transition={{ duration: .9, delay: 1.9 }}
             />
             <motion.img
@@ -129,8 +129,8 @@ export default function Hero() {
               alt='YSYA Type beat'
               loading='lazy'
               className='image-hero3'
-              initial={{ y: 120, x: -75, opacity: 0}}
-              animate={{ y: 0, x: 0, opacity: 1}}
+              initial={{ y: 120, x: -75, opacity: 0, scale: 0}}
+              animate={{ y: 0, x: 0, opacity: 1, scale: 1}}
               transition={{ duration: .9, delay: 2 }}
             />
             <motion.img
@@ -138,8 +138,8 @@ export default function Hero() {
               alt='YSYA Type beat'
               loading='lazy'
               className='image-hero4'
-              initial={{ y: 120, x: 75, opacity: 0}}
-              animate={{ y: 0, x: 0, opacity: 1}}
+              initial={{ y: 120, x: 75, opacity: 0, scale: 0}}
+              animate={{ y: 0, x: 0, opacity: 1, scale: 1}}
               transition={{ duration: .9, delay: 2.05 }}
             />
           </div>

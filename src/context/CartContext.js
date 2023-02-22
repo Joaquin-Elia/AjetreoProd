@@ -86,7 +86,7 @@ const CartProvider = ({children}) => {
     addItem: addItem,
     cart: [cart, setCart],
     total: [total, setTotal],
-    license: [license],
+    license: [license, setLicense],
   }
 
   return (

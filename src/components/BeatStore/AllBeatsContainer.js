@@ -30,10 +30,6 @@ export const AllBeatsContainer = () => {
         <>
             {loading ? <div className='all-beats-loading'><LoadingAnimation /></div> : <>
                 <div className='container-beatstore'>
-                    {/* <h2>Selecciona una licencia</h2>
-                    <button onClick={() => setLicense('Mp3 sin TAG')}>Mp3 sin TAG</button>
-                    <button onClick={() => setLicense('WAV sin TAG')}>WAV sin TAG</button>
-                    <button onClick={() => setLicense('Stems en WAV')}>Stems en WAV</button> */}
                     <FilterButtons 
                         filterResult={filterResult}
                         setData={setData} 

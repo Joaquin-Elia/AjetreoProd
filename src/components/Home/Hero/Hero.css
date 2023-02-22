@@ -149,25 +149,25 @@
     border-radius: .4375rem;
 }
 .image-hero1{
-    width: 160px;
-    left: 50px;
+    width: 10rem;
+    left: 3.125rem;
 }
 .image-hero2{
-    width: 120px;
-    top: 60px;
-    left: 65px;
+    width: 7.5rem;
+    top: 3.75rem;
+    left: 4.0625rem;
     pointer-events: none;
 }
 .image-hero3{
-    width: 80px;
-    top: 137px;
-    right: 191px;
+    width: 5rem;
+    top: 8.5625rem;
+    right: 11.9375rem;
     pointer-events: none;
 }
 .image-hero4{
-    bottom: 60px;
-    right: 80px;
-    width: 80px;
+    bottom: 3.75rem;
+    right: 5rem;
+    width: 5rem;
 }
 @media screen and (min-width: 22.5rem){
     .container-hero_title{

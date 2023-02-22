@@ -1,20 +1,88 @@
 .loading-animation{
     height: 100vh;
     width: 100%;
-    background-color: #000;
+    background-color: #171717;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 .detail-container{
-    min-height: 95vh;
+    min-height: 100vh;
     width: 100%;
-    background-color: rgb(35, 35, 35);
+    background-color: #171717;
     color: #fff;
-    padding-top: 5rem;
+    padding: 3.8rem .7rem 0 .7rem;
 }
 .img-beat-detail{
     width: 100%;
-    max-height: 15rem;
     object-fit: contain;
+    border-radius: .73rem;
+}
+.beat-card-play-container{
+    position: relative;
+    width: 100%;
+    border-radius: .5rem;
+}
+.beat-detail-info{
+    padding: 1rem 0 0 .5rem;
+}
+.beat-detail-title{
+    font-size: 1.4em;
+    font-family: 'Orbitron';
+    font-weight: 400;
+    letter-spacing: 1px;
+    margin-bottom: .3rem;
+}
+.beat-detail-category{
+    color: #a2a2a2;
+    font-style: italic;
+}
+.beat-detail-price{
+    margin-top: .3rem;
+    font-size: 1.4em;
+    font-weight: 400;
+}
+.beat-detail-add{
+    all: unset;
+    width: 100%;
+    height: 2.2rem;
+    margin-top: 1.2rem;
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: rgb(208, 0, 0);
+    border-radius: .73rem;
+}
+@media screen and (min-width: 350px) {
+    .detail-container{
+        padding: 4rem 1rem 0 1rem;
+    }
+    .container-img-detail{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .img-beat-detail{
+        width: 90%;
+    }
+    .beat-detail-title{
+        font-size: 1.6em;
+        letter-spacing: 1.3px;
+        margin-bottom: .5rem;
+    } 
+    .beat-detail-category{
+        font-size: 1em;
+    }
+    .beat-detail-price{
+        margin-top: .5rem;
+        font-size: 1.55em;
+    }
+    .beat-detail-add{
+        width: 95%;
+        height: 2.4rem;
+        margin-top: 1.2rem;
+        border-radius: .73rem;
+    }
 }

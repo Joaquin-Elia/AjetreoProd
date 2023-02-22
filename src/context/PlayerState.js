@@ -8,11 +8,10 @@ export const PlayerState = ({children}) => {
   const initialState = {
         currentSong: 0,
         repeat: false,
-        random: false,
+        // random: false,
         playing: false,
   }
   const [isPlaying, setIsPlaying] = useState(false);
-  const [footerPlayer, setFooterPlayer] = useState(false);
   const [state, dispatch] = useReducer(playerReducer, initialState);
 
   const setCurrent = id => dispatch({type: 'SET_CURRENT_SONG', data: id});
@@ -59,9 +58,9 @@ export const PlayerState = ({children}) => {
 
     return  <BeatsContext.Provider 
                 value={{
-                    currentSong: state.currentSong,
                     repeat: state.repeat,
-                    random: state.random,
+                    // random: state.random,
+                    currentSong: state.currentSong,
                     playing: state.playing,
                     dataBeats: dataBeats,
                     loading: loading,
@@ -71,9 +70,7 @@ export const PlayerState = ({children}) => {
                     togglePlaying,
                     handleEnd,
                     isPlaying,
-                    setIsPlaying,
-                    setFooterPlayer,
-                    footerPlayer
+                    setIsPlaying
                 }}>
                     {children}
             </BeatsContext.Provider>
