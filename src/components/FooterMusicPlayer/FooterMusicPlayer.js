@@ -3,8 +3,8 @@ import {MdSkipNext, MdSkipPrevious} from 'react-icons/md';
 import {IoVolumeLowOutline, IoVolumeMediumOutline, IoVolumeMuteOutline, IoVolumeHighOutline, IoPlay, IoPause, IoClose} from 'react-icons/io5'
 import BeatsContext from '../../context/BeatsContext';
 import {motion} from 'framer-motion';
-import './FooterMusicPlayer.css';
 import { Link } from 'react-router-dom';
+import './FooterMusicPlayer.css';
 
 export const FooterMusicPlayer = ({dataDetail, footerPlayer, setFooterPlayer, changeSong, id}) => {
     const {
@@ -13,9 +13,10 @@ export const FooterMusicPlayer = ({dataDetail, footerPlayer, setFooterPlayer, ch
         nextSong,
         prevSong,
         togglePlaying,
-        // handleEnd,
+        handleEnd,
         isPlaying,
         setIsPlaying,
+        isPlayingVideo,
         // repeat
     } = useContext(BeatsContext);
 
@@ -25,9 +26,9 @@ export const FooterMusicPlayer = ({dataDetail, footerPlayer, setFooterPlayer, ch
 
     const audioRef = useRef('audio_tag');
 
-    const handleVolume = q => {
-        setStateVolume(q);
-        audioRef.current.volume = q;
+    const handleVolume = volume => {
+        setStateVolume(volume);
+        audioRef.current.volume = volume;
     }
     const muteBeat = () => {
         setStateVolume(0);
@@ -46,17 +47,22 @@ export const FooterMusicPlayer = ({dataDetail, footerPlayer, setFooterPlayer, ch
         setCurrentTime(compute);
         audioRef.current.currentTime = compute;
     }
-    const fmtMSS = s => {
-        return (s - (s %= 60)) / 60 + (9 < s ? ':' : ':0') + Math.floor(s)
+    const fmtMSS = seconds => {
+        return (seconds - (seconds %= 60)) / 60 + (9 <= seconds ? ':' : ':0') + Math.floor(seconds)
     }
 
     useEffect(() => {
-        footerPlayer && 
-            audioRef.current.play() &&
-            setIsPlaying(true) && 
-        changeSong && 
-        audioRef.current.play()
-    }, [footerPlayer, changeSong, setIsPlaying]);
+        if(footerPlayer) {
+            audioRef.current.play()
+            setIsPlaying(true)
+        }if(changeSong){
+            audioRef.current.play()
+        } if(isPlayingVideo === true) {
+            audioRef.current.pause()
+            setIsPlaying(false)
+        }
+    }, [footerPlayer, changeSong, setIsPlaying, isPlayingVideo]);
+
 
   return (
       <>
@@ -110,7 +116,7 @@ export const FooterMusicPlayer = ({dataDetail, footerPlayer, setFooterPlayer, ch
                             type='range'
                             name='volBar'
                             id='volBar'
-                            onChange={(e) => handleVolume(e.target.value / 100)}
+                            onChange={e => handleVolume(e.target.value / 100)}
                         />
                     </div>
                 </div>
@@ -135,7 +141,7 @@ export const FooterMusicPlayer = ({dataDetail, footerPlayer, setFooterPlayer, ch
                     }}>
                         <div className='btn-pause-play'>
                             {isPlaying ? 
-                                <IoPause onClick={() =>{setIsPlaying(false)}} /> : 
+                                <IoPause onClick={() =>setIsPlaying(false)} /> : 
                                 <IoPlay onClick={() => setIsPlaying(true)} />
                             }
                         </div>

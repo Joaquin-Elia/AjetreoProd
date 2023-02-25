@@ -7,21 +7,46 @@
     align-items: center;
 }
 .detail-container{
-    min-height: 100vh;
     width: 100%;
     background-color: #171717;
     color: #fff;
-    padding: 3.8rem .7rem 0 .7rem;
+    padding: 3.8rem .7rem;
 }
 .img-beat-detail{
     width: 100%;
+    max-width: 21.875rem;
     object-fit: contain;
     border-radius: .73rem;
 }
-.beat-card-play-container{
+.beat-play-container{
     position: relative;
     width: 100%;
     border-radius: .5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+}
+.beat-play-icon, .beat-playing{
+    color: rgb(255, 255, 255);
+    background-color: #0000004e;
+    height: 100%;
+    width: 100%;
+    max-width: 18.75rem;
+    border-radius: .5rem;
+    font-size: 5em;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.beat-play-icon:hover{
+    color: rgb(235, 235, 235);
+    font-size: 5.3125em;
+    transition: ease .3s;
+}
+.beat-playing{
+    font-size: 1.25em;
 }
 .beat-detail-info{
     padding: 1rem 0 0 .5rem;
@@ -42,6 +67,11 @@
     font-size: 1.4em;
     font-weight: 400;
 }
+.container-btn-add{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .beat-detail-add{
     all: unset;
     width: 100%;
@@ -54,35 +84,144 @@
     text-align: center;
     background-color: rgb(208, 0, 0);
     border-radius: .73rem;
+    cursor: pointer;
 }
-@media screen and (min-width: 350px) {
+@media screen and (min-width: 21.875rem) {
     .detail-container{
-        padding: 4rem 1rem 0 1rem;
+        padding: 4rem 1rem;
     }
     .container-img-detail{
         display: flex;
         flex-direction: column;
         align-items: center;
     }
-    .img-beat-detail{
+    .img-beat-detail, .beat-play-icon, .beat-playing{
         width: 90%;
+    }
+    .beat-playing{
+        font-size: 1.4em;
     }
     .beat-detail-title{
         font-size: 1.6em;
         letter-spacing: 1.3px;
-        margin-bottom: .5rem;
+        margin: 0 0 .5rem .4rem;
     } 
     .beat-detail-category{
         font-size: 1em;
+        margin-left: .4rem;
     }
     .beat-detail-price{
-        margin-top: .5rem;
         font-size: 1.55em;
+        margin: .5rem 0 0 .4rem;
     }
     .beat-detail-add{
-        width: 95%;
-        height: 2.4rem;
-        margin-top: 1.2rem;
+        width: 90%;
+        height: 2.5rem;
         border-radius: .73rem;
+        margin: 1.2rem 0 0 -1rem;
+    }
+}
+@media screen and (min-width: 31.25rem) {
+    .detail-container{
+        padding: 5rem 1rem;
+    }
+    .beat-playing{
+        font-size: 1.5em;
+    }
+    .beat-detail-title{
+        font-size: 1.8em;
+        letter-spacing: 1.5px;
+        margin: .7rem 0 .5rem 2.5rem;
+    } 
+    .beat-detail-category{
+        font-size: 1.15em;
+        margin-left: 2.5rem;
+    }
+    .beat-detail-price{
+        font-size: 1.65em;
+        margin: .8rem 0 0 2.5rem;
+    }
+    .beat-detail-add{
+        width: 80%;
+        height: 2.7rem;
+        font-size: 1.25em;
+    }
+}
+@media screen and (min-width: 41.75rem) {
+    .beat-playing{
+        font-size: 1.6em;
+    }
+    .beat-detail-title{
+        font-size: 2em;
+        letter-spacing: 1.8px;
+        margin: .7rem 0 .5rem 4rem;
+    } 
+    .beat-detail-category{
+        font-size: 1.15em;
+        margin-left: 4rem;
+    }
+    .beat-detail-price{
+        margin: .8rem 0 0 4rem;
+    }
+    .beat-detail-add{
+        width: 75%;
+        height: 2.9rem;
+        margin-top: 2rem;
+        font-size: 1.35em;
+    }
+}
+@media screen and (min-width: 54.75rem) {
+    .beat-detail-title{
+        font-size: 2em;
+        letter-spacing: 1.8px;
+        margin-left: 5rem;
+    } 
+    .beat-detail-category{
+        font-size: 1.25em;
+        margin-left: 5rem;
+    }
+    .beat-detail-price{
+        margin-left: 5rem;
+    }
+}
+@media screen and (min-width: 62.75rem) {
+    .detail-container{
+        padding: 6.8rem 0;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+    .beat-play-container{
+        width: auto;
+    }
+    .beat-play-icon, .beat-playing{
+        height: 100%;
+        width: 100%;
+        max-width: 23.875rem;
+    }
+    .img-beat-detail{
+        width: 100%;
+        max-width: 23.875rem;
+    }
+    .beat-detail-info{
+        padding: 0;
+    }
+    .beat-detail-title{
+        max-width: 25rem;
+        font-size: 2.2em;
+        letter-spacing: 2.2px;
+        margin: 0 0 1rem 0;
+    } 
+    .beat-detail-category{
+        font-size: 1.25em;
+        margin-left: 0;
+    }
+    .beat-detail-price{
+        margin-left: 0;
+    }
+    .beat-detail-add{
+        width: 100%;
+        height: 2.9rem;
+        margin-top: 2rem;
     }
 }

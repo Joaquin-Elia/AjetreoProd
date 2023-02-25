@@ -1,4 +1,4 @@
-import React, { memo, useContext, useRef, useState } from 'react';
+import React, { memo, useContext, useEffect, useRef, useState } from 'react';
 import {CgClose} from 'react-icons/cg';
 import BeatsContext from '../../../../context/BeatsContext';
 import LoadingAnimation from '../../../LoadingAnimation/LoadingAnimation';
@@ -7,16 +7,16 @@ import { UseClickOutside } from '../../../../hooks/useClickOutside';
 const AboutUs = memo(({ activeIndex, dataSlider, loading }) => {
   const [showVideo, setShowVideo] = useState(false);
   const [getVideoSrc, setGetVideoSrc] = useState('');
-  const {setFooterPlayer} = useContext(BeatsContext);
+  const {setIsPlayingVideo} = useContext(BeatsContext);
 
   const ref = useRef(null);
   UseClickOutside(ref, ()=> setShowVideo(false));
 
   const getVideo = (video) =>{
-        setGetVideoSrc(video);
-        setShowVideo(!showVideo);
-        setFooterPlayer(false)
-  }
+    setGetVideoSrc(video);
+    setShowVideo(!showVideo);
+    setIsPlayingVideo(true)
+}
 
   return (
     <div className='about-container'>

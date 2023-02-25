@@ -12,6 +12,7 @@ export const PlayerState = ({children}) => {
         playing: false,
   }
   const [isPlaying, setIsPlaying] = useState(false);
+  const [isPlayingVideo, setIsPlayingVideo] = useState(false);
   const [state, dispatch] = useReducer(playerReducer, initialState);
 
   const setCurrent = id => dispatch({type: 'SET_CURRENT_SONG', data: id});
@@ -70,7 +71,9 @@ export const PlayerState = ({children}) => {
                     togglePlaying,
                     handleEnd,
                     isPlaying,
-                    setIsPlaying
+                    setIsPlaying,
+                    isPlayingVideo, 
+                    setIsPlayingVideo
                 }}>
                     {children}
             </BeatsContext.Provider>
