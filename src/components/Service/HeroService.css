@@ -1,5 +1,5 @@
 .service-container{
-    background-color: rgb(238, 238, 238);
+    background-color: #eeeeee;
     width: 100%;
     overflow: hidden;
 }
@@ -18,7 +18,7 @@
 }
 .service-container-text-animated > h2{
     font-size: 6em;
-    color: rgb(6, 6, 6);
+    color: #060606;
     animation: textAnimate linear 30s infinite;
     white-space: nowrap;
     user-select: none;
@@ -26,7 +26,7 @@
 }
 .service-container_text-animated-transparent{
     -webkit-text-stroke: 1.7px;
-    -webkit-text-stroke-color: rgb(0, 0, 0);
+    -webkit-text-stroke-color: #000000;
     -webkit-text-fill-color: transparent;
 }
 @keyframes textAnimate {
@@ -40,7 +40,7 @@
 .service-container-service{
     display: flex;
     width: 100%;
-    height: 23.95rem;
+    height: auto;
     overflow-x: scroll;
     scroll-snap-type: x mandatory;
     margin: 2.1875rem 0 0 .625rem;
@@ -49,30 +49,64 @@
     display: none;
 }
 .service-container_service-item{
-    min-width: 85%;
+    min-width: 15rem;
     scroll-snap-align: start;
     border-radius: .4375rem;
     background-color: #103c95;
-    background-image: radial-gradient(circle, #3d33ca, #102fa1, #282d43);
+    background: radial-gradient(circle, #3d33ca, #102fa1, #282d43);
     color: #e7e7e7;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
     margin: .625rem .9375rem .3125rem 0;
 }
-.service-container_service_item-img{
-    height: 6.5625rem;
-    user-select: none;
-    pointer-events: none;
+.service-card-header{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-bottom: 1px solid #e7e7e7;
+    margin: .3rem 1rem;
+    padding: .5rem .5rem;
+    align-items: center;
+    text-align: start;
 }
-.service-container_service_item-title{
-    font-size: 1.7em;
+.service-card-header-title{
+    font-size: 1.4em;
+    font-weight: 600;
+    letter-spacing: .4px;
     text-align: center;
 }
-.service-container_service_item-p{
-    margin: 0 .3rem 0 .625rem;
-    font-size: .95em;
+.service-card-header-ideal{
+    margin: .3rem 0 1.3rem 0;
+}
+.service-card-header-price-before{
+    color: #dbdada;
+    text-decoration: line-through;
+}
+.service-card-header-offer{
+    color: #ffffff;
+    background-color: #750ab8e2;
+    margin-left: .5rem;
+    padding: .3rem .5rem;
+    border-radius: 1.25rem;
+}
+.service-card-header-price{
+    margin: .6rem .7rem .2rem 0;
+    font-size: 2.8em;
+    font-weight: 600;
+    color: #ffffff;
+}
+.service-price-curency{
+    margin-right: -.1rem;
+    font-size: 1.3rem;
+    font-weight: 400;
+    color: #e4e4e4;
+}
+.card-items-container{
+    margin: 1.2rem .3rem .8rem 1.7rem;
+}
+.card-items{
+    padding: .45rem 0;
+    font-size: 1.08em;
 }
 .service-container-more{
     display: flex;
@@ -83,18 +117,18 @@
 .service-container-more-link{
     all: unset;
     font-size: 1.125em;
-    margin: .9375rem 0 2.5rem 0;
-    width: 9.375rem;
-    height: 2.7875rem;
+    margin: 2rem 0 2.5rem 0;
+    padding: .7rem 1.3rem;
+    width: auto;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgb(0, 52, 155);
+    background: radial-gradient(circle, #3d33ca, #102fa1,  #102fa1, #2b3668);
     border-radius: .4375rem;
     cursor: pointer;
 }
 .service-container-more-link:hover{
-    background-color: rgb(10, 66, 177);
+    background-color: #0a42b1;
 }
 .service-container-more-icon{
     font-size: 1.2em;
@@ -119,12 +153,22 @@
     }
     .service-container_service-item{
         min-width: unset;
-        height: 25rem;
-        width: 44%;
+        width: 18rem;
+        padding: 1.5rem .5rem;
     }
-    .service-container_service_item-p{
-        margin: 0 1.25rem;
-        font-size: 1.0938em;
+    .service-card-header-title{
+        font-size: 1.4em;
+        letter-spacing: .4px;
+    }
+    .card-items{
+        padding: .55rem 0;
+        font-size: 1.15em;
+    }
+    .service-card-header-price{
+        font-size: 3em;
+    }
+    .service-container-more-link{
+        padding: .8rem 1.5rem;
     }
     .service-container-text-animated > h2{
         font-size: 9em;
@@ -144,11 +188,6 @@
         margin-top: 3.75rem;
     }
     .service-container_service-item{
-        width: 22%;
-        height: 26.25rem;
         margin: 0 .9375rem .625rem 0;
-    }
-    .service-container_service_item-img{
-        height: 7.8125rem;
     }
 }

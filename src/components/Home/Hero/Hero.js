@@ -73,7 +73,7 @@ export default function Hero() {
               animate='visible'
               transition={{ delay: 1.8, duration: 0.6 }}
             >
-              Necesitas un beat para tu proximo tema? Nosotros nos dedicamos a eso</motion.p>
+              Necesitas una buena producción para tu proxima canción? Con nosotros ...</motion.p>
           </div>
           <div className="bg-blurs4"></div>
           <div className="bg-blurs4"></div>

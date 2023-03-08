@@ -13,7 +13,6 @@ const Cart = () => {
   const value = useContext(CartContext);
   const [cart, setCart] = value.cart;  
   const [total] = value.total;
-  const [license] = value.license;
   const {user} = useAuth();
   const [modalState, setModalState] = useState(false);
   useSEO({title: 'Carrito', description: 'Carrito'})
@@ -41,10 +40,10 @@ const Cart = () => {
           : <>
           <div className="cart_table">
             <h4>Producto</h4>
-            <h4>Licencia</h4>
+            {/* <h4>Licencia</h4> */}
             <h4>Precio</h4>
           </div>
-          {cart.map(({id, img, title, price}) => 
+          {cart.map(({id, img, title, price, license}) => 
               <div 
                 className="cart_items"
                 key={id}
@@ -55,19 +54,19 @@ const Cart = () => {
                   alt={title}
                 />
                 <h3 className='cart_items_title'>{title}</h3>
-                <p className='cart_items_license'>{license}</p>
-                <span className='cart_items_price'><small className='price_badge'>$USD</small> 
-                  {
-                    license === 'Stems en WAV' 
-                        ?
-                    price * 1.8 
-                        : 
-                    license === 'WAV sin TAG'
-                        ? 
-                    price * 1.5 
-                        : 
+                {license && <p>{license}</p>}
+                <span className='cart_items_price'><small className='price_badge'>USD</small> 
+                  {Math.floor(
+                    // license === 'Stems en WAV' 
+                    //     ?
+                    // price * 1.8 
+                    //     : 
+                    // license === 'WAV sin TAG'
+                    //     ? 
+                    // price * 1.5 
+                    //     : 
                     price
-                  }
+                  )},00
                   </span>
                 <div className='items_delete_container'>
                   <button 

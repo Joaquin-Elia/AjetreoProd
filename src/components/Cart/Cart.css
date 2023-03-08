@@ -76,6 +76,7 @@
     max-width: 3.75rem;
     max-height: 6.25rem;
     object-fit: contain;
+    border-radius: .44rem;
 }
 .cart_items_title{
     margin: 0 .625rem;
@@ -171,6 +172,7 @@
     .cart_items_img{
         margin-left: .625rem;
         max-width: 5rem;
+        border-radius: .74rem;
     }
     .cart_items_title{
         font-size: 1em;
@@ -206,6 +208,7 @@
     .cart_items_img{
         margin-left: 1.4375rem;
         min-width: 7.5rem;
+        border-radius: .74rem;
     }
     .cart_items_title{
         font-size: 1.15em;
@@ -237,6 +240,7 @@
         margin-left: 1.6875rem;
         min-width: 7.5rem;
         min-height: 6.875rem;
+        border-radius: .74rem;
     }
     .cart_items_title{
         font-size: 1.2em;

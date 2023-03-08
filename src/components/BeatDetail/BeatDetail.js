@@ -1,4 +1,4 @@
-import { useContext} from "react";
+import { useContext, useState} from "react";
 import { CartContext } from "../../context/CartContext";
 import { BsHandbag ,BsFillPlayFill } from 'react-icons/bs'
 import BeatsContext from "../../context/BeatsContext";
@@ -7,12 +7,12 @@ export const BeatDetail = ({dataDetail, setFooterPlayer, footerPlayer}) => {
 
   const value = useContext(CartContext);
   const addItem = value.addItem;
+  const [selectedLicense, setSelectedLicense] = useState('Mp3 sin TAG');
   const {setCurrent} = useContext(BeatsContext);
-  // const [license, setLicense] = value.license;
 
   return (
     <div>
-      {dataDetail.map(({id, title, img, category, price, description}, i) => 
+      {dataDetail.map(({id, title, img, category, price, licenses}, i) => 
         <div 
           className='detail-container'
           key={i}
@@ -46,25 +46,25 @@ export const BeatDetail = ({dataDetail, setFooterPlayer, footerPlayer}) => {
                 {title}
               </h2>
               <small className='beat-detail-category'>Categoria: {category}</small>
-              <h3 className='beat-detail-price'>$USD {
-                // license === 'Stems en WAV' 
+              <h3 className='beat-detail-price'>USD {Math.floor(
+                // selectedLicense === 'Stems en WAV' 
                 //     ?
                 // price * 1.8 
                 //     : 
-                // license === 'WAV sin TAG'
+                // selectedLicense === 'WAV sin TAG'
                 //     ? 
                 // price * 1.5 
                 //     : 
-                price}
+                price)},00
               </h3>
               {/* <p>{description}</p>*/}
 
-              {/* <button onClick={() => setLicense('Mp3 sin TAG')}>Mp3 sin TAG</button>
-              <button onClick={() => setLicense('WAV sin TAG')}>WAV sin TAG</button>
-              <button onClick={() => setLicense('Stems en WAV')}>Stems en WAV</button> */}
+              <button onClick={() => setSelectedLicense(licenses[0])}>{licenses[0]}</button>
+              <button onClick={() => setSelectedLicense(licenses[1])}>{licenses[1]}</button>
+              <button onClick={() => setSelectedLicense(licenses[2])}>{licenses[2]}</button>
               <div className="container-btn-add">
                 <button 
-                  onClick={()=> addItem(id)}
+                  onClick={()=> addItem(id, selectedLicense)}
                   className='beat-detail-add'
                 >
                   <BsHandbag className='icon-cart'/>

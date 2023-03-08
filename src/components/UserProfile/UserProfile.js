@@ -44,15 +44,15 @@ export const UserProfile = () => {
             
             {dataOrders && <> {
                 loadingOrders ? <LoadingAnimation /> : 
-                    <>{userOrders.map(({id, total, buyer, items})=>{
+                    <>{userOrders.map(({id, orderNumber, total, buyer, items})=>{
                         return (
                             (user.email === admin) ? 
                                 <div key={id} className='profile-orders'>
                                     <ol className='list-orders'>
                                         <li className='list-orders-items'><strong>Email del comprador:</strong> {buyer}</li>
-                                        <li className='list-orders-items'><strong>El numero de orden es:</strong> {id}</li>
+                                        <li className='list-orders-items'><strong>El numero de orden es:</strong> {orderNumber === undefined ? id : orderNumber}</li>
                                         <li className='list-orders-items'><strong>Nombre del Producto: </strong> {items[0].titleProduct}.</li>
-                                        <li className='list-orders-items'><strong>ID del Producto: </strong> {items[0].titleProduct}.</li>
+                                        <li className='list-orders-items'><strong>ID del Producto: </strong> {items[0].idProduct}.</li>
                                         <li className='list-orders-items'><strong>Sub total: </strong>$USD {items[0].priceProduct}.</li>
                                         <li className='list-orders-items'><strong>El total de la compra es de:</strong> USD {total}.</li>
                                     </ol>
@@ -60,9 +60,9 @@ export const UserProfile = () => {
                                 :
                                 <div key={id} className='profile-orders'>
                                     <ol className='list-orders'>
-                                        <li className='list-orders-items'><strong>Tu numero de orden es: </strong> {id} </li>
+                                        <li className='list-orders-items'><strong>Tu numero de orden es: </strong> {orderNumber === undefined ? id : orderNumber} </li>
                                         <li className='list-orders-items'><strong>Nombre del Producto: </strong> {items[0].titleProduct}.</li>
-                                        <li className='list-orders-items'><strong>Identificador del Producto: </strong> {items[0].titleProduct}.</li>
+                                        <li className='list-orders-items'><strong>Identificador del Producto: </strong> {items[0].idProduct}.</li>
                                         <li className='list-orders-items'><strong>Sub total: </strong>$USD {items[0].priceProduct}.</li>
                                         <li className='list-orders-items'><strong>El total de tu compra es de: </strong>$USD {total}.</li>
                                     </ol>

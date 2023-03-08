@@ -10,7 +10,6 @@ const CartProvider = ({children}) => {
   const [beats, setBeats] = useState([]);
   const [cart, setCart] = useState([]);
   const [total, setTotal] = useState(0);
-  const [license, setLicense] = useState('Mp3 sin TAG')
   const [dataServices, loading] = useFirestore();
 
   useEffect(() => {
@@ -27,58 +26,99 @@ const CartProvider = ({children}) => {
     }
   }, [dataServices, dataBeats])
 
-  const addItem = (id) => {
+  // const addItem = (id, selectedLicense) => {
+  //   // funcion que evalua que item.id sea diferente al id,
+  //   // si es diferente retorna true si es igual false
+  //   const check = cart.every(item => item.id !== id)
+  //   if(check){
+  //     // filtro en products el que sea igual al id y
+  //     // lo guardo en cart 
+  //     const dataProducts = products.filter(product => {
+  //       return product.id === id;
+  //     });
+  //     const dataBeats = beats.filter(beat =>{
+  //       return beat.id === id;
+  //     });
+
+  //     const newItem = {
+  //       ...(dataProducts[0]),
+  //       ...(dataBeats[0]),
+  //       selectedLicense: selectedLicense || null
+  //     };
+  //     if (dataBeats.length > 0){
+  //       // Si se agrega un beat, agrega la información de la licencia seleccionada
+  //       newItem.licences = selectedLicense;
+  //     }
+  //     // guardo lo que hay en cart y lo que hay en data
+  //     setCart([...cart, newItem])
+  //   }
+  // }
+  const addItem = (id, selectedLicense) => {
     // funcion que evalua que item.id sea diferente al id,
     // si es diferente retorna true si es igual false
-    const check = cart.every(item => {
-      return item.id !== id;
-    })
+    const check = cart.every(item => item.id !== id)
     if(check){
-      // filtro en products el que sea igual al id y
-      // lo guardo en cart 
-      const dataProducts = products.filter(product =>{
-        return product.id === id
-      })
+      // filtro en products el que sea igual al id y lo guardo en cart 
+      const dataProducts = products.filter(product => {
+        return product.id === id;
+      });
       const dataBeats = beats.filter(beat =>{
-        return beat.id === id
-      })
+        return beat.id === id;
+      });
+
+      let newItem = null;
+      if (dataBeats.length > 0) {
+        // Si se agrega un beat, agrega la información de la licencia seleccionada
+        const selectedBeat = dataBeats[0];
+        const license = selectedLicense;
+        const licensePrice = selectedLicense === 'Stems en WAV' 
+          ? 
+        selectedBeat.price * 1.7 
+          : 
+        selectedLicense === 'WAV sin TAG' 
+          ? 
+        selectedBeat.price * 1.3 : selectedBeat.price;
+        newItem = {
+          ...selectedBeat,
+          price: licensePrice,
+          license: license || null
+        };
+
+      } else if (dataProducts.length > 0) {
+        newItem = {
+          ...(dataProducts[0]),
+          price: dataProducts[0].price,
+          licence: null
+        };
+      } 
       // guardo lo que hay en cart y lo que hay en data
-      setCart([...cart, ...dataProducts, ...dataBeats])
+      setCart([...cart, newItem])
     }
   }
+
 
   // Total
   useEffect(() =>{
     const getTotal = () =>{
       const res = cart.reduce((prev, item)=> {
-        if (license === 'Stems en WAV'){
-            return prev + (item.price * 1.8);
-          } else if (license === 'WAV sin TAG') {
-             return prev + (item.price * 1.5);
-          } 
           return prev + (item.price);
       }, 0)
       setTotal(res)
   }
   getTotal()
-  }, [cart, license])
+  }, [cart])
 
 
   useEffect(() => {
     // revisando si hay algo en cart
     const dataCart = JSON.parse(localStorage.getItem('dataCart'))
-    const dataLicense = JSON.parse(localStorage.getItem('dataLicense'))
-    if (dataCart) {
       setCart(dataCart)
-    } 
-    setLicense(dataLicense)
   },[])
   
   // si hay algo en cart entonces lo guardo 
   useEffect(() =>{
     localStorage.setItem('dataCart', JSON.stringify(cart))
-    localStorage.setItem('dataLicense', JSON.stringify(license))
-  },[cart, license])
+  },[cart])
 
   const value = {
     products: [products],
@@ -86,7 +126,6 @@ const CartProvider = ({children}) => {
     addItem: addItem,
     cart: [cart, setCart],
     total: [total, setTotal],
-    license: [license, setLicense],
   }
 
   return (

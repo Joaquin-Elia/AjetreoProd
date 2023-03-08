@@ -22,9 +22,10 @@ const GenerateOrder = () => {
             total: total,
             items: cart.map(({id, title, price})=>{
                         const idProduct = id;
+                        const orderNumber = idOrder;
                         const titleProduct = title;
                         const priceProduct = price;
-                        return {idProduct, titleProduct, priceProduct}
+                        return {idProduct, orderNumber, titleProduct, priceProduct}
                     })
         }
         await addDoc(collectionRef, order)
