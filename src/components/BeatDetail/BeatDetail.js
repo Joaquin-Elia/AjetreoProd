@@ -47,21 +47,41 @@ export const BeatDetail = ({dataDetail, setFooterPlayer, footerPlayer}) => {
               </h2>
               <small className='beat-detail-category'>Categoria: {category}</small>
               <h3 className='beat-detail-price'>USD {Math.floor(
-                // selectedLicense === 'Stems en WAV' 
-                //     ?
-                // price * 1.8 
-                //     : 
-                // selectedLicense === 'WAV sin TAG'
-                //     ? 
-                // price * 1.5 
-                //     : 
+                selectedLicense === 'Stems en WAV' 
+                    ?
+                price * 1.9 
+                    : 
+                selectedLicense === 'WAV sin TAG'
+                    ? 
+                price * 1.4 
+                    : 
                 price)},00
               </h3>
-              {/* <p>{description}</p>*/}
-
-              <button onClick={() => setSelectedLicense(licenses[0])}>{licenses[0]}</button>
-              <button onClick={() => setSelectedLicense(licenses[1])}>{licenses[1]}</button>
-              <button onClick={() => setSelectedLicense(licenses[2])}>{licenses[2]}</button>
+              <div className="container-licenses">
+                {licenses.map(license => 
+                  <div key={license}
+                    className={selectedLicense === license ? 'select-license active-license' : 'select-license'}
+                    onClick={() => setSelectedLicense(license)}
+                  >
+                    <p className='title-license'>{license}</p>
+                    {license === 'Mp3 sin TAG' && 
+                      <span>
+                        USD {Math.floor(price)},00
+                      </span>   
+                    }  
+                    {license === 'WAV sin TAG' && 
+                      <span>
+                        USD {Math.floor(price * 1.4)},00
+                      </span>   
+                    }  
+                    {license === 'Stems en WAV' && 
+                      <span>
+                        USD {Math.floor(price * 1.9)},00
+                      </span>   
+                    }  
+                  </div>
+                )}
+              </div>
               <div className="container-btn-add">
                 <button 
                   onClick={()=> addItem(id, selectedLicense)}

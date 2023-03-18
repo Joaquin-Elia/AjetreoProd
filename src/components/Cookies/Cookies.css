@@ -46,7 +46,6 @@
     border-radius: .4375rem;
     font-size: 1.1rem;
     text-align: center;
-    cursor: pointer;
     transition: .3s ease;
 }
 .accept-cookies:hover{

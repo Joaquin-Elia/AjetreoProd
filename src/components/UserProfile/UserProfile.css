@@ -30,7 +30,6 @@
     text-align: center;
     background-color: rgb(164, 4, 4);
     border-radius: .4375rem;
-    cursor: pointer;
     margin-bottom: 1.25rem;
 }
 .profile-logout:hover{

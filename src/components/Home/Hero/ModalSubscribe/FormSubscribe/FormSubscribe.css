@@ -48,7 +48,6 @@
     background-color: rgb(2, 161, 161);
     color: #fff;
     font-size: 1.125em;
-    cursor: pointer;
 }
 .form_container_submit:hover{
     background-color: rgb(2, 179, 179);

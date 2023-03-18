@@ -108,7 +108,6 @@
     all: unset;
     font-size: 1.5625em;
     text-align: center;
-    cursor: pointer;
 }
 .cart_items_delete:hover{
     color: black;
@@ -130,7 +129,6 @@
     height: 2.5rem;
     background-color: rgb(209, 0, 0);
     border-radius: .4375rem;
-    cursor: pointer;
 }
 .cart_delete_all_btn:hover{
     background-color: rgb(185, 2, 2);
@@ -150,7 +148,6 @@
     text-align: center;
     background-color: rgb(0, 175, 0);
     border-radius: .4375rem;
-    cursor: pointer;
 }
 .cart_detail_btn:hover{
     background-color: rgb(2, 197, 2);

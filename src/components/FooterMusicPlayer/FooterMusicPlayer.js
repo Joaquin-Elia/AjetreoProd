@@ -4,6 +4,7 @@ import {IoVolumeLowOutline, IoVolumeMediumOutline, IoVolumeMuteOutline, IoVolume
 import BeatsContext from '../../context/BeatsContext';
 import {motion} from 'framer-motion';
 import { Link } from 'react-router-dom';
+import { CursorContext } from '../../context/CursorContext';
 import './FooterMusicPlayer.css';
 
 export const FooterMusicPlayer = ({dataDetail, footerPlayer, setFooterPlayer, changeSong, id}) => {
@@ -19,7 +20,7 @@ export const FooterMusicPlayer = ({dataDetail, footerPlayer, setFooterPlayer, ch
         isPlayingVideo,
         // repeat
     } = useContext(BeatsContext);
-
+    const {setCursorType} = useContext(CursorContext)
     const [stateVolume, setStateVolume] = useState(0.3);
     const [duration, setDuration] = useState(0);
     const [currentTime, setCurrentTime] = useState(0);
@@ -78,6 +79,8 @@ export const FooterMusicPlayer = ({dataDetail, footerPlayer, setFooterPlayer, ch
             </div>
             <div className='container-beat-progressbar'>
                 <progress 
+                    onMouseEnter={()=> setCursorType('cursor-footer')}
+                    onMouseLeave={()=> setCursorType('default')}
                     className='beat-progressbar'
                     id='prgbar'
                     value={duration ? (currentTime * 100) / duration : 0}
@@ -104,7 +107,10 @@ export const FooterMusicPlayer = ({dataDetail, footerPlayer, setFooterPlayer, ch
                         className='title-footer-beat'>
                         {id ? dataDetail[currentSong].title : dataBeats[currentSong].title}
                     </h5>
-                    <div className='container-title-volume-icons'>
+                    <div className='container-title-volume-icons'
+                        onMouseEnter={()=> setCursorType('cursor-footer')}
+                        onMouseLeave={()=> setCursorType('default')}
+                    >
                         {(stateVolume === 0 && <IoVolumeMuteOutline onClick={() => unmuteBeat()}/>) || 
                         (stateVolume < .4 && <IoVolumeLowOutline onClick={() => muteBeat()}/>) || 
                         (stateVolume < .7 && <IoVolumeMediumOutline onClick={() => muteBeat()}/>) ||
@@ -128,7 +134,10 @@ export const FooterMusicPlayer = ({dataDetail, footerPlayer, setFooterPlayer, ch
                     controlsList='nodownload'
                     src={id ? dataDetail[currentSong].audio : dataBeats[currentSong].audio}
                 />
-                <div className="btns-audio-functions">
+                <div className="btns-audio-functions"
+                    onMouseEnter={()=> setCursorType('cursor-footer-btns')}
+                    onMouseLeave={()=> setCursorType('default')}
+                >
                     {!id && 
                         <MdSkipPrevious 
                             onClick={prevSong}

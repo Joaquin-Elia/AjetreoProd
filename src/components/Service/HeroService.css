@@ -125,7 +125,6 @@
     align-items: center;
     background: radial-gradient(circle, #3d33ca, #102fa1,  #102fa1, #2b3668);
     border-radius: .4375rem;
-    cursor: pointer;
 }
 .service-container-more-link:hover{
     background-color: #0a42b1;

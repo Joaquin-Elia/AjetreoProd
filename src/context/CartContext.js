@@ -26,33 +26,6 @@ const CartProvider = ({children}) => {
     }
   }, [dataServices, dataBeats])
 
-  // const addItem = (id, selectedLicense) => {
-  //   // funcion que evalua que item.id sea diferente al id,
-  //   // si es diferente retorna true si es igual false
-  //   const check = cart.every(item => item.id !== id)
-  //   if(check){
-  //     // filtro en products el que sea igual al id y
-  //     // lo guardo en cart 
-  //     const dataProducts = products.filter(product => {
-  //       return product.id === id;
-  //     });
-  //     const dataBeats = beats.filter(beat =>{
-  //       return beat.id === id;
-  //     });
-
-  //     const newItem = {
-  //       ...(dataProducts[0]),
-  //       ...(dataBeats[0]),
-  //       selectedLicense: selectedLicense || null
-  //     };
-  //     if (dataBeats.length > 0){
-  //       // Si se agrega un beat, agrega la información de la licencia seleccionada
-  //       newItem.licences = selectedLicense;
-  //     }
-  //     // guardo lo que hay en cart y lo que hay en data
-  //     setCart([...cart, newItem])
-  //   }
-  // }
   const addItem = (id, selectedLicense) => {
     // funcion que evalua que item.id sea diferente al id,
     // si es diferente retorna true si es igual false
@@ -73,11 +46,13 @@ const CartProvider = ({children}) => {
         const license = selectedLicense;
         const licensePrice = selectedLicense === 'Stems en WAV' 
           ? 
-        selectedBeat.price * 1.7 
+        selectedBeat.price * 1.9 
           : 
         selectedLicense === 'WAV sin TAG' 
           ? 
-        selectedBeat.price * 1.3 : selectedBeat.price;
+        selectedBeat.price * 1.4 
+          : 
+        selectedBeat.price;
         newItem = {
           ...selectedBeat,
           price: licensePrice,
@@ -103,7 +78,7 @@ const CartProvider = ({children}) => {
       const res = cart.reduce((prev, item)=> {
           return prev + (item.price);
       }, 0)
-      setTotal(res)
+      setTotal(Math.floor(res))
   }
   getTotal()
   }, [cart])

@@ -56,17 +56,7 @@ const Cart = () => {
                 <h3 className='cart_items_title'>{title}</h3>
                 {license && <p>{license}</p>}
                 <span className='cart_items_price'><small className='price_badge'>USD</small> 
-                  {Math.floor(
-                    // license === 'Stems en WAV' 
-                    //     ?
-                    // price * 1.8 
-                    //     : 
-                    // license === 'WAV sin TAG'
-                    //     ? 
-                    // price * 1.5 
-                    //     : 
-                    price
-                  )},00
+                  {Math.floor(price)},00
                   </span>
                 <div className='items_delete_container'>
                   <button 

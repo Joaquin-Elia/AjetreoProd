@@ -1,6 +1,6 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import { motion } from 'framer-motion';
-import { HiOutlineArrowNarrowRight } from 'react-icons/hi';
+import { BsFillPlayFill } from 'react-icons/bs';
 import Modal from '../../Modal/Modal';
 import ModalSubscribe from './ModalSubscribe/ModalSubscribe';
 import image1 from '../../../imgs/fuckItImg.webp'
@@ -8,15 +8,17 @@ import image2 from '../../../imgs/movesImg.webp'
 import image3 from '../../../imgs/KendrickImg.jpg'
 import image4 from '../../../imgs/ysyaImg.webp'
 import './Hero.css'
+import { CursorContext } from '../../../context/CursorContext';
 // import { useBeats } from '../../../hooks/useBeats';
 
 export default function Hero() {
+  const {setCursorType} = useContext(CursorContext)
   const [modalState, setModalState] = useState(false);
   // const [dataBeats, loading] = useBeats();
 
   // const [beatsImg, setBeatsImgs] = useState(dataBeats);
-  // const heroImgs = dataBeats.filter(({showInHero}) => {
-  //   return showInHero === true;
+  // const heroImgs = dataBeats.some((showInHero)) => {
+  //   return showInHero;
   // })
 
   const title = {
@@ -76,7 +78,6 @@ export default function Hero() {
               Necesitas una buena producción para tu proxima canción? Con nosotros ...</motion.p>
           </div>
           <div className="bg-blurs4"></div>
-          <div className="bg-blurs4"></div>
           <motion.div
             className='container-hero_btns'
             variants={basicAnimation}
@@ -87,12 +88,18 @@ export default function Hero() {
             <button
               onClick={() => setModalState(!modalState)}
               className='container-hero_btns_btn'
+              onMouseEnter={()=> setCursorType('cursor-hover')}              
+              onMouseLeave={()=> setCursorType('default')}
             >
               Prueba gratis!
             </button>
-            <button className='container-hero_btns_btn'>
-              Conocer mas <HiOutlineArrowNarrowRight className='container-hero_btns_btn_icon' />
-            </button>
+            <a href='/#beats' 
+              className='container-hero_btns_btn'
+              onMouseEnter={()=> setCursorType('cursor-hover')}
+              onMouseLeave={()=> setCursorType('default')}
+            >
+            <BsFillPlayFill className='container-hero_btns_btn_icon' /> Beats 
+            </a>
           </motion.div>
 
           <Modal

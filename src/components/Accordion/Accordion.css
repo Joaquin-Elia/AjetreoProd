@@ -13,7 +13,6 @@
     padding: .7rem .5rem;
     background: rgb(230, 230, 230);
     user-select: none;
-    cursor: pointer;
 }
 .accordion-arrow{
     font-size: 1.3em;

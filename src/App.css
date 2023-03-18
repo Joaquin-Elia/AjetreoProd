@@ -6,7 +6,57 @@
 }
 a, button{
     all: unset;
-    cursor: pointer;
+}
+
+/* mouse moving effect */
+.main-cursor, .secondary-cursor{
+    display: none;
+}
+@media screen and (min-width: 1024px){
+    html, body {
+        cursor: none;
+    }
+    .main-cursor{
+        background: #fff;
+        border: 1px solid #000000;
+        width: 1.5rem;
+        border-radius: 50%;
+        aspect-ratio: 1;
+        position: fixed;
+        overflow: hidden;
+        z-index: 5;
+        pointer-events: none;
+        transform: translate3d(0,0,0);
+    }
+    .cursor-hover{
+        mix-blend-mode: difference;
+        animation: cursorScaleUp .4s ease-in-out forwards;
+        border: none;
+    }
+    .cursor-footer{
+        mix-blend-mode: difference;
+        animation: cursorScaleDown .2s ease-in-out forwards;
+    }
+    .cursor-footer-btns{
+        mix-blend-mode: difference;
+        width: 2.5rem;
+    }
+    @keyframes cursorScaleUp {
+        from{
+            width: 1.5rem;
+        }
+        to{
+            width: 4rem;
+        }
+    }
+    @keyframes cursorScaleDown {
+        from{
+            width: 1.5rem;
+        }
+        to{
+            width: 1.2rem;
+        }
+    }
 }
 .register-bg, .login-bg, .reset-bg{
     width: 100%;
@@ -57,7 +107,6 @@ a, button{
     border-radius: 50%;
     color: #000;
     margin-bottom: 1.25rem;
-    cursor: pointer;
 }
 .title-form-h5{
     margin: 1.25rem .625rem 0 1.25rem;
@@ -107,7 +156,6 @@ a, button{
     background-color: rgb(10, 10, 10);
     border-radius: 1.25rem;
     text-align: center;
-    cursor: pointer;
     border: none;
     transition: all 240ms ease-in-out;
 }
@@ -126,7 +174,6 @@ a, button{
 }
 .forget-password{
     margin: .4375rem .9375rem;
-    cursor: pointer;
     font-weight: 700;
     font-size: 1em;
     color: #000;

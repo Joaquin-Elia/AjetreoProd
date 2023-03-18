@@ -20,19 +20,17 @@
 }
 .beat-play-container{
     position: relative;
-    width: 100%;
     border-radius: .5rem;
     display: flex;
     flex-direction: column;
     align-items: center;
-    cursor: pointer;
 }
 .beat-play-icon, .beat-playing{
     color: rgb(255, 255, 255);
     background-color: #0000004e;
     height: 100%;
     width: 100%;
-    max-width: 18.75rem;
+    max-width: 20rem;
     border-radius: .5rem;
     font-size: 5em;
     position: absolute;
@@ -63,9 +61,32 @@
     font-style: italic;
 }
 .beat-detail-price{
-    margin-top: .3rem;
+    margin-top: .7rem;
     font-size: 1.4em;
     font-weight: 400;
+}
+.container-licenses{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 1.5rem 0 .7rem 0;
+    gap: 1rem .7rem;
+}
+.select-license{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 0 .6rem;
+    height: 6rem;
+    width: 11rem;
+    border-radius: .43rem;
+    border: 1px solid #d00000;
+}
+.active-license{
+    border: 1px solid #ff0000;
+    background-color: #ff020256;
+}
+.title-license{
+    font-weight: 600;
 }
 .container-btn-add{
     display: flex;
@@ -82,9 +103,9 @@
     justify-content: center;
     align-items: center;
     text-align: center;
-    background-color: rgb(208, 0, 0);
+    background-color: #d00000;
     border-radius: .73rem;
-    cursor: pointer;
+
 }
 @media screen and (min-width: 21.875rem) {
     .detail-container{
@@ -95,8 +116,11 @@
         flex-direction: column;
         align-items: center;
     }
-    .img-beat-detail, .beat-play-icon, .beat-playing{
-        width: 90%;
+    .img-beat-detail{
+        max-width: 20rem;
+    }
+    .beat-play-icon, .beat-playing{
+        max-width: 20rem;
     }
     .beat-playing{
         font-size: 1.4em;
@@ -113,6 +137,18 @@
     .beat-detail-price{
         font-size: 1.55em;
         margin: .5rem 0 0 .4rem;
+    }
+    .container-licenses{
+        margin: 1rem .5rem;
+        gap: 1rem .7rem;
+    }
+    .select-license{
+        height: 7rem;
+        width: 9rem;
+        border: 1px solid red;
+    }
+    .title-license{
+        font-size: 1.1em;
     }
     .beat-detail-add{
         width: 90%;
@@ -141,6 +177,14 @@
         font-size: 1.65em;
         margin: .8rem 0 0 2.5rem;
     }
+    .container-licenses{
+        margin: 1rem 2.5rem;
+        gap: 1.3rem 1.3rem;
+    }
+    .select-license{
+        height: 7rem;
+        width: 11rem;
+    }
     .beat-detail-add{
         width: 80%;
         height: 2.7rem;
@@ -163,36 +207,27 @@
     .beat-detail-price{
         margin: .8rem 0 0 4rem;
     }
+    .container-licenses{
+        margin: 2rem 4rem;
+        gap: 1.3rem 1.3rem;
+    }
+    .select-license{
+        height: 7rem;
+        width: 11rem;
+    }
     .beat-detail-add{
-        width: 75%;
+        width: 80%;
         height: 2.9rem;
-        margin-top: 2rem;
+        margin: 1rem 0 0 -1rem;
         font-size: 1.35em;
-    }
-}
-@media screen and (min-width: 54.75rem) {
-    .beat-detail-title{
-        font-size: 2em;
-        letter-spacing: 1.8px;
-        margin-left: 5rem;
-    } 
-    .beat-detail-category{
-        font-size: 1.25em;
-        margin-left: 5rem;
-    }
-    .beat-detail-price{
-        margin-left: 5rem;
     }
 }
 @media screen and (min-width: 62.75rem) {
     .detail-container{
-        padding: 6.8rem 0;
+        padding: 6.8rem 0 6.8rem 2rem;
         display: flex;
         justify-content: space-evenly;
         align-items: center;
-    }
-    .beat-play-container{
-        width: auto;
     }
     .beat-play-icon, .beat-playing{
         height: 100%;
@@ -210,18 +245,13 @@
         max-width: 25rem;
         font-size: 2.2em;
         letter-spacing: 2.2px;
-        margin: 0 0 1rem 0;
     } 
     .beat-detail-category{
         font-size: 1.25em;
-        margin-left: 0;
-    }
-    .beat-detail-price{
-        margin-left: 0;
     }
     .beat-detail-add{
-        width: 100%;
+        width: 85%;
         height: 2.9rem;
-        margin-top: 2rem;
+        margin: 1rem 0 0 1rem;
     }
 }

@@ -17,7 +17,6 @@
     border-radius: .4375rem;
     border: 2px solid #dd0303e4;
     color: #ff0000;
-    cursor: pointer;
     transition: .5s ease;
 }
 .filter-active {

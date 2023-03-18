@@ -59,8 +59,8 @@
     background-color: #610699;
     color: #ffffff;
     border-radius: .3125rem;
-    font-size: .95rem;
-    cursor: pointer;
+    font-size: .9rem;
+    font-weight: 600;
 }
 .container-hero_btns_btn:nth-child(2){
     background-color: transparent;
@@ -68,12 +68,17 @@
     text-align: center;
     color: #00ffe1;
     border: 1px solid #00ffe1;
-    width: 7.1875rem;
-    padding: .25rem .3125rem;
+    width: 6.7rem;
+    padding: .3rem .3125rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: .3rem;
+    font-weight: 600;
 }
 .container-hero_btns_btn_icon{
     font-size: 1.1rem;
-    transform: translateY(.25rem);
+    transform: translateY(.09rem);
 }
 .bg-blurs, .bg-blurs2, .bg-blurs3, .bg-blurs4{
     width: 15.625rem;
@@ -87,28 +92,6 @@
     filter: blur(4.0625rem);
     background-color: #9e08d9;
     animation: 8s animateBlurs 2s linear infinite;
-}
-@keyframes animateBlurs {
-    0%{
-        transform: translate(0);
-    }
-    50%{
-        transform: translate(-8.1875rem, -2.3125rem) ;
-    }
-    100%{
-        transform: translate(0);
-    }
-}
-@keyframes animateBlurs2 {
-    0%{
-        transform: translate(0);
-    }
-    50%{
-        transform: translate(8.1875rem, 5.3125rem);
-    }
-    100%{
-        transform: translate(0);
-    }
 }
 .bg-blurs2{
     top: 30;
@@ -147,6 +130,18 @@
     position: relative;
     object-fit: contain;
     border-radius: .4375rem;
+    animation: animate-img 5s ease-in-out infinite;
+}
+@keyframes animate-img {
+    from{
+        border-radius: 35% 30% 15% 40% / 40% 25% 40% 20%;
+    }
+    50%{
+        border-radius: 25% 40% 30% 20% / 30% 35% 25% 40%;
+    }
+    100%{
+        border-radius: 35% 30% 15% 40% / 40% 25% 40% 20%;
+    }
 }
 .image-hero1{
     width: 10rem;
@@ -190,14 +185,13 @@
         font-size: 1.12rem;
     }
     .container-hero_btns_btn:nth-child(2){
-        width: 9.7rem;
+        width: 9rem;
         font-size: 1.2em;
         margin-top: .3725rem;
         padding: .375rem 2px .48rem 0;
     }
     .container-hero_btns_btn_icon{
         font-size: 1.5rem;
-        transform: translateY(.375rem);
     }
     .container-images{
         margin-top: 4rem;
@@ -222,18 +216,40 @@
     .container-hero_btns_btn:nth-child(2){
         width: 9.375rem;
         font-size: 1.2em;
-        margin-top: .48rem;
-        padding: .295rem 0rem;
+        margin-top: .4rem;
+        padding: .31rem 0;
     }
-    .container-hero_featured{
-        margin-top: 2.8125rem;
+    .bg-blurs, .bg-blurs2{
+        width: 10.75rem;
+        height: 5.5rem;
+        top: 1.25rem;
+        left: 12.5rem;
     }
-    .container-hero_featured_title{
-        font-size: 2rem;
-        margin-bottom: 1.25rem;
+    .bg-blurs2{
+        top: 8.25rem;
+        left: 2.5rem;
     }
-    .container-hero_featured_name::before{
-        font-size: 4.8rem;
+    @keyframes animateBlurs {
+        0%{
+            transform: translate(0);
+        }
+        50%{
+            transform: translate(-8.1875rem, -3.3125rem) ;
+        }
+        100%{
+            transform: translate(0);
+        }
+    }
+    @keyframes animateBlurs2 {
+        0%{
+            transform: translate(0);
+        }
+        50%{
+            transform: translate(8.1875rem, 5.3125rem);
+        }
+        100%{
+            transform: translate(0);
+        }
     }
 }
 @media screen and (min-height: 52.75rem) and (orientation: portrait) {
@@ -254,7 +270,6 @@
         font-size: 1.35em;
     }
     .container-hero_btns_btn:nth-child(2){
-        width: 10rem;
         font-size: 1.3em;
     }
 }
@@ -273,9 +288,8 @@
         font-size: 1.35em;
     }
     .container-hero_btns_btn:nth-child(2){
-        width: 10.5rem;
         margin-top: .45rem;
-        padding: .48rem 0;
+        padding: .4rem .5rem;
         font-size: 1.3em;
     }
     .container-images{
@@ -301,44 +315,44 @@
     }
     .container-hero_btns_btn:nth-child(2){
         margin-top: .9375rem;
-        padding: 3px .625rem .5625rem .625rem;
+        padding: .45rem .3rem;
     }
     .container-hero_btns_btn{
         margin: .9375rem 1.575rem 0 0;
     }
     .bg-blurs, .bg-blurs2, .bg-blurs3{
-        width: 300px;
-        height: 120px;
-        top: 20px;
-        left: 200px;
+        width: 18.75rem;
+        height: 7.5rem;
+        top: 1.25rem;
+        left: 12.5rem;
     }
     .bg-blurs2{
-        left: -20px;
+        left: -1.25rem;
     }
     .bg-blurs3{
-        width: 300px;
-        height: 90px;
-        top: 40px;
-        left: 30px;
+        width: 18.75rem;
+        height: 5.625rem;
+        top: 2.5rem;
+        left: 1.875rem;
     }
     .image-hero1{
-        top: -10px;
-        left: 25px;
+        top: -0.625rem;
+        left: 1.5625rem;
     }
     .image-hero2{
-        width: 130px;
-        top: 60px;
-        left: 65px;
+        width: 8.125rem;
+        top: 3.75rem;
+        left: 4.0625rem;
     }
     .image-hero3{
-        width: 85px;
-        top: 137px;
-        right: 200px;
+        width: 5.3125rem;
+        top: 8.5625rem;
+        right: 12.5rem;
     }
     .image-hero4{
-        bottom: 50px;
-        right: 60px;
-        width: 70px;
+        bottom: 3.125rem;
+        right: 3.75rem;
+        width: 4.375rem;
     }
 }
 @media screen and (min-width: 40.625rem) and (min-height: 63.75rem) {
@@ -360,11 +374,10 @@
         font-size: 1.4em;
     }
     .container-hero_btns_btn:nth-child(2){
-        width: 11.25rem;
         height: 2.875rem;
         font-size: 1.4em;
         margin-top: .9375rem;
-        padding: .4375rem 1.125rem .5313rem 1.125rem;
+        padding: .4475rem 1.5rem;
     }
     .bg-blurs, .bg-blurs2, .bg-blurs3{
         width: 21.875rem;
@@ -428,13 +441,13 @@
     .bg-blurs, .bg-blurs2, .bg-blurs3{
         width: 25.875rem;
         height: 9.75rem;
-        top: 6.625rem;
+        top: 4.625rem;
         left: 25.75rem;
     }
     .bg-blurs2{
         width: 22.75rem;
-        top: 10.25rem;
-        left: 2.25rem;
+        top: 11.25rem;
+        left: 8.25rem;
     }
     .bg-blurs3{
         width: 20.875rem;
@@ -577,15 +590,15 @@
         margin: 2rem 0 0 2rem;
     }
     .bg-blurs{
-        width: 13.875rem;
-        height: 10.15rem;
-        top: 2rem;
-        left: 7.75rem;
+        width: 11.875rem;
+        height: 8.15rem;
+        top: 1rem;
+        left: 6.75rem;
     }
     .bg-blurs2{
-        width: 13.75rem;
-        top: 13.25rem;
-        left: 2rem;
+        width: 11.75rem;
+        top: 15.25rem;
+        left: 8rem;
     }
     .container-images{
         margin: 0 .5rem 6rem 1rem;

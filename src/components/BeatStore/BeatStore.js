@@ -5,14 +5,16 @@ import { FooterMusicPlayer } from '../FooterMusicPlayer/FooterMusicPlayer';
 import {BsFillPlayFill} from 'react-icons/bs'
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper";
-import "swiper/swiper.min.css";
-import "swiper/css/navigation";
 import LoadingAnimation from '../LoadingAnimation/LoadingAnimation';
 import { useBeats } from '../../hooks/useBeats';
+import { CursorContext } from '../../context/CursorContext';
+import "swiper/swiper.min.css";
+import "swiper/css/navigation";
 
 
 const BeatStore = () => {
   const [dataBeats, loading] = useBeats()
+  const {setCursorType} = useContext(CursorContext)
   const {
     setCurrent,
     currentSong } = useContext(BeatsContext);
@@ -21,7 +23,7 @@ const BeatStore = () => {
 
   return (
     <>
-        <div className='container-beats-home' >
+        <div className='container-beats-home' id='beats'>
           <div className="title-beats-page">
             <h2 className='container-beats-home-title'>Catalogo de beats</h2>
             <h3 className='bg-text'>Catalogo</h3>
@@ -84,8 +86,15 @@ const BeatStore = () => {
                             <h4>Reproduciendo</h4>
                           </div>
                             : 
-                          <div className='beat-card-play-icon' onClick={() => setChangeSong(!changeSong)}>
-                            <BsFillPlayFill/>
+                          <div 
+                            className='beat-card-play-icon' 
+                            onClick={() => setChangeSong(!changeSong)}
+                          >
+                            <BsFillPlayFill                             
+                              onMouseEnter={()=> setCursorType('cursor-hover')}
+                              onMouseLeave={()=> setCursorType('default')}
+                              onClick={()=> setCursorType('default')}
+                            />
                           </div>
                         }
                         <img 

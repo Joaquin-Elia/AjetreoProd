@@ -58,7 +58,7 @@
     background-color: #fff;
     transition: .5s width .09s;
 }
-.hover-effect:hover:before, .active:before{
+ .active:before{
     width: 70%;
     margin-top: 5px;
 }
@@ -82,7 +82,6 @@
     margin: .9rem 0 0 .7rem;
     position: absolute;
     font-size: 1.5em;
-    cursor: pointer;
 }
 .cart-container{
     position: absolute;

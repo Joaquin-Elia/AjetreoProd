@@ -24,7 +24,6 @@
     background: linear-gradient(146deg, rgba(173,8,8,1) 0%, rgba(120,14,14,1) 29%, rgba(232,7,7,1) 72%, rgba(187,8,8,1) 100%);
     margin: 0 .5625rem;
     border-radius: .4375rem;
-    cursor: pointer;
 }
 .selected-beat{
     background-color: rgb(41, 41, 41);
@@ -320,7 +319,6 @@
     background-color: rgb(173,8,8);
     color: #fff;
     border-radius: .4375rem;
-    cursor: pointer;
     margin: 1.25rem auto -1.25rem auto;
     display: flex;
     justify-content: center;
@@ -389,5 +387,6 @@
         background-color: #00000060;
         border-radius: 1.25rem;
         transition: all ease .5s;
+        cursor: none;
     }
 }

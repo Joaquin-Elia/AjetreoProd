@@ -82,7 +82,6 @@
 }
 .slide-btn{
   all: unset;
-  cursor: pointer;
   position: absolute;
   left: .75rem;
   top: 72%;
@@ -94,7 +93,6 @@
   letter-spacing: .05rem;
   border-radius: 3px;
   text-align: center;
-  cursor: pointer;
 }
 .all-dots {
   width: 100%;
@@ -105,7 +103,6 @@
   bottom: 3%;
 }
 .dot {
-  cursor: pointer;
   height: 1.6rem;
   width: 1.6rem;
   margin: 2.5px 3px;
@@ -139,7 +136,6 @@
   width: 2.7rem;
   height: 2.7rem;
   color: #fff;
-  cursor: pointer;
   background-color: rgba(215, 215, 215, 0.405);
   padding: .3125rem;
   border-radius: 10%;
@@ -403,7 +399,6 @@
     height: 3rem;
     width: 10rem;
     font-size: 1.4375em;
-    cursor: pointer;
   }
   .dot {
     height: 2rem;
@@ -427,47 +422,3 @@
     right: 5rem;
   }
 }
-/* @media screen and (min-width: 60.25rem) and (orientation: landscape){
-  .slides{
-    height: 100vh;
-  }
-  .slide-image{
-    height: 100%;
-  }
-  .slide-title{
-    font-size: 6.6875em;
-    letter-spacing: 1px;
-    padding: 0 0 26.25rem 3.4375rem;
-  }
-  .slide-authors{
-    top: 25%;
-    left: 3.75rem;
-    font-size: 2.1875em;
-  }
-  .slide-text{
-    font-size: 1.3125em;
-    width: 40%;
-    top: 33%;
-    left: 3.75rem;
-  }
-  .slide-btn{
-    top: 74%;
-    left: 3.75rem;
-    height: 3rem;
-    width: 10rem;
-    font-size: 1.4375em;
-    cursor: pointer;
-  }
-  .all-dots {
-    top: 1.875rem;
-    right: 1.875rem;
-  }
-  .open iframe{
-    width: 75%;
-    height: 82%;
-  }
-  .open .close-video{
-    top: 1.875rem;
-    right: 5rem;
-  }
-} */
