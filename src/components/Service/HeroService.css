@@ -13,21 +13,27 @@
 .service-container-text-animated{
     display: flex;
     overflow: hidden;
-    margin-top: 3rem;
-    transform: skew(-5deg, -7deg);
+    margin: 3rem 0 0 -1rem;
+    padding: 1.5rem 0;
+    transform: skew(-7deg, -5deg);
+    background: radial-gradient(circle, #151515, #181818, #1b1b1b, #181818);
+    width: 110%;
 }
 .service-container-text-animated > h2{
-    font-size: 6em;
-    color: #060606;
+    font-size: 3em;
+    color: #0329b0;
     animation: textAnimate linear 30s infinite;
     white-space: nowrap;
     user-select: none;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    font-family: 'Monument Extended';
+    letter-spacing: 1px;
+    text-transform: uppercase;
 }
 .service-container_text-animated-transparent{
-    -webkit-text-stroke: 1.7px;
-    -webkit-text-stroke-color: #000000;
+    -webkit-text-stroke: 1px;
+    -webkit-text-stroke-color: #0034ef;
     -webkit-text-fill-color: transparent;
+    margin: 0 1.5rem;
 }
 @keyframes textAnimate {
     0%{
@@ -170,17 +176,18 @@
         padding: .8rem 1.5rem;
     }
     .service-container-text-animated > h2{
-        font-size: 9em;
-        padding: 0 .9375rem;
+        font-size: 3.5em;
+        padding: 1.5rem .5rem;
     }
 }
 @media screen and (min-width: 62.5rem){
     .service-container-text-animated{
-        transform: skew(-9deg, -3.5deg);
+        transform: skew(-7deg, -3deg);
+        padding: .2rem;
     }
     .service-container-text-animated > h2{
-        font-size: 10em;
-        padding: 0 1.25rem;
+        font-size: 5em;
+        padding: 1.7rem .6rem;
     }
     .service-container-service{
         width: 100%;

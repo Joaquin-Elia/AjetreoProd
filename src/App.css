@@ -32,6 +32,7 @@ a, button{
         mix-blend-mode: difference;
         animation: cursorScaleUp .4s ease-in-out forwards;
         border: none;
+        transform-origin: 100% 100%;
     }
     .cursor-footer{
         mix-blend-mode: difference;

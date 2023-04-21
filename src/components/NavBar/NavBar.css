@@ -33,6 +33,7 @@
     left: -100%;
     opacity: 1;
     transition: .5s ease;
+
 }
 .nav-menu.menu-active{
     background: rgba(21, 20, 21, 0.445);
@@ -195,6 +196,9 @@
         color: #fff;
         margin-right: 1.5rem;
         transition: none;
+    }
+    .container-links{
+        padding: .8rem;
     }
     .nav-links{
         padding: 0 1.8rem;

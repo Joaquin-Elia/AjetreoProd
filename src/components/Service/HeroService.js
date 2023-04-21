@@ -11,7 +11,6 @@ const HeroService = () => {
   const heroServiceData = dataServices.filter(({showInHero}) => {
     return showInHero === true;
   })
-
   
   return (
     <div className='service-container'>
@@ -21,14 +20,13 @@ const HeroService = () => {
           </div> 
             : 
           <>
-      <div className='service-container-text-animated'>
-          <h2 className='service-container_text-animated-transparent'>Ajetreo Services</h2>
-          <h2>Ajetreo Services</h2>
-          <h2 className='service-container_text-animated-transparent'>Ajetreo Services</h2>
-          <h2>Ajetreo Services</h2>
-      </div>
-      <>
-        {/* <p>Comenzar de cero en el mundo de la musica y subir tus canciones es mas simple de lo que pensás</p> */}
+          <div className='service-container-text-animated'>
+              <h2 className='service-container_text-animated-transparent'>Ajetreo Services</h2>
+              <h2>Ajetreo Services</h2>
+              <h2 className='service-container_text-animated-transparent'>Ajetreo Services</h2>
+              <h2>Ajetreo Services</h2>
+          </div>
+        <>
           <div className='service-container-service custom-scroll'>
             {heroServiceData.map(({id, title, price})=> 
               <div

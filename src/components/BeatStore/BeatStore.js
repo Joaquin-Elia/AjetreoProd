@@ -24,12 +24,14 @@ const BeatStore = () => {
   return (
     <>
         <div className='container-beats-home' id='beats'>
-          <div className="title-beats-page">
-            <h2 className='container-beats-home-title'>Catalogo de beats</h2>
-            <h3 className='bg-text'>Catalogo</h3>
-          </div>
-          {loading ? <LoadingAnimation /> : 
+          {loading ? <div className='beats-loading'><LoadingAnimation /></div> : 
+            <>
             <div className='beats-store_titles'>
+                <h2 className='beats-text-animated-bolder'>Catalogo de Beats</h2>
+                <h2 className='beats-text-animated'>Ajetreo Beats</h2>
+                <h2 className='beats-text-animated-bolder'>Catalogo de Beats</h2>
+                <h2 className='beats-text-animated'>Ajetreo Beats</h2>
+            </div>
               <div className="container-card-beat custom-scroll">
                 <Swiper
                   loop={true}
@@ -109,9 +111,9 @@ const BeatStore = () => {
                   )}
                   </Swiper>
               </div>
-              <h3 className='beats-store_recent'>Los mas recientes:</h3>
-            </div>
+              {/* <h3 className='beats-store_recent'>Los mas recientes:</h3> */}
           
+          </>
           }
             <div className="btn-go-allbeats-container">
               <Link 

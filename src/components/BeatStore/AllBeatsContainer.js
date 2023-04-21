@@ -28,7 +28,7 @@ export const AllBeatsContainer = () => {
     }
     return (
         <>
-            {loading ? <div className='all-beats-loading'><LoadingAnimation /></div> : <>
+            {loading ? <div className='beats-loading'><LoadingAnimation /></div> : <>
                 <div className='container-beatstore'>
                     <FilterButtons 
                         filterResult={filterResult}

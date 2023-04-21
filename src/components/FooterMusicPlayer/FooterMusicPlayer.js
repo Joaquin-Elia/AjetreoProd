@@ -163,7 +163,10 @@ export const FooterMusicPlayer = ({dataDetail, footerPlayer, setFooterPlayer, ch
                     }
                     <IoClose 
                         className='btn-close-footer'
-                        onClick={() => setFooterPlayer(!footerPlayer)}
+                        onClick={() => {
+                            setFooterPlayer(!footerPlayer);
+                            setCursorType('default');
+                        }}
                     />
                 </div>
             </div>

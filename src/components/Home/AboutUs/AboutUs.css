@@ -43,9 +43,6 @@
     line-height: 1.4;
     text-align: center;
 }
-.who-we-are-strong{
-    transition: .5s cubic-bezier(0.075, 0.82, 0.165, 1);
-}
 @media screen and (min-width: 28.125rem){
     .who-we-are-title{
         width: 80%;
@@ -88,6 +85,31 @@
         font-size: 2.4em;
         width: 70%;
         max-width: 37.5rem;
+    }
+}
+@media screen and (min-height: 50rem) and (orientation: portrait) {
+    .container-choose-us{
+        margin: 1.5rem 1rem;
+    }
+    .who-we-are-title{
+        margin: 5.5rem 0 0 0;
+    }
+    .reasons-numbers{
+        margin-bottom: -1rem;
+    }
+}
+@media screen and (min-height: 60rem) and (orientation: portrait) {
+    .container-choose-us{
+        margin: 1rem 1rem 5rem 2rem;
+    }
+    .who-we-are-title{
+        margin: 5.5rem 0 0 0;
+    }
+    .reasons-numbers{
+        margin-bottom: -1rem;
+    }
+    .scroll-left-bg{
+        height: 20vh;
     }
 }
 @media screen and (min-width: 68.8rem){

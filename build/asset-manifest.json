@@ -1,22 +1,23 @@
 {
   "files": {
-    "main.css": "/static/css/main.8c6eaa82.css",
-    "main.js": "/static/js/main.aaa12011.js",
+    "main.css": "/static/css/main.e6c05191.css",
+    "main.js": "/static/js/main.dcd623ed.js",
     "static/js/787.0c46290f.chunk.js": "/static/js/787.0c46290f.chunk.js",
     "static/media/mesh-gradient.webp": "/static/media/mesh-gradient.ea5a475799d93749a311.webp",
     "static/media/KendrickImg.jpg": "/static/media/KendrickImg.91c222c76e5dc0e0e698.jpg",
     "static/media/logoHeader.webp": "/static/media/logoHeader.05af9b8b842c31507650.webp",
     "static/media/LogoFooter.png": "/static/media/LogoFooter.7f353efb6b575364bdd0.png",
+    "static/media/MonumentExtended.otf": "/static/media/MonumentExtended.db74f7a563ec017311bc.otf",
     "static/media/ysyaImg.webp": "/static/media/ysyaImg.de6f36cac270ce279d78.webp",
     "static/media/fuckItImg.webp": "/static/media/fuckItImg.cb9db7dd844c2827cb2f.webp",
     "static/media/movesImg.webp": "/static/media/movesImg.92b32da0f27e2e50b55b.webp",
     "index.html": "/index.html",
-    "main.8c6eaa82.css.map": "/static/css/main.8c6eaa82.css.map",
-    "main.aaa12011.js.map": "/static/js/main.aaa12011.js.map",
+    "main.e6c05191.css.map": "/static/css/main.e6c05191.css.map",
+    "main.dcd623ed.js.map": "/static/js/main.dcd623ed.js.map",
     "787.0c46290f.chunk.js.map": "/static/js/787.0c46290f.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.8c6eaa82.css",
-    "static/js/main.aaa12011.js"
+    "static/css/main.e6c05191.css",
+    "static/js/main.dcd623ed.js"
   ]
 }
