@@ -10,6 +10,8 @@ const CartProvider = ({children}) => {
   const [beats, setBeats] = useState([]);
   const [cart, setCart] = useState([]);
   const [total, setTotal] = useState(0);
+  const [couponCode, setCouponCode] = useState(null);
+  const [discount, setDiscount] = useState(0);
   const [dataServices, loading] = useFirestore();
 
   useEffect(() => {
@@ -71,7 +73,37 @@ const CartProvider = ({children}) => {
     }
   }
 
+  const applyCoupon = (code) => {
+    if(couponCode) {
+      alert('Ya tenes un cupon aplicado');
+      return;
+    }
 
+    const availableCoupons = [
+      { code: "2023AJETREO10", discount: 10 },
+      { code: "DESCUENTARDO", discount: 20 },
+      { code: "AJETREOCAMPEONES", discount: 30 },
+    ];
+
+    const selectedCoupon = availableCoupons.find(c => c.code === code.toUpperCase());
+    if (selectedCoupon) {
+      setCouponCode(selectedCoupon.code);
+      setTotal(prevTotal => prevTotal * (1 - selectedCoupon.discount / 100));
+    } else {
+      setDiscount(0);
+      setCouponCode(null);
+      alert("Cupón inválido");
+    }
+  };
+
+  const removeCoupon = () => {
+    setCouponCode('');
+    // Recalculate total without the coupon discount
+    const res = cart.reduce((prev, item)=> {
+      return prev + (item.price);
+    }, 0)
+    setTotal(Math.floor(res));
+  }
   // Total
   useEffect(() =>{
     const getTotal = () =>{
@@ -82,7 +114,6 @@ const CartProvider = ({children}) => {
   }
   getTotal()
   }, [cart])
-
 
   useEffect(() => {
     // revisando si hay algo en cart
@@ -100,6 +131,10 @@ const CartProvider = ({children}) => {
     loading: loading,
     addItem: addItem,
     cart: [cart, setCart],
+    applyCoupon,
+    removeCoupon,
+    discount,
+    couponCode,
     total: [total, setTotal],
   }
 

@@ -7,6 +7,7 @@ import { NeedSignIn } from '../NeedSignIn/NeedSignIn';
 import { useAuth } from '../../context/AuthContext';
 import GenerateOrder from '../GenerateOrder/GenerateOrder';
 import { useSEO } from '../../hooks/useSEO';
+import Coupons from '../Coupons/Coupons';
 import './Cart.css'
 
 const Cart = () => {
@@ -16,6 +17,7 @@ const Cart = () => {
   const {user} = useAuth();
   const [modalState, setModalState] = useState(false);
   useSEO({title: 'Carrito', description: 'Carrito'})
+
 
   const removeItem = id => {
     cart.forEach((items , i) =>{
@@ -78,7 +80,8 @@ const Cart = () => {
           </div>
         </div>
         <div className="cart_detail">
-          <h3>Total: $USD {total}</h3>
+          <h3>Total: $USD {Math.floor(total)}</h3>
+          <Coupons />
           {!user && 
             <button 
               className='cart_detail_btn'
