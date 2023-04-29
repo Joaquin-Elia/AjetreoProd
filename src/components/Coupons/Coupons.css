@@ -1,0 +1,59 @@
+.coupon-form{
+    display: flex;
+    flex-direction: column;
+    margin: 2rem 0 0rem 0;
+}
+.coupon-input{
+    all: unset;
+    height: 2rem;
+    width: 15rem;
+    padding-left: 1rem;
+    background-color: #fff;
+    color: #000000;
+    border-radius: .75rem;
+}
+.coupon-description {
+    margin-top: 1rem;
+    text-align: center;
+}
+.coupon-code{
+    color: #96ef1d;
+}
+.coupon-send{
+    margin: 1rem 0;
+    height: 2.2rem;
+    background-color: rgb(124, 124, 124);
+    text-align: center;
+    border-radius: .75rem;
+}
+.coupon-error{
+    text-align: center;
+    color: rgb(237, 4, 4);
+}
+.coupon-delete{
+    margin: 1rem 0;
+    text-align: center;
+    width: 8.125rem;
+    height: 2.5rem;
+    background-color: rgb(185, 2, 2);
+    border-radius: .4375rem;
+}
+@media (min-width: 62.5rem){
+    .coupon-input{
+        all: unset;
+        height: 2.7rem;
+        width: 20rem;
+        padding-left: 1rem;
+        background-color: #fff;
+        color: #000000;
+        border-radius: .75rem;
+    }
+    .coupon-send{
+        margin: 1.3rem 0;
+        height: 2.8rem;
+        background-color: rgb(124, 124, 124);
+        text-align: center;
+        border-radius: .75rem;
+        font-size: 1.2em;
+    }
+}

@@ -42,13 +42,13 @@
     background-color: rgb(1, 58, 102);
 }
 .cart_empty_btn2{
-    background-color: rgb(0, 149, 35);
+    background-color: rgb(173,8,8);
 }
 .cart_empty_btn1:hover{
     background-color: rgb(0, 71, 125);
 }
 .cart_empty_btn2:hover{
-    background-color: rgb(1, 167, 40);
+    background-color: rgb(203, 3, 3);
 }
 .cart_table{
     display: flex;

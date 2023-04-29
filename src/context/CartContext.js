@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useEffect, useState } from 'react';
+import  { createContext, useContext, useEffect, useState } from 'react';
 import { useFirestore } from '../hooks/useFirestore';
 import BeatsContext from './BeatsContext';
 
@@ -11,6 +11,7 @@ const CartProvider = ({children}) => {
   const [cart, setCart] = useState([]);
   const [total, setTotal] = useState(0);
   const [couponCode, setCouponCode] = useState(null);
+  const [couponError, setCouponError] = useState(null);
   const [discount, setDiscount] = useState(0);
   const [dataServices, loading] = useFirestore();
 
@@ -75,7 +76,7 @@ const CartProvider = ({children}) => {
 
   const applyCoupon = (code) => {
     if(couponCode) {
-      alert('Ya tenes un cupon aplicado');
+      setCouponError('Ya tenes un cupon aplicado');
       return;
     }
 
@@ -92,7 +93,7 @@ const CartProvider = ({children}) => {
     } else {
       setDiscount(0);
       setCouponCode(null);
-      alert("Cupón inválido");
+      setCouponError("El cupón no existe");
     }
   };
 
@@ -104,6 +105,7 @@ const CartProvider = ({children}) => {
     }, 0)
     setTotal(Math.floor(res));
   }
+
   // Total
   useEffect(() =>{
     const getTotal = () =>{
@@ -118,7 +120,8 @@ const CartProvider = ({children}) => {
   useEffect(() => {
     // revisando si hay algo en cart
     const dataCart = JSON.parse(localStorage.getItem('dataCart'))
-      setCart(dataCart)
+    
+    setCart(dataCart)
   },[])
   
   // si hay algo en cart entonces lo guardo 
@@ -132,9 +135,11 @@ const CartProvider = ({children}) => {
     addItem: addItem,
     cart: [cart, setCart],
     applyCoupon,
-    removeCoupon,
     discount,
     couponCode,
+    removeCoupon,
+    couponError,
+    setCouponError,
     total: [total, setTotal],
   }
 
