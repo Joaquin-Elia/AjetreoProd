@@ -6,6 +6,7 @@
     position: fixed;
     width: 100%;
     z-index: 4;
+    font-family: 'Orbitron';
 }
 .navbar-container-active{
     background: rgba(0, 0, 0, 0.609);
@@ -33,7 +34,6 @@
     left: -100%;
     opacity: 1;
     transition: .5s ease;
-
 }
 .nav-menu.menu-active{
     background: rgba(21, 20, 21, 0.445);
@@ -184,7 +184,7 @@
         border-bottom-right-radius: 1.25rem;
     }
     .navbar-logo{
-        margin: 1rem 0 0 .5rem;
+        margin: 1rem 0 0 1rem;
         width: 13.5rem;
     }
     .nav-menu{
@@ -194,15 +194,53 @@
         height: 0;
         width: auto;
         color: #fff;
-        margin-right: 1.5rem;
+        margin-right: 1rem;
         transition: none;
     }
     .container-links{
         padding: .8rem;
     }
     .nav-links{
-        padding: 0 1.8rem;
+        padding: 0 1.3rem;
+        font-size: .9em;
+        letter-spacing: 1px;
+    }
+    .menu-icon{
+        display: none;
+        color: #fff;
+    }
+    .cart-container{
+        position: static;
+    }
+    .cart-widget{
+        margin-top: 0;
+    }
+    .item_count{
         font-size: 1em;
+        margin: .2rem 0 0 1.2rem;
+    }
+}
+@media screen and (min-width: 80rem) {
+    .container-links{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: .65rem 0 0 9rem;
+    }
+    .navbar-container-active{
+        border-bottom-left-radius: 1.25rem;
+        border-bottom-right-radius: 1.25rem;
+    }
+    .navbar-logo{
+        width: 14rem;
+    }
+    .nav-menu{
+        margin-right: 1.5rem;
+    }
+    .nav-links{
+        padding: 0 1.5rem;
+        font-size: .98em;
+        letter-spacing: 1.5px;
     }
     .menu-icon{
         display: none;

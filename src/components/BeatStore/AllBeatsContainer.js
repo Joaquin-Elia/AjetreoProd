@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useSEO } from '../../hooks/useSEO';
 import LoadingAnimation from '../LoadingAnimation/LoadingAnimation';
 import { useBeats } from '../../hooks/useBeats';
@@ -28,7 +28,8 @@ export const AllBeatsContainer = () => {
     }
     return (
         <>
-            {loading ? <div className='beats-loading'><LoadingAnimation /></div> : <>
+            {loading ? <div className='beats-loading'><LoadingAnimation /></div> 
+            : <div className='max-content'>
                 <div className='container-beatstore'>
                     <FilterButtons 
                         filterResult={filterResult}
@@ -38,7 +39,7 @@ export const AllBeatsContainer = () => {
                     />
                     <AllBeats data={data}/>
                 </div>
-            </> }  
+            </div> }  
         </>
     )
 }

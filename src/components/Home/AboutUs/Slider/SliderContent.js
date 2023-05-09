@@ -41,7 +41,7 @@ const AboutUs = memo(({ activeIndex, dataSlider, loading }) => {
             <LoadingAnimation />
           </div> 
           : 
-        dataSlider.map(({id, img, title, authors, video}, index) => 
+        dataSlider.map(({id, img, title, authors, description,video}, index) => 
           <div
             ref={ref}
             key={id}
@@ -55,7 +55,10 @@ const AboutUs = memo(({ activeIndex, dataSlider, loading }) => {
             />
             <h2 className={title.length >= 8 ? 'slide-title slide-title-long' : 'slide-title'}>{title}</h2>
             <h3 className='slide-authors'>{authors}</h3>
-            <p className='slide-text'>El artista Tian VCK tenía compuesto un tema con KKKevin, necesitaban una grabación y producción a la altura de este hit. Colaboramos grabando las voces con una cadena de audio profesional, sin equipos millonarios, pero con un excelente asesoramiento. Mezcla y master 100% digital pero con un sonido cálido y profesional, logrando así ¡5 Millones de visitas en plataformas de manera 100% Independiente!</p>
+            <p className='slide-text'>
+              {!description ? 'El artista Tian VCK tenía compuesto un tema con KKKevin, necesitaban una grabación y producción a la altura de este hit. Colaboramos grabando las voces con una cadena de audio profesional, sin equipos millonarios, pero con un excelente asesoramiento. Mezcla y master 100% digital pero con un sonido cálido y profesional, logrando así ¡5 Millones de visitas en plataformas de manera 100% Independiente!' 
+              : description}
+            </p>
             <button 
               onClick={()=> {getVideo(video) }}
               className='slide-btn'

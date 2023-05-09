@@ -1,4 +1,4 @@
-import { collection, getDocs, query } from 'firebase/firestore/lite';
+import { collection, getDocs, query} from 'firebase/firestore/lite';
 import { useEffect, useState } from 'react';
 import {db} from '../FireBase/Firebase';
 

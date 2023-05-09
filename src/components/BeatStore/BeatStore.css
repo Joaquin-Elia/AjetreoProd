@@ -13,7 +13,7 @@
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    row-gap: 1.5625rem;
+    gap: 1.5625rem;
     padding: 6.25rem 0 8.75rem .3125rem;
     overflow: hidden;
 }
@@ -24,6 +24,7 @@
     background: linear-gradient(146deg, rgba(173,8,8,1) 0%, rgba(120,14,14,1) 29%, rgba(232,7,7,1) 72%, rgba(187,8,8,1) 100%);
     margin: 0 .5625rem;
     border-radius: .4375rem;
+    overflow-x: hidden;
 }
 .selected-beat{
     background-color: rgb(41, 41, 41);
@@ -82,10 +83,6 @@
     margin-top: .625rem;
     font-weight: 600;
 }
-.icon-cart{
-    margin-right: .5rem;
-    font-size: 1em;
-}
 @media screen and (min-width: 21.25rem){
     .beats-container{
         width: 15rem;
@@ -108,11 +105,6 @@
         font-size: 1.0938rem;
         margin-top: .7rem;
     }
-    .icon-cart{
-        margin-right: .5625rem;
-        font-size: 1.0313em;
-        transform: translateY(1px);
-    }
 }
 @media screen and (min-width: 23.75rem) and (min-height: 51.25rem){
     .container-beatstore{
@@ -132,20 +124,11 @@
     .beat-info-price{
         font-size: 1.2188em;
     }
-    .add-beat-cart{
-        height: 2.3rem;
-        font-size: 1.1563em;
-        margin-top: .9375rem;
-    }
-    .icon-cart{
-        font-size: 1.2188em;
-        font-weight: 900;
-        transform: translateY(1px);
-    }
 }
 @media screen and (min-width: 37.5rem){
     .container-beatstore{
         padding: 8.125rem 0 5rem 0;
+        gap: 2rem;
     }
     .beats-container{
         width: 17rem;
@@ -193,6 +176,37 @@
         height: 2.35rem;
         font-size: 1.1563em;
         margin-top: .825rem;
+    }
+}
+@media screen and (min-width: 87rem){
+    .max-content{
+        background-color: #131313;
+        display: flex;
+        justify-content: center;
+    }
+    .container-beatstore{
+        padding: 8.125rem 0 5rem 0;
+        max-width: 81rem;
+        column-gap: 1.5rem;
+    }
+    .beats-container{
+        width: 20rem;
+        height: 24rem;
+        margin: 0 .9375rem 1.25rem .9375rem;
+    }
+    .img-beat{
+        height: 13rem;
+    }
+    .beat-info-title{ 
+        font-size: 1.45em;
+    }
+    .beat-info-price{
+        font-size: 1.5em;
+    }
+    .add-beat-cart{
+        height: 2.75rem;
+        font-size: 1.3em;
+        margin-top: 1.3rem;
     }
 }
 
