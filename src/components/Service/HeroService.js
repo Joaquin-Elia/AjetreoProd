@@ -25,6 +25,7 @@ const HeroService = () => {
               <h2>Ajetreo Services</h2>
               <h2 className='service-container_text-animated-transparent'>Ajetreo Services</h2>
               <h2>Ajetreo Services</h2>
+              <h2 className='service-container_text-animated-transparent'>Ajetreo Services</h2>
           </div>
         <>
           <div className='service-container-service custom-scroll'>
@@ -67,7 +68,6 @@ const HeroService = () => {
       </>
       </>}
     </div>
-    // sos un artista o queres iniciarte en la musica? entonces te podemos ayudar, tenemos la mejor variedad de beats y licencias para que puedas crear tu musica y subirla a tus sitios favoritos
   )
 }
 

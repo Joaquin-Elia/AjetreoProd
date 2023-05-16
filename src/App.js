@@ -1,4 +1,4 @@
-import React, { useEffect} from 'react';
+import React from 'react';
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
 import NavBar from './components/NavBar/NavBar';
 import Home from './components/Home/Home';
@@ -24,18 +24,6 @@ import CursorProvider from './context/CursorContext';
 import './App.css';
 
 function App() {
-
-  useEffect(() => {
-    const onLoad = () => {
-      window.scrollTo({top: 0})
-    }
-
-    window.addEventListener("load", onLoad);
-
-    return () => {
-      window.removeEventListener("load", onLoad);
-    }
-  }, []);
 
   return (
     <AuthProvider>

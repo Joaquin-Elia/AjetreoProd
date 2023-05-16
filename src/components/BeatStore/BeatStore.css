@@ -232,7 +232,7 @@
     color: rgb(173,8,8);
     font-family: 'Orbitron';
     text-transform: uppercase;
-    animation: textAnimateRight linear 30s infinite;
+    animation: textAnimateRight linear 35s infinite;
 }
 .beats-text-animated, .beats-text-animated-bolder{
     display: flex;
@@ -247,7 +247,7 @@
         transform: translateX(0)
     }
     100%{
-        transform: translateX(300%);
+        transform: translateX(400%);
     }
 }
 .container-beats-home-title{

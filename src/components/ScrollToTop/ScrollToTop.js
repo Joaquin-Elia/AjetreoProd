@@ -1,24 +1,36 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import {MdOutlineKeyboardArrowUp} from 'react-icons/md';
+import { useLocation } from 'react-router-dom';
 import './ScrollToTop.css'
 
 const ScrollToTop = () => {
     const [visibleBtn, setVisibleBtn] = useState(false);
+    const { pathname } = useLocation();
+
+    useEffect(() => {
+        scrollToTop()
+    }, [pathname])
     
-    const toggleVissible = () =>{
-        const scrolled = document.documentElement.scrollTop;
-        if(scrolled >= 800){
-            setVisibleBtn(true);
-        }else if(scrolled <= 800){
-            setVisibleBtn(false);
+    useEffect(() => {
+        const toggleVissible = () =>{
+            const scrolled = document.documentElement.scrollTop;
+            if(scrolled >= 800){
+                setVisibleBtn(true);
+            }else if(scrolled <= 800){
+                setVisibleBtn(false);
+            }
         }
-    }
+        window.addEventListener('scroll', toggleVissible);
+    
+      return () => {
+        window.removeEventListener('scroll', toggleVissible);
+      }
+    }, [visibleBtn])
+    
     const scrollToTop = ()=>{
-        window.scrollTo({
-            top: 0
-        })
+        window.scrollTo(0,0)
     }
-    window.addEventListener('scroll', toggleVissible);
+    
   return (
     <>
         {visibleBtn && 

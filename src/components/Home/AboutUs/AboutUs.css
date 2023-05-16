@@ -53,7 +53,7 @@
 @media screen and (min-width: 55.5rem){
     .container-choose-us{
         display: flex;
-        margin: 5.5rem 2rem;
+        justify-content: center;
         position: relative;
     }
     .choose-us-titles, .scroll-left-bg{
@@ -113,9 +113,6 @@
     }
 }
 @media screen and (min-width: 68.8rem){
-    .container-choose-us{
-        margin: 6rem 4rem;
-    }
     .choose-us-titles{
         margin-right: 6.575rem;
     }
@@ -144,7 +141,7 @@
 }
 @media screen and (min-width: 78.8rem){
     .container-choose-us{
-        margin: 6rem 1rem 6rem 4rem;
+        margin-bottom: 4rem;
     }
     .choose-us-titles{
         margin-right: 10.575rem;

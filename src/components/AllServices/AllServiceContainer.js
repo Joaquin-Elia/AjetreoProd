@@ -11,15 +11,7 @@ const AllService = () => {
     ? 'Cargando...' 
     : dataServices ? 'Services' : ''
   useSEO({title, description: 'Services'})
-
-  useEffect(() => {
-    const onLoad = () => {
-      window.scrollTo({top: 0});
-    }
-    return () => onLoad();
-    
-  }, []);
-
+  
   return (
     <div className='all_services_bg'>
       {loading ? 
