@@ -11,26 +11,27 @@
     background-color: #171717;
     color: #fff;
     padding: 3.8rem .7rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 .img-beat-detail{
     width: 100%;
-    max-width: 21.875rem;
-    object-fit: contain;
+    height: 20rem;
+    max-width: 25rem;
+    object-fit: cover;
     border-radius: .73rem;
 }
 .beat-play-container{
     position: relative;
     border-radius: .5rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
 }
 .beat-play-icon, .beat-playing{
     color: rgb(255, 255, 255);
+    /* overflow: hidden; */
     background-color: #0000004e;
     height: 100%;
     width: 100%;
-    max-width: 20rem;
     border-radius: .5rem;
     font-size: 5em;
     position: absolute;
@@ -44,6 +45,7 @@
     transition: ease .3s;
 }
 .beat-playing{
+    overflow: hidden;
     font-size: 1.25em;
 }
 .beat-detail-info{
@@ -89,23 +91,15 @@
     font-weight: 600;
 }
 .container-btn-add{
+    height: 2.4rem;
     display: flex;
     justify-content: center;
     align-items: center;
-}
-.beat-detail-add{
-    all: unset;
-    width: 100%;
-    height: 2.2rem;
-    margin-top: 1.2rem;
-    font-weight: 600;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+    gap: .5rem;
+    margin-top: 2.5rem;
     background-color: #d00000;
-    border-radius: .73rem;
-
+    border-radius: .43rem;
+    font-weight: 600;
 }
 @media screen and (min-width: 21.875rem) {
     .detail-container{
@@ -115,12 +109,6 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-    }
-    .img-beat-detail{
-        max-width: 20rem;
-    }
-    .beat-play-icon, .beat-playing{
-        max-width: 20rem;
     }
     .beat-playing{
         font-size: 1.4em;
@@ -150,11 +138,10 @@
     .title-license{
         font-size: 1.1em;
     }
-    .beat-detail-add{
-        width: 90%;
-        height: 2.5rem;
+    .container-btn-add{
+        height: 2.6rem;
         border-radius: .73rem;
-        margin: 1.2rem 0 0 -1rem;
+        font-size: 1.2em;
     }
 }
 @media screen and (min-width: 31.25rem) {
@@ -164,79 +151,89 @@
     .beat-playing{
         font-size: 1.5em;
     }
+    .beats-width-container{
+        margin: 1.7rem 0 .5rem 1.5rem;
+        max-width: 40rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
     .beat-detail-title{
         font-size: 1.8em;
         letter-spacing: 1.5px;
-        margin: .7rem 0 .5rem 2.5rem;
-    } 
+        margin-left: .3rem;
+    }
     .beat-detail-category{
         font-size: 1.15em;
-        margin-left: 2.5rem;
     }
     .beat-detail-price{
         font-size: 1.65em;
-        margin: .8rem 0 0 2.5rem;
+        margin-top: .8rem;
     }
     .container-licenses{
-        margin: 1rem 2.5rem;
         gap: 1.3rem 1.3rem;
     }
     .select-license{
         height: 7rem;
         width: 11rem;
     }
-    .beat-detail-add{
-        width: 80%;
-        height: 2.7rem;
-        font-size: 1.25em;
+    .container-btn-add{
+        width: 25rem;
+        margin: 2.5rem auto 0 auto;
+        justify-content: center;
+        height: 3rem;
+        font-size: 1.3em;
     }
 }
 @media screen and (min-width: 41.75rem) {
     .beat-playing{
         font-size: 1.6em;
     }
+    .beats-width-container{
+        margin: 2.7rem 5rem .5rem 6rem;
+        max-width: 40rem;
+    }
     .beat-detail-title{
         font-size: 2em;
-        letter-spacing: 1.8px;
-        margin: .7rem 0 .5rem 4rem;
     } 
     .beat-detail-category{
         font-size: 1.15em;
-        margin-left: 4rem;
-    }
-    .beat-detail-price{
-        margin: .8rem 0 0 4rem;
     }
     .container-licenses{
-        margin: 2rem 4rem;
-        gap: 1.3rem 1.3rem;
+        margin: 2rem 0;
+        gap: 1.4rem 1.5rem;
     }
     .select-license{
         height: 7rem;
-        width: 11rem;
+        width: 12rem;
     }
-    .beat-detail-add{
-        width: 80%;
-        height: 2.9rem;
-        margin: 1rem 0 0 -1rem;
+    .container-btn-add{
+        height: 3.4rem;
+        width: 40rem;
         font-size: 1.35em;
     }
 }
 @media screen and (min-width: 62.75rem) {
     .detail-container{
-        padding: 6.8rem 0 6.8rem 2rem;
+        padding: 6.8rem 0 6.8rem 4rem;
         display: flex;
+        flex-direction: row;
         justify-content: space-evenly;
         align-items: center;
+    }
+    .img-beat-detail{
+        height: 25rem;
+        max-width: 30rem;
+        object-fit: cover;
+        border-radius: .73rem;
     }
     .beat-play-icon, .beat-playing{
         height: 100%;
         width: 100%;
-        max-width: 23.875rem;
     }
-    .img-beat-detail{
-        width: 100%;
-        max-width: 23.875rem;
+    .beats-width-container{
+        margin: 2.7rem 0rem .5rem 5rem;
+        max-width: 35rem;
     }
     .beat-detail-info{
         padding: 0;
@@ -249,9 +246,11 @@
     .beat-detail-category{
         font-size: 1.25em;
     }
-    .beat-detail-add{
-        width: 85%;
-        height: 2.9rem;
-        margin: 1rem 0 0 1rem;
+    .container-btn-add{
+        width: 25rem;
+        margin: 2.5rem 0 0 1rem;
+        justify-content: center;
+        height: 3rem;
+        font-size: 1.3em;
     }
 }

@@ -41,6 +41,7 @@ export const BeatDetail = ({dataDetail, setFooterPlayer, footerPlayer}) => {
               />
             </div>
           </div>
+          <div className="beats-width-container">
             <div className="beat-detail-info">
               <h2 className='beat-detail-title'>
                 {title}
@@ -83,15 +84,14 @@ export const BeatDetail = ({dataDetail, setFooterPlayer, footerPlayer}) => {
                 )}
               </div>
               <div className="container-btn-add">
-                <button 
-                  onClick={()=> addItem(id, selectedLicense)}
-                  className='beat-detail-add'
-                >
-                  <BsHandbag className='icon-cart'/>
+                <BsHandbag className='icon-cart'/>
+                <button onClick={()=> addItem(id, selectedLicense)}>
                   Agregar al carrito
                 </button>
               </div>
             </div>
+
+          </div>
           </div>
         )}
     </div>

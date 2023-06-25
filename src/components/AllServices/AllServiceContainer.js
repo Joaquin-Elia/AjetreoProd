@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import AllServiceItem from './AllServiceItem';
 import { useFirestore } from '../../hooks/useFirestore';
 import LoadingAnimation from '../LoadingAnimation/LoadingAnimation';
@@ -7,6 +6,7 @@ import './AllService.css'
 
 const AllService = () => {
   const [dataServices, loading] = useFirestore();
+
   const title = loading 
     ? 'Cargando...' 
     : dataServices ? 'Services' : ''
