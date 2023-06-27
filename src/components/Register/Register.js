@@ -40,7 +40,6 @@ export const Register = () => {
 
   return (
     <div className='register-bg'>
-    {error && <FormAlert message={error} />}
       <form 
         onSubmit={handleSubmit} 
         className='form-container'
@@ -78,6 +77,7 @@ export const Register = () => {
             onChange={handleChange}
           />
         </div>
+        {error && <FormAlert message={error} />}
         <div className='container-btn-submit'>
           <button className='btn-submit'>Registrarse</button>
         </div>

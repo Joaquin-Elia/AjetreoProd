@@ -61,10 +61,9 @@ a, button{
 }
 .register-bg, .login-bg, .reset-bg{
     width: 100%;
-    height: 100vh;
+    max-height: auto;
+    min-height: 100vh;
     background-color: rgb(17, 17, 17);
-    top: 0;
-    left: 0;
 }
 .form-container{
     position: relative;
@@ -78,7 +77,7 @@ a, button{
 }
 .backdrop-form{
     width: 105%;
-    height: 45%;
+    height: 43%;
     position: absolute;
     top: 0;
     left: 0;
@@ -149,7 +148,7 @@ a, button{
     margin: .9375rem 0;
 }
 .btn-submit{
-    width: 95%;
+    width: 90%;
     padding: .9375rem 0;
     color: #fff;
     font-size: 1em;
@@ -219,17 +218,22 @@ a, button{
         font-size: 1.0625em;
     }
     .container-inputs{
-        margin: 16.25rem 0 0 1.75rem;
+        margin: 18.25rem 0 0 1.75rem;
         width: 85%;
+        height: auto;
     }
     .btn-submit{
-        width: 80%;
+        width: 85%;
         font-size: 1em;
-        font-weight: 600;
-        border-radius: 1.25rem;
     }
 }
 @media screen and (min-width: 43.75rem){
+    .register-bg, .login-bg, .reset-bg{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 5rem 0 3rem 0;
+    }
     .backdrop-form{
         width: 101%;
     }
@@ -241,16 +245,34 @@ a, button{
     .title-form-h5{
         font-size: 1.0625em;
     }
-    .register-bg, .login-bg, .reset-bg{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
     .form-container{
-        height: 85%;
+        margin-left: 1.75rem;
+        margin: 0;
         width: 50%;
         max-width: 25rem;
         max-height: 48.125rem;
-        border-radius: 1.25rem;
+        border-radius: 1.35rem;
+    }
+}
+@media screen and (min-width: 63.75rem){
+    .register-bg, .login-bg, .reset-bg{
+        padding-top: 6rem;
+    }
+    .backdrop-form{
+        width: 101%;
+    }
+    .title-form-h3{
+        font-size: 3.4em;
+        width: 80%;
+        margin-top: 1.875rem;
+    }
+    .title-form-h5{
+        font-size: 1.15em;
+    }
+    .form-container{
+        height: auto;
+        width: 55%;
+        max-width: 26rem;
+        min-height: 43rem;
     }
 }

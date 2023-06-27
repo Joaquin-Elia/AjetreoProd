@@ -20,17 +20,17 @@
     width: 110%;
 }
 .service-container-text-animated > h2{
-    font-size: 3em;
+    font-size: 3.1em;
     color: #0329b0;
     animation: textAnimate linear 30s infinite;
     white-space: nowrap;
     user-select: none;
-    font-family: 'Monument Extended';
-    letter-spacing: 1px;
+    font-family: 'Orbitron';
+    letter-spacing: .5px;
     text-transform: uppercase;
 }
 .service-container_text-animated-transparent{
-    -webkit-text-stroke: 1px;
+    -webkit-text-stroke: 2px;
     -webkit-text-stroke-color: #0034ef;
     -webkit-text-fill-color: transparent;
     margin: 0 1.5rem;
@@ -71,7 +71,7 @@
     flex-direction: column;
     justify-content: center;
     border-bottom: 1px solid #e7e7e7;
-    margin: 0   ;
+    margin: 0;
     padding: 1rem .5rem;
     align-items: center;
     text-align: start;
@@ -83,7 +83,6 @@
     position: absolute;
     z-index: -1;
     overflow: hidden;
-    /* background: url('https://images.pexels.com/photos/164938/pexels-photo-164938.jpeg'); */
     background-size: cover;
     width: 100%;
     height: 100%;
@@ -210,8 +209,8 @@
         padding: .2rem;
     }
     .service-container-text-animated > h2{
-        font-size: 5em;
-        padding: 1.7rem .6rem;
+        font-size: 4.7em;
+        padding: 1.6rem .6rem;
     }
     .service-container-service{
         width: 100%;

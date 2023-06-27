@@ -51,7 +51,6 @@ export const Login = () => {
 
   return (
     <div className='login-bg'>
-      {error && <FormAlert message={error}/> }
       <form 
         onSubmit={handleSubmit} 
         className='form-container'
@@ -69,7 +68,7 @@ export const Login = () => {
           </h5>
         </div>
         
-        <div className="container-inputs">        
+        <div className="container-inputs">
           <label hetmlfor='email'>Correo electronico</label>
           <input
             className='inputs-form' 
@@ -89,6 +88,7 @@ export const Login = () => {
           />
         </div>
 
+        {error && <FormAlert message={error} />}
         <div className="container-btn-submit">
             <button className='btn-submit'>Ingresar</button>
           </div>

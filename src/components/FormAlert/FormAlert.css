@@ -1,9 +1,9 @@
-.container-alert{
-    background-color: rgb(243, 182, 182);
-    border: 1px solid rgb(230, 30, 30);
-    color: rgb(189, 1, 1);
-    padding: 1.7rem;
+.form-alert{
+    color: rgb(233, 6, 6);
+    padding: 0 2rem ;
+    top: .5rem;
+    font-size: 1.1em;
     position: relative;
-    margin-top: 1rem;
-    text-align: center;
+    /* margin-top: 1rem; */
+    /* text-align: center; */
 }

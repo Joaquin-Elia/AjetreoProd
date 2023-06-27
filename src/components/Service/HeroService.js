@@ -38,7 +38,7 @@ const HeroService = () => {
           </div>
         <>
           <div className='service-container-service custom-scroll'>
-            {heroServiceData.map(({id, img, title, price}, i)=> 
+            {heroServiceData.map(({id, title, price}, i)=> 
               <div
                 className='service-container_service-item' 
                 key={id} 

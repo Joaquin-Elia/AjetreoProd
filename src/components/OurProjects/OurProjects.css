@@ -5,18 +5,18 @@
     background-color: rgb(18, 18, 18);
 }
 .our-projects-title{
-    font-family: 'Monument Extended';
+    font-family: 'Orbitron';
     text-transform: uppercase;
-    font-size: 2em;
+    font-size: 2.2em;
     color: #96ef1d;
-    letter-spacing: .05rem;
+    letter-spacing: .08rem;
     white-space: nowrap;
     transition: 1.5s cubic-bezier(.165, .84, .44, 1);
     margin-left: 1.5rem;
 }
 @media screen and (min-width: 22.5rem){
     .our-projects-title{
-        font-size: 2.5em;
+        font-size: 2.7em;
         margin-left: 3rem;
     }
 }
