@@ -88,7 +88,7 @@ export const Login = () => {
           />
         </div>
 
-        {error && <FormAlert message={error} />}
+        {error && <FormAlert  message={error} />}
         <div className="container-btn-submit">
             <button className='btn-submit'>Ingresar</button>
           </div>

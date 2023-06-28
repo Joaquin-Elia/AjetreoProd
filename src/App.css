@@ -61,31 +61,33 @@ a, button{
 }
 .register-bg, .login-bg, .reset-bg{
     width: 100%;
-    max-height: auto;
+    height: auto;
     min-height: 100vh;
-    background-color: rgb(17, 17, 17);
+    background-color: #111111;
 }
 .form-container{
     position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    height: 100vh;
+    height: auto;
+    min-height: 100vh;
     width: 100%;
-    background-color: rgb(222, 222, 222);
+    background-color: #dedede;
     overflow: hidden;
 }
 .backdrop-form{
     width: 105%;
-    height: 43%;
+    height: auto;
+    min-height: 43%;
     position: absolute;
     top: 0;
     left: 0;
     display: flex;
     flex-direction: column;
-    background: rgb(17, 16, 16);
+    background: #111010;
     border-bottom-right-radius: 90%;
-    color: rgb(255, 255, 255);
+    color: #fff;
 }
 .title-form-h3{
     margin: 4.375rem 0 0 1.25rem;
@@ -197,15 +199,7 @@ a, button{
         padding: 0 .625rem;
     }
 }
-@media screen and (max-height: 23.125rem){
-    .backdrop-form{
-        width: 220%;
-        height: 3.75rem;
-    }
-    .title-form-h3, .title-form-h5{
-        display: none;
-    }
-}
+
 @media screen and (min-width: 27.1875rem){
     .backdrop-form{
         width: 99%;
@@ -273,6 +267,20 @@ a, button{
         height: auto;
         width: 55%;
         max-width: 26rem;
+        min-height: 43rem;
+    }
+}
+@media screen and (min-height: 62rem) and (orientation: portrait) {
+    .register-bg, .login-bg, .reset-bg{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 5rem 0 3rem 0;
+    }
+    .form-container{
+        height: auto;
+        width: 85%;
+        max-width: 30rem;
         min-height: 43rem;
     }
 }

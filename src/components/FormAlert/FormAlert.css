@@ -1,9 +1,14 @@
 .form-alert{
-    color: rgb(233, 6, 6);
-    padding: 0 2rem ;
+    color: #ec0000;
+    padding: 0 .3rem .5rem 1rem;
     top: .5rem;
-    font-size: 1.1em;
+    font-size: 1.05em;
     position: relative;
-    /* margin-top: 1rem; */
-    /* text-align: center; */
+    font-weight: 500;
+}
+@media (min-width: 30rem) {
+    .form-alert{
+        padding: 0 1rem .5rem 2rem;
+        font-size: 1.1em;
+    }
 }

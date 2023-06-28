@@ -50,25 +50,23 @@ const AllServiceItem = ({
             </ul>
         </div>
         {!added && 
-          <div className='container_add_cart'>
+          <div 
+            onClick={()=> deleteBtn()}
+            className='container_add_cart'
+          >
             <BsHandbag />
-            <button 
-              className="btn_add_cart"
-              onClick={()=> deleteBtn()}
-            >
-              Agregar
-            </button>
+            <button className="btn_add_cart">Agregar</button>
           </div>
         }
         {added && 
-          <div className="container_add_cart">
-            <Link 
-              to='/cart'
-              className="btn_added"
-            >
+          <Link 
+            className="container_add_cart"
+            to='/cart' 
+          >
+            <button className="btn_added">
               Ir al carrito
-            </Link>
-          </div> 
+            </button>
+          </Link> 
         }
     </div>
 )}

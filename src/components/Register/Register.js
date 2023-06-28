@@ -25,8 +25,11 @@ export const Register = () => {
       await signup(user.email, user.password)
       cart.length === 0 ? navigate('/profile') : navigate('/cart');
     } catch (error) {
-      if(error.code === 'auth/internal-error' || error.code === 'auth/invalid-email')
+      if(error.code === 'auth/invalid-email')
         setError('Error: Correo invalido');
+      
+      else if (error.code === 'auth/internal-error')
+        setError('Error: Debes ingresar una contraseña de al menos 6 caracteres');
       
       else if(error.code === 'auth/email-already-in-use')
         setError('Error: El correo ya esta en uso')
@@ -34,7 +37,7 @@ export const Register = () => {
       else if(error.code === 'auth/weak-password')
         setError('Error: La contraseña debe tener al menos 6 caracteres')
       
-      else setError('Error: Ocurrio un error intentelo de nuevo')
+      else setError('Error: Verifique haber ingresado su correo y una contraseña.')
     }
   }
 
