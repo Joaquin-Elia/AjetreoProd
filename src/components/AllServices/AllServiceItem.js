@@ -1,4 +1,4 @@
-import React, {useContext, useState} from 'react';
+import React, {useContext} from 'react';
 import { Link } from 'react-router-dom';
 import { CartContext } from '../../context/CartContext';
 import {BsHandbag} from 'react-icons/bs';
@@ -11,27 +11,19 @@ const AllServiceItem = ({
 }) => {
     const value = useContext(CartContext);
     const addItem = value.addItem;
-    const [added, setAdded] = useState(false);
+    const [addedProductIds] = value.addedProduct;
+  
+    const isInCart = addedProductIds.includes(id);
 
-    const deleteBtn = () =>{
-      addItem(id)
-      setAdded(!added)
-    }
+    const handleAddToCart = () => {
+      if(!isInCart)
+        addItem(id);
+    };
 
-    // const images = [      
-    //   'https://images.pexels.com/photos/164938/pexels-photo-164938.jpeg',
-    //   'https://images.unsplash.com/photo-1633933769681-dc8d28bdeb6d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1171&q=80',
-    //   'https://images.pexels.com/photos/1481311/pexels-photo-1481311.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-    //   'https://images.pexels.com/photos/10933702/pexels-photo-10933702.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-    //   'https://images.pexels.com/photos/352505/pexels-photo-352505.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-    //   'https://images.unsplash.com/photo-1633933769681-dc8d28bdeb6d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1171&q=80',
-    // ]
   return (
     <div className='all_services_cards'>
           <div className="all_services_content">
             <div className='service-card-header'>
-              {/* {images.map((img, i) => <div key={i} className='service_header_bg' style={{backgroundImage: `url(${img})` }}/>  */}
-                {/* )} */}
                 <h3 className='service-card-header-title'>{title}</h3>
                 <small className='service-card-header-ideal'>Ideal para principiantes</small>
                 <div>
@@ -49,24 +41,21 @@ const AllServiceItem = ({
               <li className='card-items'><TiTick/> Calidad profesional</li>
             </ul>
         </div>
-        {!added && 
+        {isInCart ?
+                 <Link 
+                  className="container_add_cart"
+                  to='/cart' 
+                >
+                  Ir al carrito
+                </Link> 
+          :
           <div 
-            onClick={()=> deleteBtn()}
+            onClick={()=> handleAddToCart()}
             className='container_add_cart'
           >
             <BsHandbag />
             <button className="btn_add_cart">Agregar</button>
           </div>
-        }
-        {added && 
-          <Link 
-            className="container_add_cart"
-            to='/cart' 
-          >
-            <button className="btn_added">
-              Ir al carrito
-            </button>
-          </Link> 
         }
     </div>
 )}

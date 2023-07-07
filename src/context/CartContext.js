@@ -7,6 +7,10 @@ export const CartContext = createContext()
 const CartProvider = ({children}) => {
   const {dataBeats} = useContext(BeatsContext);
   const [products, setProducts] = useState([]);
+  const [addedProductIds, setAddedProductIds] = useState(() => {
+    const localData = localStorage.getItem('addedProductIds');
+    return localData ? JSON.parse(localData) : [];
+  });
   const [beats, setBeats] = useState([]);
   const [cart, setCart] = useState([]);
   const [total, setTotal] = useState(0);
@@ -70,7 +74,9 @@ const CartProvider = ({children}) => {
         };
       } 
       // guardo lo que hay en cart y lo que hay en data
-      setCart([...cart, newItem])
+      setCart([...cart, newItem]);
+      setAddedProductIds([...addedProductIds, id]);
+      localStorage.setItem('addedProductIds', JSON.stringify([...addedProductIds, id]));
     }
   }
 
@@ -141,6 +147,7 @@ const CartProvider = ({children}) => {
     couponError,
     setCouponError,
     total: [total, setTotal],
+    addedProduct: [addedProductIds, setAddedProductIds]
   }
 
   return (

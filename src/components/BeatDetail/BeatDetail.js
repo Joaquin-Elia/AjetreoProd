@@ -2,13 +2,17 @@ import { useContext, useState} from "react";
 import { CartContext } from "../../context/CartContext";
 import { BsHandbag ,BsFillPlayFill } from 'react-icons/bs'
 import BeatsContext from "../../context/BeatsContext";
+// import { Link } from "react-router-dom";
 
 export const BeatDetail = ({dataDetail, setFooterPlayer, footerPlayer}) => {
 
   const value = useContext(CartContext);
   const addItem = value.addItem;
+  const [addedProductIds] = value.addedProduct;
+  // const [inCart, setInCart] = useState(false)
   const [selectedLicense, setSelectedLicense] = useState('Mp3 sin TAG');
   const {setCurrent} = useContext(BeatsContext);
+
 
   return (
     <div>
@@ -83,12 +87,34 @@ export const BeatDetail = ({dataDetail, setFooterPlayer, footerPlayer}) => {
                   </div>
                 )}
               </div>
-              <div className="container-btn-add">
+              {/* {!addedProductIds ?
+                <Link 
+                  className="container_add_cart"
+                  to='/cart' 
+                >
+                  Ir al carrito
+                </Link> 
+                : */}
+              <div 
+                onClick={()=> addItem(id, selectedLicense)//{
+                //     const isInCart = addedProductIds.includes(id);
+
+                //     const handleAddToCart = () => {
+                //       if(!isInCart) {
+                //         addItem(id, selectedLicense)
+                //       }
+                //     };
+                //     handleAddToCart()
+                // }
+              } 
+                className="container-btn-add"
+              >
                 <BsHandbag className='icon-cart'/>
-                <button onClick={()=> addItem(id, selectedLicense)}>
+                <button>
                   Agregar al carrito
                 </button>
               </div>
+              {/* } */}
             </div>
 
           </div>

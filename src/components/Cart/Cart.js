@@ -12,7 +12,8 @@ import './Cart.css'
 
 const Cart = () => {
   const value = useContext(CartContext);
-  const [cart, setCart] = value.cart;  
+  const [cart, setCart] = value.cart;
+  const [addedProductIds, setAddedProductIds] = value.addedProduct;
   const [total] = value.total;
   const {user} = useAuth();
   const [modalState, setModalState] = useState(false);
@@ -26,6 +27,8 @@ const Cart = () => {
       }
     })
     setCart([...cart])
+    setAddedProductIds(addedProductIds.filter(productId => productId !== id));
+    localStorage.setItem('addedProductIds', JSON.stringify(addedProductIds.filter(productId => productId !== id)));
   }
 
   return (
