@@ -31,6 +31,13 @@ const Cart = () => {
     localStorage.setItem('addedProductIds', JSON.stringify(addedProductIds.filter(productId => productId !== id)));
   }
 
+  const clearCart = () => {
+    setCart([]);
+    setAddedProductIds([]);
+    localStorage.setItem("addedProductIds", JSON.stringify([]));
+  }
+
+
   return (
     <div className='cart'>
       <div className="cart_bg">
@@ -76,7 +83,7 @@ const Cart = () => {
         <div className="cart_delete_all">
           <div 
             className="cart_delete_all_btn"
-            onClick={()=> setCart([])}
+            onClick={()=> clearCart()}
           >
             <BsTrash className='cart_delete_all_icon'/>
             <p>Vaciar carrito</p>
