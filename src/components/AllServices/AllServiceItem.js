@@ -33,21 +33,21 @@ const AllServiceItem = ({
                 <span className='service-card-header-price'><small className='service-price-curency'>USD</small> {price},00</span>
             </div>
             <ul className='card-items-container'>
-              <li className='card-items'><TiTick /> Edición</li>
+              <li className='card-items'><TiTick/> Edición</li>
               <li className='card-items'><TiTick/> Mezcla de voces</li>
               <li className='card-items'><TiTick/> Pistas instrumentales</li>
               <li className='card-items'><TiTick/> SFX</li>
               <li className='card-items'><TiTick/> 20 pistas</li>
-              <li className='card-items'><TiTick/> Calidad profesional</li>
+              <li className='card-items'><TiTick/> Calidad profesional</li> 
             </ul>
         </div>
         {isInCart ?
-                 <Link 
-                  className="container_add_cart"
-                  to='/cart' 
-                >
-                  Ir al carrito
-                </Link> 
+            <Link 
+              className="container_add_cart"
+              to='/cart' 
+            >
+              Ir al carrito
+            </Link> 
           :
           <div 
             onClick={()=> handleAddToCart()}

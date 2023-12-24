@@ -6,7 +6,6 @@
     position: fixed;
     width: 100%;
     z-index: 4;
-    font-family: 'Orbitron';
 }
 .navbar-container-active{
     background: rgba(0, 0, 0, 0.609);
@@ -59,7 +58,7 @@
     background-color: #fff;
     transition: .5s width .09s;
 }
- .active:before{
+.active:before{
     width: 70%;
     margin-top: 5px;
 }
